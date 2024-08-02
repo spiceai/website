@@ -41,6 +41,8 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+/.pnp
+.pnp.js
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
@@ -84,8 +86,9 @@ web_modules/
 .parcel-cache
 
 # Next.js build output
-.next
-out
+/.next/
+/out/
+
 
 # Nuxt.js build / generate output
 .nuxt
@@ -128,3 +131,16 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+*storybook.log

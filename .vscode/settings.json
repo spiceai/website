@@ -1,0 +1,18 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "className:\\s*[\"']([^\"']*)[\"']",
+    "className:\\s*`([^`]*)`",
+    "className:\\s*{`([^`]*)`}",
+    "className:\\s*{[\"']([^\"']*)[\"']}",
+    "className: \"([^\"]*)\""
+  ],
+  "files.associations": {
+    "*.stories.ts": "typescript"
+  },
+  "tailwindCSS.validate": ["typescript", "typescriptreact"],
+  "tailwindCSS.experimental.configFile": "tailwind.config.ts"
+}
