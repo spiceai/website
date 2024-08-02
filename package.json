@@ -9,7 +9,9 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,css,md,json}\""
   },
   "dependencies": {
     "babel-plugin-react-compiler": "0.0.0-experimental-334f00b-20240725",
@@ -35,6 +37,8 @@
     "eslint-config-next": "^14.2.5",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8.4.40",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "storybook": "^8.2.7",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4"

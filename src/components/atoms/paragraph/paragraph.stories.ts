@@ -1,20 +1,19 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Paragraph } from "./paragraph";
+import { Meta, StoryObj } from '@storybook/react'
+import { Paragraph } from './paragraph'
 
 const meta = {
-  title: "Atoms/Paragraph",
+  title: 'Atoms/Paragraph',
   component: Paragraph,
-  tags: ["autodocs"],
-} satisfies Meta<typeof Paragraph>;
+  tags: ['autodocs']
+} satisfies Meta<typeof Paragraph>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const ParagraphBold: Story = {
   args: {
-    children:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.",
-    className: "font-bold",
-  },
-};
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
+    className: 'font-bold'
+  }
+}
