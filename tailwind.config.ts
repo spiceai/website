@@ -49,7 +49,7 @@ const config = {
         sans: 'var(--font-sans, ui-sans-serif)'
       },
       boxShadow: {
-        'button-hover': '0px -4px 8px 0px  #FFE0B7'
+        'button-hover': '0px -4px 8px 0px rgba(246, 147, 65, 0.40)'
       }
     }
   },

@@ -1,20 +1,19 @@
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
+import Link, { LinkProps } from 'next/link'
 import { cn } from 'lib/utils'
 
 const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
   variants: {
     variant: {
-      brand:
-        ' bg-primary text-primary-foreground hover:bg-primary-600 hover:text-primary-foreground hover:shadow-[0px_-4px_8px_0px_rgba(246,_147,_65,_0.40)] active:bg-red-400 active:shadow-none',
+      brand: 'bg-primary hover:bg-primary-600',
       brandOutline:
-        '  bg-primary hover:bg-neutral hover:text-neutral-foreground active:bg-neutral-400 active:shadow-none',
-      primary:
-        ' bg-alpha-900 text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground hover:shadow-button-hover active:bg-red-400 active:shadow-none',
-      secondary:
-        ' bg-neutral text-neutral-foreground hover:bg-alpha-150 hover:text-neutral-foreground active:bg-alpha-300',
-      negative:
-        ' bg-neutral text-neutral-foreground hover:bg-primary  hover:text-primary-foreground hover:shadow-button-hover active:bg-red-400 active:shadow-none'
+        'bg-primary  hover:bg-neutral hover:text-neutral-foreground active:bg-neutral-400 active:shadow-none hover:shadow-button-hover',
+      primary: 'bg-alpha-900 hover:bg-primary ',
+      secondary: 'bg-neutral hover:bg-alpha-150 hover:text-neutral-foreground active:bg-alpha-300',
+      negative: 'bg-neutral hover:bg-primary',
+      linkSmall: 'text-neutral font-medium',
+      linkLarge: 'text-alpha-900 text-lg'
     },
     size: {
       sm: 'px-3 py-2',
@@ -25,20 +24,46 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
   defaultVariants: {
     variant: 'primary',
     size: 'md'
-  }
+  },
+  compoundVariants: [
+    {
+      variant: ['linkSmall', 'linkLarge'],
+      size: 'md',
+      className: 'px-0 py-0 hover:text-primary active:text-red-400'
+    },
+    {
+      variant: ['brand', 'primary', 'negative'],
+      className:
+        'active:bg-red-400 hover:text-primary-foreground hover:shadow-button-hover active:shadow-none'
+    },
+    {
+      variant: ['brand', 'brandOutline', 'primary', 'linkSmall'],
+      className: 'text-primary-foreground'
+    },
+    {
+      variant: ['secondary', 'negative'],
+      className: 'text-neutral-foreground'
+    }
+  ]
 })
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof buttonVariants> {
+  href?: string
+}
+const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
+  const classes = cn(buttonVariants({ variant, size, className }))
 
-function Button(
-  { className, variant, size, ...props }: ButtonProps,
-  ref: React.Ref<HTMLButtonElement>
-) {
-  return (
-    <button className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
-  )
+  if (href) {
+    return (
+      <Link className={classes} {...(props as LinkProps)} href={href}>
+        {props.children}
+      </Link>
+    )
+  }
+
+  return <button className={classes} {...props} />
 }
 
 Button.displayName = 'Button'
