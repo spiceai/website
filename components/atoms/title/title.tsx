@@ -5,8 +5,8 @@ const titleVariants = cva('text-alpha-900', {
   variants: {
     variant: {
       small: 'text-lg font-semibold leading-7',
-      medium: 'text-4xl',
-      large: 'text-6xl font-medium'
+      medium: 'text-2xl leading-8 md:text-4xl',
+      large: 'text-3xl md:text-6xl font-medium'
     }
   },
   defaultVariants: {

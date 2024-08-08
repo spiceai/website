@@ -1,4 +1,6 @@
 import React from 'react'
+import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
+
 import type { Preview } from '@storybook/react'
 import { Manrope } from 'next/font/google'
 import { cn } from '../lib/utils'
@@ -21,6 +23,12 @@ const preview: Preview = {
     },
     nextjs: {
       appDirectory: true
+    },
+    viewport: {
+      viewports: {
+        ...INITIAL_VIEWPORTS,
+        ...MINIMAL_VIEWPORTS
+      }
     }
   },
   decorators: [

@@ -52,6 +52,12 @@ const config = {
         'button-hover': '0px -4px 8px 0px rgba(246, 147, 65, 0.40)'
       },
       fontSize: {
+        '3xl': [
+          '2rem',
+          {
+            lineHeight: '2.5rem'
+          }
+        ],
         '4xl': [
           '2.5rem',
           {
