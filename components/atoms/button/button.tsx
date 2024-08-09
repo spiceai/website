@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import Link, { LinkProps } from 'next/link'
 import { cn } from 'lib/utils'
 
-const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
+const buttonVariants = cva('font-semibold transition-colors', {
   variants: {
     variant: {
       brand: 'bg-primary hover:bg-primary-600',
@@ -26,6 +26,10 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
     size: 'md'
   },
   compoundVariants: [
+    {
+      variant: ['primary', 'secondary', 'brand', 'brandOutline', 'negative'],
+      className: 'rounded-xl'
+    },
     {
       variant: ['linkSmall', 'linkLarge'],
       size: 'md',

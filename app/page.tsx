@@ -2,6 +2,7 @@ import { Button } from 'components/atoms/button/button'
 import { Title } from 'components/atoms/title/title'
 import { TestButton } from './_landing/test-button'
 import { Social } from 'components/molecules/social/social'
+import { Footer } from 'components/organisms/footer/footer'
 
 export default function LandingPage() {
   return (
@@ -43,7 +44,7 @@ export default function LandingPage() {
       </div>
 
       <div className='mt-10'>
-        <Social />
+        <Footer />
       </div>
     </div>
   )
