@@ -10,16 +10,16 @@ export const Social = () => {
       </div>
       <div className='flex items-center gap-3'>
         <a href='#' target='_blank' rel='noreferrer'>
-          <FaGithub className='h-8 w-8' />
+          <FaGithub className='h-8 w-8 hover:text-primary' />
         </a>
         <a href='#' target='_blank' rel='noreferrer'>
-          <RiTwitterXLine className='h-8 w-8' />
+          <RiTwitterXLine className='h-7 w-7 hover:text-primary' />
         </a>
         <a href='#' target='_blank' rel='noreferrer'>
-          <FaDiscord className='h-8 w-8' />
+          <FaDiscord className='h-8 w-8 hover:text-primary' />
         </a>
         <a href='#' target='_blank' rel='noreferrer'>
-          <FaYoutube className='h-8 w-8' />
+          <FaYoutube className='h-8 w-8 hover:text-primary' />
         </a>
       </div>
     </div>

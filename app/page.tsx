@@ -6,7 +6,7 @@ import { Footer } from 'components/organisms/footer/footer'
 
 export default function LandingPage() {
   return (
-    <div className='px-10 py-20'>
+    <div className='px-10'>
       <Title className='mb-5'>Landing Page</Title>
 
       <div className='hidden items-center gap-3 bg-gray-700 p-10 sm:flex'>
@@ -21,7 +21,7 @@ export default function LandingPage() {
         </Button>
       </div>
 
-      <div className='flex items-center gap-3 bg-gray-800 p-10'>
+      <div className='flex items-center gap-3 bg-gray-800 p-6 md:p-10'>
         <h3 className='text-primary-foreground'>Test Client component button</h3>
 
         <TestButton />
