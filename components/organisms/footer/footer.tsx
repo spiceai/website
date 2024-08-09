@@ -1,7 +1,8 @@
-import { Button } from 'components/atoms/button/button'
+import Image from 'next/image'
+
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Social } from 'components/molecules/social/social'
-import Image from 'next/image'
+import { Button } from 'components/atoms/button/button'
 
 export const Footer = () => {
   return (
