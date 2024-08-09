@@ -1,8 +1,42 @@
-type Props = {
-  children: React.ReactNode
+import React from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from 'lib/utils'
+
+const paragraphVariants = cva('', {
+  variants: {
+    variant: {
+      small: 'text-sm leading-6',
+      medium: 'text-base leading-7',
+      large: 'text-lg',
+      extralarge: 'text-2xl text-neutral-400'
+    }
+  },
+  defaultVariants: {
+    variant: 'medium'
+  },
+  compoundVariants: [
+    {
+      variant: ['small', 'medium', 'large'],
+      className: 'text-alpha-700'
+    }
+  ]
+})
+
+type ParagraphProps = VariantProps<typeof paragraphVariants> & {
   className?: string
+  children: React.ReactNode
 }
 
-export const Paragraph = ({ children, className }: Props) => {
-  return <p className={className}>{children}</p>
+const Paragraph: React.FC<ParagraphProps> = ({ className, variant, children, ...props }) => {
+  const classes = cn(paragraphVariants({ variant, className }))
+
+  return (
+    <p className={classes} {...props}>
+      {children}
+    </p>
+  )
 }
+
+Paragraph.displayName = 'Paragraph'
+
+export { Paragraph, paragraphVariants }
