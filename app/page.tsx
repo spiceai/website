@@ -1,13 +1,14 @@
 import { Button } from 'components/atoms/button/button'
 import { Title } from 'components/atoms/title/title'
 import { TestButton } from './_landing/test-button'
+import { Social } from 'components/molecules/social/social'
 
 export default function LandingPage() {
   return (
     <div className='px-10 py-20'>
       <Title className='mb-5'>Landing Page</Title>
 
-      <div className='flex items-center gap-3 bg-gray-700 p-10'>
+      <div className='hidden items-center gap-3 bg-gray-700 p-10 sm:flex'>
         <Button href='/page-2' size='lg' variant='brandOutline'>
           Brand Outline - Link
         </Button>
@@ -39,6 +40,10 @@ export default function LandingPage() {
             Link
           </Button>
         </div>
+      </div>
+
+      <div className='mt-10'>
+        <Social />
       </div>
     </div>
   )
