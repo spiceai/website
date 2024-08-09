@@ -1,12 +1,10 @@
 import { Button } from 'components/atoms/button/button'
 import { Title } from 'components/atoms/title/title'
 import { TestButton } from './_landing/test-button'
-import { Social } from 'components/molecules/social/social'
-import { Footer } from 'components/organisms/footer/footer'
 
 export default function LandingPage() {
   return (
-    <div className='px-10'>
+    <div className='mx-auto max-w-screen-xl'>
       <Title className='mb-5'>Landing Page</Title>
 
       <div className='hidden items-center gap-3 bg-gray-700 p-10 sm:flex'>
@@ -41,10 +39,6 @@ export default function LandingPage() {
             Link
           </Button>
         </div>
-      </div>
-
-      <div className='mt-10'>
-        <Footer />
       </div>
     </div>
   )
