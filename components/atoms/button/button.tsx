@@ -16,7 +16,7 @@ const buttonVariants = cva('font-semibold transition-colors', {
       linkLarge: 'text-alpha-900 text-lg',
       tag: 'px-4 py-3 hover:bg-alpha-50 active:bg-alpha-100',
       tagSmall:
-        'bg-alpha-100 hover:bg-alpha-150 active:bg-alpha-200 text-sm leading-6 text-alpha-700'
+        'bg-alpha-100 rounded-sm hover:bg-alpha-150 active:bg-alpha-200 text-sm leading-6 text-alpha-700'
     },
     size: {
       sm: 'px-3 py-2',
@@ -30,7 +30,7 @@ const buttonVariants = cva('font-semibold transition-colors', {
   },
   compoundVariants: [
     {
-      variant: ['primary', 'secondary', 'brand', 'brandOutline', 'negative', 'tag', 'tagSmall'],
+      variant: ['primary', 'secondary', 'brand', 'brandOutline', 'negative', 'tag'],
       className: 'rounded-xl'
     },
     {

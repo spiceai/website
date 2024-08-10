@@ -19,8 +19,8 @@ export const Article = ({ image, title, description, tags }: ArticleProps) => {
         <Image
           src={image || DefaultPicture}
           alt='article image'
-          width={400}
-          height={210}
+          width={600}
+          height={400}
           className='w-full overflow-hidden rounded-[4px]'
         />
 
