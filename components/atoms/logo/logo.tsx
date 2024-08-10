@@ -1,36 +1,38 @@
 import React from 'react'
 import Image from 'next/image'
-import { cva, type VariantProps } from 'class-variance-authority'
 
-const logoVariants = cva('', {
-  variants: {
-    variant: {
-      white: '',
-      dark: '',
-      logotype: ''
-    }
-  },
-  defaultVariants: {
-    variant: 'white'
-  }
-})
+import LogoDark from 'public/spice-logo-dark.png'
+import LogoWhite from 'public/spice-logo-white.png'
+import Logotype from 'public/spice-logotype.png'
 
-type LogoProps = VariantProps<typeof logoVariants> & {
+type LogoVariant = 'white' | 'dark' | 'logotype'
+
+type LogoProps = {
+  variant?: LogoVariant
   className?: string
   width?: number
   height?: number
 }
 
-export const Logo: React.FC<LogoProps> = ({ variant, className, width = 156, height = 32 }) => {
-  const src = `/spice-logo-${variant}.png`
+const logoSources: Record<LogoVariant, any> = {
+  white: LogoWhite,
+  dark: LogoDark,
+  logotype: Logotype
+}
 
+export const Logo: React.FC<LogoProps> = ({
+  variant = 'white',
+  className,
+  width = 156,
+  height = 32
+}) => {
   return (
     <Image
-      src={src}
+      src={logoSources[variant]}
       alt='Spice.ai Logo'
       width={width}
       height={height}
-      className={logoVariants({ variant, className })}
+      className={className}
     />
   )
 }
