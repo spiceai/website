@@ -1,5 +1,9 @@
 import { cn } from 'lib/utils'
 
+/**
+ *
+ * Containers are used to wrap content and provide consistent spacing and alignment.
+ */
 export const Container = ({
   children,
   className

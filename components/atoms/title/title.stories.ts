@@ -4,7 +4,6 @@ import { Title } from './title'
 const meta = {
   title: 'Atoms/Title',
   component: Title,
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',

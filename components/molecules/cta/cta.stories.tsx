@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { Cta } from './cta'
 
 const meta: Meta<typeof Cta> = {
-  title: 'Components/Cta',
+  title: 'Molecules/Cta',
   component: Cta,
   parameters: {
     layout: 'fullscreen'

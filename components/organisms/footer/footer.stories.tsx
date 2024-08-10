@@ -4,7 +4,6 @@ import { Footer } from './footer'
 const meta: Meta<typeof Footer> = {
   title: 'Components/Footer',
   component: Footer,
-  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen'
   }

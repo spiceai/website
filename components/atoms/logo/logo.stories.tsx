@@ -5,7 +5,6 @@ import { Logo } from './logo'
 const meta = {
   title: 'atoms/Logo',
   component: Logo,
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',
