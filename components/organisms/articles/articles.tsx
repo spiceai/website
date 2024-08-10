@@ -10,8 +10,8 @@ import {
 
 export const Articles = () => {
   return (
-    <section className='py-36'>
-      <Title variant='medium' className='pb-14'>
+    <section className='pb-0 pt-20 md:py-36'>
+      <Title variant='medium' className='pb-6 text-center md:pb-14 md:text-left'>
         Latest Articles
       </Title>
       <Carousel

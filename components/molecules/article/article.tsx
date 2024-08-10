@@ -14,7 +14,7 @@ type ArticleProps = {
 
 export const Article = ({ image, title, description, tags }: ArticleProps) => {
   return (
-    <article className='group relative overflow-hidden rounded-lg p-4 transition-all hover:bg-neutral hover:shadow-[0px_-8px_16px_0px_rgba(0,0,0,0.04)]'>
+    <article className='shadow-card-shadow md:hover:shadow-card-shadow group relative overflow-hidden rounded-lg bg-neutral p-4 transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral'>
       <div className='flex flex-col gap-4'>
         <Image
           src={image || DefaultPicture}
@@ -44,14 +44,14 @@ export const Article = ({ image, title, description, tags }: ArticleProps) => {
 
       <Button
         variant={'primary'}
-        className='absolute bottom-4 left-4 z-10 opacity-0 transition-opacity group-hover:opacity-100'
+        className='absolute bottom-4 left-4 z-10 transition-opacity group-hover:opacity-100 md:opacity-0'
       >
         Continue reading
       </Button>
       {/* Absolute Shadow */}
-      <div className='absolute bottom-0 left-0 h-20 w-full bg-gradient-to-t from-neutral opacity-0 transition-opacity group-hover:opacity-100' />
+      <div className='absolute bottom-0 left-0 h-20 w-full bg-gradient-to-t from-neutral transition-opacity group-hover:opacity-100 md:opacity-0' />
 
-      <div className='absolute bottom-0 left-0 h-10 w-full bg-gradient-to-t from-neutral opacity-0 transition-opacity group-hover:opacity-100' />
+      <div className='absolute bottom-0 left-0 h-10 w-full bg-gradient-to-t from-neutral transition-opacity group-hover:opacity-100 md:opacity-0' />
     </article>
   )
 }
