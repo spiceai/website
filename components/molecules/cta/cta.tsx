@@ -1,3 +1,4 @@
+import { HiOutlineArrowRight } from 'react-icons/hi2'
 import { FaGithub } from 'react-icons/fa'
 import Image from 'next/image'
 
@@ -34,7 +35,8 @@ export const Cta = ({ className, mobileFullWidth = false }: CtaProps) => {
           </Title>
 
           <div className='flex items-center gap-6'>
-            <Button variant={'brand'} size={'lg'}>
+            <Button variant={'brand'} size={'lg'} className='flex items-center gap-2'>
+              <HiOutlineArrowRight className='h-6 w-6' />
               Installation
             </Button>
             <div className='flex items-center gap-2'>
