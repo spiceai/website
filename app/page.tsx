@@ -1,6 +1,7 @@
 import { Button } from 'components/atoms/button/button'
 import { Title } from 'components/atoms/title/title'
 import { TestButton } from './_landing/test-button'
+import { Cta } from 'components/molecules/cta/cta'
 
 export default function LandingPage() {
   return (
@@ -20,7 +21,7 @@ export default function LandingPage() {
       </div>
 
       <div className='flex items-center gap-3 bg-gray-800 p-6 md:p-10'>
-        <h3 className='text-primary-foreground'>Test Client component button</h3>
+        <h3 className=''>Test Client component button</h3>
 
         <TestButton />
       </div>
@@ -40,6 +41,8 @@ export default function LandingPage() {
           </Button>
         </div>
       </div>
+
+      <Cta />
     </div>
   )
 }

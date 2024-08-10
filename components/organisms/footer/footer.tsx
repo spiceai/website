@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className='mx-auto flex max-w-screen-xl flex-col gap-8 py-16 md:py-20'>
       <div className='flex flex-col items-center justify-between gap-8 md:flex-row'>
-        <Logo variant='dark' width={156} height={32} />
+        <Logo variant='dark' />
 
         <Social />
       </div>

@@ -8,7 +8,7 @@ const paragraphVariants = cva('', {
       small: 'text-sm leading-6',
       medium: 'text-base leading-7',
       large: 'text-lg',
-      extralarge: 'text-2xl text-neutral-400'
+      extralarge: 'text-lg md:text-2xl text-neutral-400 leading-7'
     }
   },
   defaultVariants: {
