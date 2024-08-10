@@ -20,6 +20,11 @@ export default function LandingPage() {
           <Button variant='negative' size='sm'>
             Negative Small
           </Button>
+          <div className='rounded-sm bg-neutral p-10'>
+            <Button variant='tag' size='sm'>
+              Tag button
+            </Button>
+          </div>
         </div>
 
         <div className='flex items-center gap-3 bg-gray-800 p-6 md:p-10'>
