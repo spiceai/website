@@ -3,6 +3,7 @@ import { Button } from 'components/atoms/button/button'
 import { Title } from 'components/atoms/title/title'
 import { TestButton } from './_landing/test-button'
 import { Cta } from 'components/molecules/cta/cta'
+import { Article } from 'components/molecules/article/article'
 
 export default function LandingPage() {
   return (
@@ -47,6 +48,27 @@ export default function LandingPage() {
               Link
             </Button>
           </div>
+        </div>
+
+        <div className='my-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+          <Article
+            image='/article-one.jpg'
+            title='How to use Spice.ai'
+            description='Words matter. A single word can throw you into the depths of despair or raise you to euphoria. Every significant civilization, culture, and religion has placed emphasis on them because words are how we create. Every idea starts with words which develop, grow, and materialize through the process of writing. Writing is fundamental to formalizing thoughts, communicating effectively, and is the ultimate creation tool.'
+            tags={['spice.ai', 'web3', 'data', 'ai']}
+          />
+          <Article
+            image='/article-one.jpg'
+            title='How to use Spice.ai'
+            description='Words matter. A single word can throw you into the depths of despair or raise you to euphoria. Every significant civilization, culture, and religion has placed emphasis on them because words are how we create. Every idea starts with words which develop, grow, and materialize through the process of writing. Writing is fundamental to formalizing thoughts, communicating effectively, and is the ultimate creation tool.'
+            tags={['spice.ai', 'web3', 'data', 'ai']}
+          />
+          <Article
+            image='/article-one.jpg'
+            title='How to use Spice.ai'
+            description='Words matter. A single word can throw you into the depths of despair or raise you to euphoria. Every significant civilization, culture, and religion has placed emphasis on them because words are how we create. Every idea starts with words which develop, grow, and materialize through the process of writing. Writing is fundamental to formalizing thoughts, communicating effectively, and is the ultimate creation tool.'
+            tags={['spice.ai', 'web3', 'data', 'ai']}
+          />
         </div>
       </Container>
 
