@@ -1,14 +1,13 @@
-import Image from 'next/image'
-
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Social } from 'components/molecules/social/social'
 import { Button } from 'components/atoms/button/button'
+import { Logo } from 'components/atoms/logo/logo'
 
 export const Footer = () => {
   return (
     <footer className='mx-auto flex max-w-screen-xl flex-col gap-8 py-16 md:py-20'>
       <div className='flex flex-col items-center justify-between gap-8 md:flex-row'>
-        <Image src='/spice-logo.png' alt='Spice.ai Logo' width={156} height={32} />
+        <Logo variant='dark' width={156} height={32} />
 
         <Social />
       </div>
