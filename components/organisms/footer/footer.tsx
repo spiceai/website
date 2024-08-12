@@ -8,7 +8,7 @@ import { Link } from 'components/atoms/link/link'
 export const Footer = () => {
   return (
     <Container>
-      <footer className='mx-auto flex max-w-screen-xl flex-col gap-8 py-16 md:py-20'>
+      <footer className='flex flex-col gap-8 py-16 md:py-20'>
         <div className='flex flex-col items-center justify-between gap-8 md:flex-row'>
           <Logo variant='dark' />
 

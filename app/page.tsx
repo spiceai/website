@@ -7,7 +7,7 @@ import { Cta } from 'components/molecules/cta/cta'
 
 export default function LandingPage() {
   return (
-    <div className='mx-auto max-w-screen-xl'>
+    <div>
       <Container>
         <Title className='mb-5'>Landing Page</Title>
 
