@@ -27,7 +27,7 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
     {
       variant: ['brand', 'primary', 'negative'],
       className:
-        'active:bg-red-400 hover:text-primary-foreground hover:shadow-button-hover active:shadow-none'
+        'active:bg-red-700 hover:text-primary-foreground hover:shadow-button-hover active:shadow-none'
     },
     {
       variant: ['brand', 'brandOutline', 'primary'],
