@@ -48,18 +48,16 @@ const config = {
       fontFamily: {
         sans: 'var(--font-sans, ui-sans-serif)'
       },
+      boxShadow: {
+        'button-hover': '0px -4px 8px 0px rgba(246, 147, 65, 0.40)'
+      },
       fontSize: {
         lg: [
           '1.125rem',
           {
             lineHeight: '1.5rem'
           }
-        ]
-      },
-      boxShadow: {
-        'button-hover': '0px -4px 8px 0px rgba(246, 147, 65, 0.40)'
-      },
-      fontSize: {
+        ],
         '3xl': [
           '2rem',
           {
