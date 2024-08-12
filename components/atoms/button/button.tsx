@@ -16,7 +16,7 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
     size: {
       sm: 'px-3 py-2',
       md: 'px-4 py-3',
-      lg: 'px-8 py-4'
+      lg: 'px-8 py-4 text-lg'
     }
   },
   defaultVariants: {
