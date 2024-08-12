@@ -11,11 +11,9 @@ interface LinkProps extends Omit<NextLinkProps, 'href'> {
 
 const Link: React.FC<LinkProps> = ({ href, variant = 'small', className, children, ...props }) => {
   const baseClasses =
-    'rounded-xl font-semibold transition-colors hover:text-primary active:text-red-400'
+    'rounded-xl font-semibold transition-colors hover:text-primary active:text-red-700'
   const variantClasses =
-    variant === 'small'
-      ? 'text-neutral font-medium text-primary-foreground'
-      : 'text-alpha-900 text-lg'
+    variant === 'small' ? 'font-medium text-primary-foreground' : 'text-alpha-900 text-lg'
 
   const classes = cn(baseClasses, variantClasses, className)
 
