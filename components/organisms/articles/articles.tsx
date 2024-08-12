@@ -30,7 +30,7 @@ export const Articles = () => {
   }, [api])
 
   return (
-    <section className='relative pb-0 pt-20 md:py-20'>
+    <section className='relative pb-0 pt-20 md:py-36'>
       <Title as='h3' variant='medium' className='pb-6 text-center md:pb-14 md:text-left'>
         Latest Articles
       </Title>

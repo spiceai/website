@@ -12,9 +12,9 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
       primary: 'bg-alpha-900 hover:bg-primary ',
       secondary: 'bg-neutral hover:bg-alpha-150 hover:text-neutral-foreground active:bg-alpha-300',
       negative: 'bg-neutral hover:bg-primary',
-      tag: 'px-4 py-3 hover:bg-alpha-50 active:bg-alpha-100',
+      tag: 'px-4 py-3 md:hover:bg-alpha-50 md:active:bg-alpha-100',
       tagSmall:
-        'bg-alpha-100 rounded-sm hover:bg-alpha-150 active:bg-alpha-200 text-sm leading-6 text-alpha-700'
+        'bg-alpha-100 rounded-sm md:hover:bg-alpha-150 active:bg-alpha-200 text-sm leading-6 text-alpha-700'
     },
     size: {
       sm: 'px-3 py-2 text-base',

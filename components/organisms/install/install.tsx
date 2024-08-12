@@ -5,7 +5,7 @@ import { InstallOptions } from 'components/molecules/install-options/install-opt
 
 export const Install = () => {
   return (
-    <div className='my-20 rounded-lg border border-alpha-150 bg-neutral p-20'>
+    <div className='my-20 rounded-lg border border-alpha-150 bg-neutral p-8 md:p-16 xl:p-20'>
       <Title variant={'medium'} className='mb-6'>
         Install the Spice CLI
       </Title>
@@ -16,7 +16,7 @@ export const Install = () => {
 
       <InstallOptions />
 
-      <Button variant={'primary'} className='my-14'>
+      <Button variant={'primary'} className='mb-14 mt-6 md:my-14'>
         Quickstart docs
       </Button>
 

@@ -21,7 +21,7 @@ let allTabs = [
   {
     id: 'windows',
     name: 'Windows',
-    command: 'Invoke-WebRequest -Uri "https://install.spiceai.org" -OutFile "install.ps1"'
+    command: 'Invoke-WebRequest -Uri "https://install.spiceai.org"'
   }
 ]
 
@@ -47,7 +47,7 @@ export const InstallOptions = () => {
 
   return (
     <div className='pt-14'>
-      <div className='flew-row relative mx-auto flex h-12 gap-2 px-2 backdrop-blur-sm'>
+      <div className='flew-row relative mx-auto grid h-12 grid-cols-3 gap-2 px-2 backdrop-blur-sm md:flex'>
         <span
           className={clsx(
             'absolute bottom-0 top-0 -z-10 rounded-lg bg-alpha-100 px-4 py-3 transition-all duration-300',
@@ -65,13 +65,19 @@ export const InstallOptions = () => {
               ref={(el) => {
                 tabsRef.current[index] = el
               }}
-              className={clsx('flex items-center gap-2', isActive && 'hover:bg-transparent')}
+              className={clsx(
+                'relative bottom-1 flex items-center justify-center gap-2 md:bottom-0',
+                isActive && 'hover:bg-transparent'
+              )}
               onClick={() => setActiveTabIndex(index)}
             >
-              {index === 0 && <FaApple className='h-7 w-7' />}
-              {index === 1 && <FcLinux className='h-7 w-7' />}
-              {index === 2 && <FaWindows className='h-4 w-4' />}
-              {tab.name}
+              <>
+                {index === 0 && <FaApple className='h-7 w-7' />}
+                {index === 1 && <FcLinux className='h-7 w-7' />}
+                {index === 2 && <FaWindows className='h-4 w-4' />}
+
+                <span className='hidden md:block'>{tab.name}</span>
+              </>
             </Button>
           )
         })}
