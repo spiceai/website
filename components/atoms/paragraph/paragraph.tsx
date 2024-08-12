@@ -1,7 +1,6 @@
 import React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-
-import clsx from 'clsx'
+import { cn } from 'lib/utils'
 
 const paragraphVariants = cva('', {
   variants: {
@@ -29,7 +28,7 @@ type ParagraphProps = VariantProps<typeof paragraphVariants> & {
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({ className, variant, children, ...props }) => {
-  const classes = clsx(paragraphVariants({ variant, className }))
+  const classes = cn(paragraphVariants({ variant, className }))
 
   return (
     <p className={classes} {...props}>

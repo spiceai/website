@@ -1,5 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority'
-import clsx from 'clsx'
+import { cn } from 'lib/utils'
 
 const titleVariants = cva('text-alpha-900', {
   variants: {
@@ -27,7 +27,7 @@ const Title: React.FC<TitleProps> = ({
   children,
   ...props
 }) => {
-  const classes = clsx(titleVariants({ variant, className }))
+  const classes = cn(titleVariants({ variant, className }))
 
   return (
     <Component className={classes} {...props}>

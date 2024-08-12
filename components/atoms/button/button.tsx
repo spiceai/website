@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import Link, { LinkProps } from 'next/link'
-import clsx from 'clsx'
+import { cn } from 'lib/utils'
 
 const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
   variants: {
@@ -46,7 +46,7 @@ export interface ButtonProps
   href?: string
 }
 const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
-  const classes = clsx(buttonVariants({ variant, size, className }))
+  const classes = cn(buttonVariants({ variant, size, className }))
 
   if (href) {
     return (

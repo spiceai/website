@@ -1,6 +1,6 @@
 import * as React from 'react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
-import clsx from 'clsx'
+import { cn } from 'lib/utils'
 
 interface LinkProps extends Omit<NextLinkProps, 'href'> {
   href: string
@@ -15,7 +15,7 @@ const Link: React.FC<LinkProps> = ({ href, variant = 'small', className, childre
   const variantClasses =
     variant === 'small' ? 'font-medium text-primary-foreground' : 'text-alpha-900 text-lg'
 
-  const classes = clsx(baseClasses, variantClasses, className)
+  const classes = cn(baseClasses, variantClasses, className)
 
   return (
     <NextLink href={href} className={classes} {...props}>
