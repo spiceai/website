@@ -3,9 +3,9 @@ import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 import type { Preview } from '@storybook/react'
 import { Manrope } from 'next/font/google'
-import { cn } from '../lib/utils'
 
 import '../app/globals.css'
+import clsx from 'clsx'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -33,7 +33,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={cn('font-sans antialiased', manrope.variable)}>
+      <div className={clsx('font-sans antialiased', manrope.variable)}>
         <Story />
       </div>
     )

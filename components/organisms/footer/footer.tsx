@@ -2,7 +2,6 @@ import Image from 'next/image'
 
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Social } from 'components/molecules/social/social'
-import { Button } from 'components/atoms/button/button'
 import { Link } from 'components/atoms/link/link'
 
 export const Footer = () => {
