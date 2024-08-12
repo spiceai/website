@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import Link, { LinkProps } from 'next/link'
 import { cn } from 'lib/utils'
 
-const buttonVariants = cva('font-semibold transition-colors', {
+const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
   variants: {
     variant: {
       brand: 'bg-primary hover:bg-primary-600',
@@ -11,14 +11,12 @@ const buttonVariants = cva('font-semibold transition-colors', {
         'bg-primary  hover:bg-neutral hover:text-neutral-foreground active:bg-neutral-400 active:shadow-none hover:shadow-button-hover',
       primary: 'bg-alpha-900 hover:bg-primary ',
       secondary: 'bg-neutral hover:bg-alpha-150 hover:text-neutral-foreground active:bg-alpha-300',
-      negative: 'bg-neutral hover:bg-primary',
-      linkSmall: 'text-neutral font-medium',
-      linkLarge: 'text-alpha-900 text-lg'
+      negative: 'bg-neutral hover:bg-primary'
     },
     size: {
       sm: 'px-3 py-2',
       md: 'px-4 py-3',
-      lg: 'px-8 py-4'
+      lg: 'px-8 py-4 text-lg'
     }
   },
   defaultVariants: {
@@ -27,21 +25,12 @@ const buttonVariants = cva('font-semibold transition-colors', {
   },
   compoundVariants: [
     {
-      variant: ['primary', 'secondary', 'brand', 'brandOutline', 'negative'],
-      className: 'rounded-xl'
-    },
-    {
-      variant: ['linkSmall', 'linkLarge'],
-      size: 'md',
-      className: 'px-0 py-0 hover:text-primary active:text-red-400'
-    },
-    {
       variant: ['brand', 'primary', 'negative'],
       className:
         'active:bg-red-400 hover:text-primary-foreground hover:shadow-button-hover active:shadow-none'
     },
     {
-      variant: ['brand', 'brandOutline', 'primary', 'linkSmall'],
+      variant: ['brand', 'brandOutline', 'primary'],
       className: 'text-primary-foreground'
     },
     {

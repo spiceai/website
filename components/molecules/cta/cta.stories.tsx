@@ -15,12 +15,6 @@ type Story = StoryObj<typeof Cta>
 
 export const Default: Story = {}
 
-export const MobileFullWidth: Story = {
-  args: {
-    mobileFullWidth: true
-  }
-}
-
 export const CustomClassName: Story = {
   args: {
     className: 'bg-gray-100'
