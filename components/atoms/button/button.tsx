@@ -51,8 +51,9 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   href?: string
+  ref?: React.Ref<HTMLButtonElement>
 }
-const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
+const Button = ({ className, variant, size, href, ref, ...props }: ButtonProps) => {
   const classes = cn(buttonVariants({ variant, size, className }))
 
   if (href) {
@@ -63,7 +64,7 @@ const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
     )
   }
 
-  return <button className={classes} {...props} />
+  return <button className={classes} {...props} {...(ref ? { ref } : {})} />
 }
 
 Button.displayName = 'Button'

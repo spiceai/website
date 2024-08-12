@@ -1,6 +1,7 @@
 import { Button } from 'components/atoms/button/button'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Title } from 'components/atoms/title/title'
+import { InstallOptions } from 'components/molecules/install-options/install-options'
 
 export const Install = () => {
   return (
@@ -13,19 +14,13 @@ export const Install = () => {
         any database, data warehouse, or data lake.
       </Paragraph>
 
+      <InstallOptions />
+
       <Button variant={'primary'} className='my-14'>
         Quickstart docs
       </Button>
 
-      <video
-        src='/spice-demo.mp4'
-        autoPlay
-        playsInline
-        loop
-        muted
-        className='w-full rounded-lg'
-        controls
-      />
+      <video src='/spice-demo.mp4' className='w-full rounded-lg' controls />
     </div>
   )
 }

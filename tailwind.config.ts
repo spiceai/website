@@ -75,11 +75,13 @@ const config = {
         }
       },
       fontFamily: {
-        sans: 'var(--font-sans, ui-sans-serif)'
+        sans: 'var(--font-sans, ui-sans-serif)',
+        mono: 'var(--font-mono, ui-monospace)'
       },
       boxShadow: {
         'button-hover': '0px -4px 8px 0px rgba(246, 147, 65, 0.40)',
-        'card-shadow': '0px -8px 16px 0px rgba(0, 0, 0, 0.04)'
+        'card-shadow': '0px -8px 16px 0px rgba(0, 0, 0, 0.04)',
+        'code-shadow': '0px -8px 24px 0px var(--Primary-100, #FEEDD6)'
       },
       fontSize: {
         lg: [

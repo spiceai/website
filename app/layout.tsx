@@ -1,4 +1,5 @@
 import { Manrope } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import { Metadata } from 'next'
 
 import { Footer } from 'components/organisms/footer/footer'
@@ -17,10 +18,22 @@ const manrope = Manrope({
   variable: '--font-sans'
 })
 
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono'
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={clsx('min-h-screen bg-neutral-50 font-sans antialiased', manrope.variable)}>
+      <body
+        className={clsx(
+          'min-h-screen bg-neutral-50 font-sans antialiased',
+          manrope.variable,
+          robotoMono.variable
+        )}
+      >
         <main>{children}</main>
         <Footer />
       </body>
