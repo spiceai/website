@@ -3,6 +3,11 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import Link, { LinkProps } from 'next/link'
 import { cn } from 'lib/utils'
 
+type ButtonAnchorProps = Omit<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  keyof React.ButtonHTMLAttributes<HTMLButtonElement>
+>
+
 const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
   variants: {
     variant: {
@@ -48,13 +53,15 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
 })
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonAnchorProps>,
+    ButtonAnchorProps,
     VariantProps<typeof buttonVariants> {
   href?: string
-  ref?: React.Ref<HTMLButtonElement>
+  ref?: React.Ref<HTMLButtonElement & HTMLAnchorElement>
 }
+
 const Button = ({ className, variant, size, href, ref, ...props }: ButtonProps) => {
-  const classes = cn(buttonVariants({ variant, size, className }))
+  const classes = cn('inline-block', buttonVariants({ variant, size, className }))
 
   if (href) {
     return (

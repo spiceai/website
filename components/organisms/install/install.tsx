@@ -16,7 +16,13 @@ export const Install = () => {
 
       <InstallOptions />
 
-      <Button variant={'primary'} className='mb-14 mt-6 md:my-14'>
+      <Button
+        href='https://docs.spice.ai/'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant={'primary'}
+        className='mb-14 mt-6 md:my-14'
+      >
         Quickstart docs
       </Button>
 
