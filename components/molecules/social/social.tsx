@@ -9,16 +9,16 @@ export const Social = () => {
         <Title variant='small'>Connect with us</Title>
       </div>
       <div className='flex items-center gap-3'>
-        <a href='#' target='_blank' rel='noreferrer'>
+        <a href='https://github.com/spiceai/spiceai' target='_blank' rel='noreferrer'>
           <FaGithub className='h-8 w-8 hover:text-primary' />
         </a>
-        <a href='#' target='_blank' rel='noreferrer'>
+        <a href='https://x.com/spice_ai' target='_blank' rel='noreferrer'>
           <RiTwitterXLine className='h-7 w-7 hover:text-primary' />
         </a>
-        <a href='#' target='_blank' rel='noreferrer'>
+        <a href='https://discord.gg/kZnTfneP5u' target='_blank' rel='noreferrer'>
           <FaDiscord className='h-8 w-8 hover:text-primary' />
         </a>
-        <a href='#' target='_blank' rel='noreferrer'>
+        <a href='https://www.youtube.com/@spiceai' target='_blank' rel='noreferrer'>
           <FaYoutube className='h-8 w-8 hover:text-primary' />
         </a>
       </div>
