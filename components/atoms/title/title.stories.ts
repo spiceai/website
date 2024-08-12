@@ -4,23 +4,52 @@ import { Title } from './title'
 const meta = {
   title: 'Atoms/Title',
   component: Title,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['small', 'medium', 'large']
+    },
+    as: {
+      control: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+    }
+  }
 } satisfies Meta<typeof Title>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const TitleLarge: Story = {
+export const TitleSmall: Story = {
   args: {
-    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.',
-    className: 'text-lg'
+    children: 'Small Title Example',
+    variant: 'small',
+    as: 'h3'
   }
 }
 
-export const BigTitle: Story = {
+export const TitleMedium: Story = {
   args: {
-    children: 'Spice is a powerful, portable runtime for developers.',
-    className: 'font-medium text-6xl'
+    children: 'Medium Title Example',
+    variant: 'medium',
+    as: 'h2'
+  }
+}
+
+export const TitleLarge: Story = {
+  args: {
+    children: 'Large Title Example',
+    variant: 'large',
+    as: 'h1'
+  }
+}
+
+export const TitleAsSpan: Story = {
+  args: {
+    children: 'Spice is a powerful, portable, runtime for developers.',
+    variant: 'large',
+    as: 'span',
+    className: 'text-primary'
   }
 }
