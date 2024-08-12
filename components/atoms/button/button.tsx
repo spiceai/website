@@ -14,8 +14,8 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
       negative: 'bg-neutral hover:bg-primary'
     },
     size: {
-      sm: 'px-3 py-2',
-      md: 'px-4 py-3',
+      sm: 'px-3 py-2 text-base',
+      md: 'px-4 py-3 text-base',
       lg: 'px-8 py-4 text-lg'
     }
   },

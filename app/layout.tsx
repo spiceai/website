@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import './globals.css'
 import { Manrope } from 'next/font/google'
-import { cn } from 'lib/utils'
+import { Footer } from 'components/organisms/footer/footer'
+import clsx from 'clsx'
 
 export const metadata: Metadata = {
   title: 'Spice.ai',
@@ -18,7 +19,15 @@ const manrope = Manrope({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={cn('min-h-screen font-sans antialiased', manrope.variable)}>{children}</body>
+      <body
+        className={clsx(
+          'min-h-screen bg-neutral-50 px-4 font-sans antialiased sm:px-16 lg:px-20 xl:px-0',
+          manrope.variable
+        )}
+      >
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
