@@ -58,6 +58,26 @@ const config = {
       },
       boxShadow: {
         'button-hover': '0px -4px 8px 0px rgba(246, 147, 65, 0.40)'
+      },
+      fontSize: {
+        '3xl': [
+          '2rem',
+          {
+            lineHeight: '2.5rem'
+          }
+        ],
+        '4xl': [
+          '2.5rem',
+          {
+            lineHeight: '3.5rem'
+          }
+        ],
+        '6xl': [
+          '4rem',
+          {
+            lineHeight: '4.5rem'
+          }
+        ]
       }
     }
   },
