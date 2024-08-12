@@ -1,7 +1,13 @@
-import { Title } from 'components/atoms/title/title'
+'use client'
+
+import { useEffect, useState } from 'react'
+import clsx from 'clsx'
+
 import { Article } from 'components/molecules/article/article'
+import { Title } from 'components/atoms/title/title'
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -9,9 +15,23 @@ import {
 } from 'components/ui/carousel'
 
 export const Articles = () => {
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    api.on('select', () => {
+      console.log('select')
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
+
   return (
-    <section className='pb-0 pt-20 md:py-36'>
-      <Title variant='medium' className='pb-6 text-center md:pb-14 md:text-left'>
+    <section className='relative pb-0 pt-20 md:py-36'>
+      <Title as='h3' variant='medium' className='pb-6 text-center md:pb-14 md:text-left'>
         Latest Articles
       </Title>
       <Carousel
@@ -19,6 +39,7 @@ export const Articles = () => {
           align: 'start',
           loop: true
         }}
+        setApi={setApi}
         className='w-full'
       >
         <CarouselContent>
@@ -36,6 +57,24 @@ export const Articles = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+
+      <div className='absolute -bottom-12 left-1/2 -translate-x-1/2 -translate-y-1/2 transform md:hidden'>
+        <div className='flex gap-4'>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <button
+              type='button'
+              onClick={() => {
+                api?.scrollTo(index)
+              }}
+              key={index}
+              className={clsx(
+                'h-2 w-2 rounded-full',
+                current === index ? 'bg-alpha-900' : 'bg-alpha-300'
+              )}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

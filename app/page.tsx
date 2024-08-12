@@ -4,12 +4,12 @@ import { Title } from 'components/atoms/title/title'
 import { TestButton } from './_landing/test-button'
 import { Link } from 'components/atoms/link/link'
 import { Cta } from 'components/molecules/cta/cta'
-import { Article } from 'components/molecules/article/article'
+
 import { Articles } from 'components/organisms/articles/articles'
 
 export default function LandingPage() {
   return (
-    <div>
+    <>
       <Container>
         <Title className='mb-5'>Landing Page</Title>
 
@@ -51,7 +51,7 @@ export default function LandingPage() {
         <Articles />
       </Container>
 
-      <Cta mobileFullWidth />
-    </div>
+      <Cta />
+    </>
   )
 }

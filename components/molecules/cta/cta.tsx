@@ -12,11 +12,7 @@ import { cn } from 'lib/utils'
 import kannan from 'public/kannan.png'
 import eigenLayer from 'public/eigen-layer.png'
 
-type CtaProps = {
-  className?: string
-  mobileFullWidth?: boolean
-}
-export const Cta = ({ className }: CtaProps) => {
+export const Cta = ({ className }: { className?: string }) => {
   return (
     <Container className='px-0'>
       <div
