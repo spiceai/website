@@ -1,11 +1,11 @@
 'use client'
-
 import clsx from 'clsx'
-import { Button } from 'components/atoms/button/button'
-import { Code } from 'components/atoms/code/code'
+import { FcLinux } from 'react-icons/fc'
 import { useEffect, useRef, useState } from 'react'
 import { FaApple, FaWindows } from 'react-icons/fa'
-import { FcLinux } from 'react-icons/fc'
+
+import { Code } from 'components/atoms/code/code'
+import { Button } from 'components/atoms/button/button'
 
 let allTabs = [
   {

@@ -1,7 +1,7 @@
-import { Button } from 'components/atoms/button/button'
-import { Paragraph } from 'components/atoms/paragraph/paragraph'
-import { Title } from 'components/atoms/title/title'
 import { InstallOptions } from 'components/molecules/install-options/install-options'
+import { Paragraph } from 'components/atoms/paragraph/paragraph'
+import { Button } from 'components/atoms/button/button'
+import { Title } from 'components/atoms/title/title'
 
 export const Install = () => {
   return (

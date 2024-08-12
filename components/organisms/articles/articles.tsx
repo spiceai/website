@@ -24,7 +24,6 @@ export const Articles = () => {
     }
 
     api.on('select', () => {
-      console.log('select')
       setCurrent(api.selectedScrollSnap())
     })
   }, [api])
