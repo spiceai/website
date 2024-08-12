@@ -5,7 +5,6 @@ import { Social } from './social' // Adjust the import path as necessary
 const meta = {
   title: 'Molecules/Social',
   component: Social,
-  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <div style={{ padding: '2rem' }}>

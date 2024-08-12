@@ -1,5 +1,6 @@
-import React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
+import React from 'react'
+
 import { cn } from 'lib/utils'
 
 const paragraphVariants = cva('', {
@@ -8,7 +9,7 @@ const paragraphVariants = cva('', {
       small: 'text-sm leading-6',
       medium: 'text-base leading-7',
       large: 'text-lg',
-      extralarge: 'text-2xl text-neutral-400'
+      extralarge: 'text-lg md:text-2xl text-neutral-400 leading-7'
     }
   },
   defaultVariants: {

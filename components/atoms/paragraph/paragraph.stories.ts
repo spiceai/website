@@ -5,7 +5,6 @@ import { Paragraph } from './paragraph'
 const meta = {
   title: 'Atoms/Paragraph',
   component: Paragraph,
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: 'select',
