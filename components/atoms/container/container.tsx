@@ -11,5 +11,9 @@ export const Container = ({
   children: React.ReactNode
   className?: string
 }) => {
-  return <div className={cn('px-4 sm:px-16 lg:px-20 xl:px-0', className)}>{children}</div>
+  return (
+    <div className={cn('px-4 sm:px-16 xl:px-20', className)}>
+      <div className='container mx-auto max-w-screen-xl'>{children}</div>
+    </div>
+  )
 }

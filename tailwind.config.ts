@@ -82,6 +82,12 @@ const config = {
         'card-shadow': '0px -8px 16px 0px rgba(0, 0, 0, 0.04)'
       },
       fontSize: {
+        lg: [
+          '1.125rem',
+          {
+            lineHeight: '1.5rem'
+          }
+        ],
         '3xl': [
           '2rem',
           {

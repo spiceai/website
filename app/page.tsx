@@ -2,13 +2,14 @@ import { Container } from 'components/atoms/container/container'
 import { Button } from 'components/atoms/button/button'
 import { Title } from 'components/atoms/title/title'
 import { TestButton } from './_landing/test-button'
+import { Link } from 'components/atoms/link/link'
 import { Cta } from 'components/molecules/cta/cta'
 import { Article } from 'components/molecules/article/article'
 import { Articles } from 'components/organisms/articles/articles'
 
 export default function LandingPage() {
   return (
-    <div className='mx-auto max-w-screen-xl'>
+    <div>
       <Container>
         <Title className='mb-5'>Landing Page</Title>
 
@@ -30,7 +31,7 @@ export default function LandingPage() {
         </div>
 
         <div className='flex items-center gap-3 bg-gray-800 p-6 md:p-10'>
-          <h3 className=''>Test Client component button</h3>
+          <h3 className='text-primary-foreground'>Test Client component button</h3>
 
           <TestButton />
         </div>
@@ -38,16 +39,12 @@ export default function LandingPage() {
         <div className='grid grid-cols-2 items-center gap-3 bg-gray-900'>
           <div className='p-10'>
             <h3 className='text-primary-foreground'>Link header</h3>
-            <Button href='/page-2' variant='linkSmall'>
-              Link
-            </Button>
+            <Link href='#'>Link</Link>
           </div>
-          <div className='bg-neutral p-10'>
-            <h3 className='text-primary'>Link footer</h3>
 
-            <Button href='/page-2' variant='linkLarge'>
-              Link
-            </Button>
+          <div className='bg-neutral-800 p-10'>
+            <h3 className='text-primary'>Link footer</h3>
+            <Link href='#'>Link</Link>
           </div>
         </div>
 

@@ -16,14 +16,13 @@ type CtaProps = {
   className?: string
   mobileFullWidth?: boolean
 }
-export const Cta = ({ className, mobileFullWidth = false }: CtaProps) => {
+export const Cta = ({ className }: CtaProps) => {
   return (
-    <Container className={mobileFullWidth ? 'px-0' : ''}>
+    <Container className='px-0'>
       <div
         className={cn(
-          'my-20 flex flex-col overflow-hidden lg:flex-row',
-          className,
-          mobileFullWidth ? 'rounded-none sm:rounded-2xl' : 'rounded-2xl'
+          'my-20 flex flex-col overflow-hidden rounded-none sm:rounded-2xl lg:flex-row',
+          className
         )}
       >
         <div className='bg-alpha-900 px-8 py-16 md:p-14 lg:w-7/12 xl:p-20'>
