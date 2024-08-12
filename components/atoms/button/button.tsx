@@ -14,8 +14,8 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
       negative: 'bg-neutral hover:bg-primary'
     },
     size: {
-      sm: 'px-3 py-2',
-      md: 'px-4 py-3',
+      sm: 'px-3 py-2 text-base',
+      md: 'px-4 py-3 text-base',
       lg: 'px-8 py-4 text-lg'
     }
   },
@@ -27,7 +27,7 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
     {
       variant: ['brand', 'primary', 'negative'],
       className:
-        'active:bg-red-400 hover:text-primary-foreground hover:shadow-button-hover active:shadow-none'
+        'active:bg-red-700 hover:text-primary-foreground hover:shadow-button-hover active:shadow-none'
     },
     {
       variant: ['brand', 'brandOutline', 'primary'],
