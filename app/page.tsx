@@ -6,6 +6,7 @@ import { Link } from 'components/atoms/link/link'
 import { Cta } from 'components/molecules/cta/cta'
 
 import { Articles } from 'components/organisms/articles/articles'
+import { Install } from 'components/organisms/install/install'
 
 export default function LandingPage() {
   return (
@@ -47,6 +48,8 @@ export default function LandingPage() {
             <Link href='#'>Link</Link>
           </div>
         </div>
+
+        <Install />
 
         <Articles />
       </Container>
