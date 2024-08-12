@@ -75,23 +75,6 @@ export const Negative: Story = {
   }
 }
 
-export const LinkSmall: Story = {
-  parameters: {
-    backgrounds: { default: 'dark' }
-  },
-  args: {
-    variant: 'linkSmall',
-    children: 'Small Link Button'
-  }
-}
-
-export const LinkLarge: Story = {
-  args: {
-    variant: 'linkLarge',
-    children: 'Large Link Button'
-  }
-}
-
 export const Tag: Story = {
   args: {
     variant: 'tag',
