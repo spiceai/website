@@ -8,12 +8,13 @@ import {
   CarouselNext,
   CarouselPrevious
 } from 'components/ui/carousel'
-import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
-import { Title } from 'components/atoms/title/title'
-import { Article } from 'components/molecules/article/article'
 import { useEffect, useState } from 'react'
-import { Paragraph } from 'components/atoms/paragraph/paragraph'
+
+import { Title } from 'components/atoms/title/title'
 import { BeforeAndAfterSlide } from './before-and-after-slide'
+import { Paragraph } from 'components/atoms/paragraph/paragraph'
+import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
+import { beforeAndAfterSlides } from './data'
 
 export const BeforeAndAfter = () => {
   const [api, setApi] = useState<CarouselApi>()
@@ -46,12 +47,12 @@ export const BeforeAndAfter = () => {
         className='w-full'
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {beforeAndAfterSlides.map((slideData, index) => (
             <CarouselItem
               key={index}
-              className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)]'
+              className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)] xl:basis-[calc(100%-10rem)]'
             >
-              <BeforeAndAfterSlide />
+              <BeforeAndAfterSlide slideData={slideData} />
             </CarouselItem>
           ))}
         </CarouselContent>

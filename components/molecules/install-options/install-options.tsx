@@ -74,7 +74,7 @@ export const InstallOptions = () => {
               <>
                 {index === 0 && <FaApple className='h-7 w-7' />}
                 {index === 1 && <FcLinux className='h-7 w-7' />}
-                {index === 2 && <FaWindows className='h-4 w-4' />}
+                {index === 2 && <FaWindows className='h-6 w-6' />}
 
                 <span className='hidden md:block'>{tab.name}</span>
               </>
