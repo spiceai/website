@@ -2,7 +2,7 @@ import { Button } from 'components/atoms/button/button'
 import { Link } from 'components/atoms/link/link'
 import { Logo } from 'components/atoms/logo/logo'
 import { FaGithub } from 'react-icons/fa'
-import { HiOutlineMenu } from 'react-icons/hi'
+import { IoMenuOutline } from 'react-icons/io5'
 
 export const Header = () => {
   return (
@@ -11,7 +11,7 @@ export const Header = () => {
         <Logo variant={'logotype'} width={40} height={40} />
       </div>
 
-      <nav className='flex items-center gap-6 whitespace-pre'>
+      <nav className='flex items-center gap-6 whitespace-pre pl-8 md:pl-0'>
         <div className='hidden items-center gap-6 md:flex'>
           <Link href='#'>Use cases</Link>
           <Link href='#'>QuickStarts</Link>
@@ -34,7 +34,7 @@ export const Header = () => {
         Installation
       </Button>
       <button type='button' className='absolute right-2 top-3 text-neutral md:hidden'>
-        <HiOutlineMenu className='h-6 w-6' />
+        <IoMenuOutline className='h-6 w-6' />
       </button>
     </header>
   )
