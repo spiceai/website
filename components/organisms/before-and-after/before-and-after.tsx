@@ -13,6 +13,7 @@ import { Title } from 'components/atoms/title/title'
 import { Article } from 'components/molecules/article/article'
 import { useEffect, useState } from 'react'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
+import { BeforeAndAfterSlide } from './before-and-after-slide'
 
 export const BeforeAndAfter = () => {
   const [api, setApi] = useState<CarouselApi>()
@@ -29,7 +30,7 @@ export const BeforeAndAfter = () => {
   }, [api])
 
   return (
-    <section className='pt-20'>
+    <section className='relative mb-32 px-4 pb-2 pt-20 md:px-0'>
       <Title as='h3' variant='medium' className='pb-6 text-center'>
         Before & After Spice
       </Title>
@@ -38,7 +39,7 @@ export const BeforeAndAfter = () => {
       </Paragraph>
       <Carousel
         opts={{
-          align: 'start',
+          align: 'center',
           loop: true
         }}
         setApi={setApi}
@@ -46,13 +47,11 @@ export const BeforeAndAfter = () => {
       >
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className=''>
-              <Article
-                image='/article-one.jpg'
-                title='How to use Spice.ai'
-                description='Words matter. A single word can throw you into the depths of despair or raise you to euphoria. Every significant civilization, culture, and religion has placed emphasis on them because words are how we create. Every idea starts with words which develop, grow, and materialize through the process of writing. Writing is fundamental to formalizing thoughts, communicating effectively, and is the ultimate creation tool.'
-                tags={['spice.ai', 'web3', 'data', 'ai']}
-              />
+            <CarouselItem
+              key={index}
+              className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)]'
+            >
+              <BeforeAndAfterSlide />
             </CarouselItem>
           ))}
         </CarouselContent>

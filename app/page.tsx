@@ -49,9 +49,11 @@ export default function LandingPage() {
             <Link href='#'>Link</Link>
           </div>
         </div>
+      </Container>
 
-        <BeforeAndAfter />
+      <BeforeAndAfter />
 
+      <Container>
         <Install />
 
         <Articles />
