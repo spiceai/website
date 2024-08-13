@@ -3,13 +3,14 @@ import { Container } from 'components/atoms/container/container'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Title } from 'components/atoms/title/title'
 import Image from 'next/image'
+import { HeroPlaygroundSlider } from './hero-playground-slider'
 
 export const HeroPlayground = () => {
   return (
     <section className='pt-12'>
       <Container>
         <div className='shadow-box relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-4 py-8 md:px-20 md:pb-14 md:pt-20'>
-          <Title as='h1' variant={'large'} className='mb-6 text-center'>
+          <Title as='h1' variant={'large'} className='mx-auto mb-6 text-center xl:max-w-[1020px]'>
             Spice is a powerful, portable{' '}
             <span className='text-primary'>runtime for developers.</span>
           </Title>
@@ -19,12 +20,15 @@ export const HeroPlayground = () => {
             from any database, data warehouse, or data lake.
           </Paragraph>
 
-          <div className='flex items-center justify-center gap-3'>
+          <div className='mb-14 flex items-center justify-center gap-3'>
             <Button variant={'primary'} className='border border-alpha-900 hover:border-primary'>
               Installation
             </Button>
             <Button variant={'secondary'}>Documentation</Button>
           </div>
+
+          <HeroPlaygroundSlider />
+
           <div className='pt-14'>
             <Paragraph variant={'small'} className='mb-4 text-center'>
               Accelerating 🚀
