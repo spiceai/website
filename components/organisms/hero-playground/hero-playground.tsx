@@ -1,15 +1,16 @@
+import Image from 'next/image'
+
+import { Title } from 'components/atoms/title/title'
 import { Button } from 'components/atoms/button/button'
+import { HeroPlaygroundSlider } from './hero-playground-slider'
 import { Container } from 'components/atoms/container/container'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
-import { Title } from 'components/atoms/title/title'
-import Image from 'next/image'
-import { HeroPlaygroundSlider } from './hero-playground-slider'
 
 export const HeroPlayground = () => {
   return (
     <section className='pt-12'>
       <Container>
-        <div className='shadow-box relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-4 py-8 md:px-20 md:pb-14 md:pt-20'>
+        <div className='shadow-box relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-8 md:px-20 md:pb-14 md:pt-20'>
           <Title as='h1' variant={'large'} className='mx-auto mb-6 text-center xl:max-w-[1020px]'>
             Spice is a powerful, portable{' '}
             <span className='text-primary'>runtime for developers.</span>
@@ -29,7 +30,7 @@ export const HeroPlayground = () => {
 
           <HeroPlaygroundSlider />
 
-          <div className='pt-14'>
+          <div className='hidden pt-14 md:block'>
             <Paragraph variant={'small'} className='mb-4 text-center'>
               Accelerating 🚀
             </Paragraph>
@@ -39,21 +40,21 @@ export const HeroPlayground = () => {
                 alt='Spice Logo'
                 width={100}
                 height={100}
-                className='h-7 object-contain'
+                className='h-7 w-auto object-contain'
               />
               <Image
                 src={'/accelerating-two.png'}
                 alt='Spice Logo'
                 width={100}
                 height={100}
-                className='h-4 object-contain'
+                className='h-4 w-auto object-contain'
               />
               <Image
                 src={'/accelerating-three.png'}
                 alt='Spice Logo'
                 width={100}
                 height={100}
-                className='relative bottom-1 h-8 object-contain'
+                className='relative bottom-1 h-8 w-auto object-contain'
               />
             </div>
           </div>

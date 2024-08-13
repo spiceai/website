@@ -1,12 +1,13 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 import { PlaygroundOption } from 'components/molecules/playground-option/playground-option'
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from 'components/ui/carousel'
-import { useEffect, useState } from 'react'
 
 export const HeroPlaygroundSlider = () => {
   const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
     if (!api) {
@@ -14,7 +15,7 @@ export const HeroPlaygroundSlider = () => {
     }
 
     api.on('select', () => {
-      setCurrent(api.selectedScrollSnap())
+      setCurrentIndex(api.selectedScrollSnap())
     })
   }, [api])
 
@@ -29,13 +30,13 @@ export const HeroPlaygroundSlider = () => {
     >
       <CarouselContent>
         <CarouselItem>
-          <PlaygroundOption carouselApi={api} />
+          <PlaygroundOption carouselApi={api} currentIndex={currentIndex} />
         </CarouselItem>
         <CarouselItem>
-          <PlaygroundOption carouselApi={api} />
+          <PlaygroundOption carouselApi={api} currentIndex={currentIndex} />
         </CarouselItem>
         <CarouselItem>
-          <PlaygroundOption carouselApi={api} />
+          <PlaygroundOption carouselApi={api} currentIndex={currentIndex} />
         </CarouselItem>
       </CarouselContent>
     </Carousel>

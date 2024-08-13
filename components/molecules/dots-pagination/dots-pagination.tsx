@@ -13,7 +13,7 @@ type DotsPaginationProps = {
 
 export const DotsPagination = ({ api, current, className, dotsLength }: DotsPaginationProps) => {
   return (
-    <section
+    <div
       className={cn(
         'absolute -bottom-12 left-1/2 -translate-x-1/2 -translate-y-1/2 transform md:hidden',
         className
@@ -34,6 +34,6 @@ export const DotsPagination = ({ api, current, className, dotsLength }: DotsPagi
           />
         ))}
       </div>
-    </section>
+    </div>
   )
 }
