@@ -4,13 +4,14 @@ import { Container } from 'components/atoms/container/container'
 import { Features } from 'components/organisms/features/features'
 import { Articles } from 'components/organisms/articles/articles'
 import { UseCases } from 'components/organisms/use-cases/use-cases'
-import { BeforeAndAfter } from 'components/organisms/before-and-after/before-and-after'
 import { HeroPlayground } from 'components/organisms/hero-playground/hero-playground'
+import { BeforeAndAfter } from 'components/organisms/before-and-after/before-and-after'
 
 export default function LandingPage() {
   return (
     <>
       <HeroPlayground />
+
       <Container>
         <Features />
         <UseCases />
@@ -20,7 +21,6 @@ export default function LandingPage() {
 
       <Container>
         <Install />
-
         <Articles />
       </Container>
 

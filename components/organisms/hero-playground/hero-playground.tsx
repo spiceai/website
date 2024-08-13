@@ -10,7 +10,7 @@ export const HeroPlayground = () => {
   return (
     <section className='relative pt-10 md:pt-12'>
       <Container>
-        <div className='shadow-box relative z-10 overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-8 md:px-20 md:pb-14 md:pt-20'>
+        <div className='shadow-box relative z-10 overflow-hidden rounded-2xl border border-alpha-150 bg-neutral px-6 py-8 md:px-20 md:pb-14 md:pt-20'>
           <Title
             as='h1'
             variant={'large'}
