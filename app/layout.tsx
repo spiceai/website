@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 import { Footer } from 'components/organisms/footer/footer'
 import './globals.css'
 import clsx from 'clsx'
+import { Header } from 'components/molecules/header/header'
 
 export const metadata: Metadata = {
   title: 'Spice.ai',
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           robotoMono.variable
         )}
       >
+        <Header />
         <main>{children}</main>
         <Footer />
       </body>
