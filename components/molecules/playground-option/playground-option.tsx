@@ -1,3 +1,6 @@
+'use client'
+
+import React from 'react'
 import { FaPlay } from 'react-icons/fa'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
 
@@ -12,21 +15,27 @@ import { DotsPagination } from '../dots-pagination/dots-pagination'
 type PlaygroundOptionProps = {
   carouselApi: CarouselApi
   currentIndex: number
+  title: string
+  description: string
+  code: React.ReactNode
 }
 
-export const PlaygroundOption = ({ carouselApi, currentIndex }: PlaygroundOptionProps) => {
+export const PlaygroundOption = ({
+  carouselApi,
+  currentIndex,
+  title,
+  description,
+  code
+}: PlaygroundOptionProps) => {
   return (
     <div className='rounded-lg border border-alpha-150 bg-neutral pb-0 md:pb-10'>
       <div className='flex flex-col items-center justify-between gap-10 border-b border-alpha-150 px-6 py-8 md:flex-row md:px-10 md:py-10'>
         <ArrowButton carouselApi={carouselApi} />
         <div>
           <Title as='h4' variant='small' className='mb-4 md:text-center'>
-            Explore Queries: OpenSea NFT Sales Across Ethereum/Polygon
+            {title}
           </Title>
-          <Paragraph className='md:text-center'>
-            Compare the number of NFTs being sold in a five-minute window across both Polygon and
-            Ethereum.
-          </Paragraph>
+          <Paragraph className='md:text-center'>{description}</Paragraph>
         </div>
         <ArrowButton carouselApi={carouselApi} isLeft={false} />
 
@@ -38,16 +47,8 @@ export const PlaygroundOption = ({ carouselApi, currentIndex }: PlaygroundOption
           <Title as='h4' variant='small'>
             SQL Query
           </Title>
-          <code className='text-sm leading-6'>
-            <span className='text-red-400'>SELECT</span> chain,{' '}
-            <span className='text-red-400'>count</span>(*) as nft_sales,
-            TO_TIMESTAMP((block_timestamp / <span className='text-red-400'>300</span>) *{' '}
-            <span className='text-red-400'>300</span>) as time_window{' '}
-            <span className='text-red-400'></span>FROM nft.recent_sales{' '}
-            <span className='text-red-400'>GROUP </span>
-            BY time_window, chain <span className='text-red-400'>ORDER</span> BY time_window{' '}
-            <span className='text-red-400'>desc</span>
-          </code>
+
+          {code}
 
           <Button variant={'primary'} className='flex items-center gap-2'>
             <FaPlay className='h-3.5 w-3.5' />

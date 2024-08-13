@@ -30,13 +30,70 @@ export const HeroPlaygroundSlider = () => {
     >
       <CarouselContent>
         <CarouselItem>
-          <PlaygroundOption carouselApi={api} currentIndex={currentIndex} />
+          <PlaygroundOption
+            title={'Explore Queries: OpenSea NFT Sales Across Ethereum/Polygon'}
+            description={
+              'Compare the number of NFTs being sold in a five-minute window across both Polygon and Ethereum.'
+            }
+            code={
+              <code className='text-sm leading-6'>
+                <span className='text-red-400'>SELECT</span> chain,{' '}
+                <span className='text-red-400'>count</span>(*) as nft_sales,
+                TO_TIMESTAMP((block_timestamp / <span className='text-red-400'>300</span>) *{' '}
+                <span className='text-red-400'>300</span>) as time_window{' '}
+                <span className='text-red-400'></span>FROM nft.recent_sales{' '}
+                <span className='text-red-400'>GROUP </span>
+                BY time_window, chain <span className='text-red-400'>ORDER</span> BY time_window{' '}
+                <span className='text-red-400'>desc</span>
+              </code>
+            }
+            carouselApi={api}
+            currentIndex={currentIndex}
+          />
         </CarouselItem>
         <CarouselItem>
-          <PlaygroundOption carouselApi={api} currentIndex={currentIndex} />
+          <PlaygroundOption
+            title={'Explore Queries: OpenSea NFT Sales Across Ethereum/Polygon'}
+            description={
+              'Compare the number of NFTs being sold in a five-minute window across both Polygon and Ethereum.'
+            }
+            code={
+              <code className='text-sm leading-6'>
+                <span className='text-red-400'>SELECT</span> chain,{' '}
+                <span className='text-red-400'>count</span>(*) as nft_sales,
+                TO_TIMESTAMP((block_timestamp / <span className='text-red-400'>300</span>) *{' '}
+                <span className='text-red-400'>300</span>) as time_window{' '}
+                <span className='text-red-400'></span>FROM nft.recent_sales{' '}
+                <span className='text-red-400'>GROUP </span>
+                BY time_window, chain <span className='text-red-400'>ORDER</span> BY time_window{' '}
+                <span className='text-red-400'>desc</span>
+              </code>
+            }
+            carouselApi={api}
+            currentIndex={currentIndex}
+          />
         </CarouselItem>
         <CarouselItem>
-          <PlaygroundOption carouselApi={api} currentIndex={currentIndex} />
+          <PlaygroundOption
+            title={'Explore Queries: OpenSea NFT Sales Across Ethereum/Polygon'}
+            description={
+              'Compare the number of NFTs being sold in a five-minute window across both Polygon and Ethereum.'
+            }
+            code={
+              <code className='text-sm leading-6'>
+                <span className='text-red-400'>SELECT</span> chain,{' '}
+                <span className='text-red-400'>count</span>(*) as nft_sales,
+                TO_TIMESTAMP((block_timestamp / <span className='text-red-400'>300</span>) *{' '}
+                <span className='text-red-400'>300</span>) as time_window{' '}
+                <span className='text-red-400'></span>FROM nft.recent_sales{' '}
+                <span className='text-red-400'>GROUP </span>
+                BY time_window, chain <span className='text-red-400'>ORDER</span> BY time_window{' '}
+                <span className='text-red-400'>desc</span>
+              </code>
+            }
+            carouselApi={api}
+            currentIndex={currentIndex}
+          />
         </CarouselItem>
       </CarouselContent>
     </Carousel>
