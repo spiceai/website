@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react'
 
-import { Article } from 'components/molecules/article/article'
-import { Title } from 'components/atoms/title/title'
 import {
   Carousel,
   CarouselApi,
@@ -12,6 +10,9 @@ import {
   CarouselNext,
   CarouselPrevious
 } from 'components/ui/carousel'
+import { dataArticles } from './data'
+import { Title } from 'components/atoms/title/title'
+import { Article } from 'components/molecules/article/article'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
 
 export const Articles = () => {
@@ -42,14 +43,9 @@ export const Articles = () => {
         className='w-full'
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {dataArticles.map((article, index) => (
             <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
-              <Article
-                image='/article-one.jpg'
-                title='How to use Spice.ai'
-                description='Words matter. A single word can throw you into the depths of despair or raise you to euphoria. Every significant civilization, culture, and religion has placed emphasis on them because words are how we create. Every idea starts with words which develop, grow, and materialize through the process of writing. Writing is fundamental to formalizing thoughts, communicating effectively, and is the ultimate creation tool.'
-                tags={['spice.ai', 'web3', 'data', 'ai']}
-              />
+              <Article articleData={article} />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -57,7 +53,7 @@ export const Articles = () => {
         <CarouselNext />
       </Carousel>
 
-      <DotsPagination api={api} current={current} />
+      <DotsPagination api={api} current={current} dotsLength={dataArticles.length} />
     </section>
   )
 }

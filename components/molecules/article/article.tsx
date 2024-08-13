@@ -1,32 +1,27 @@
-import { Button } from 'components/atoms/button/button'
-import { Paragraph } from 'components/atoms/paragraph/paragraph'
-import { Title } from 'components/atoms/title/title'
 import Image from 'next/image'
-import Link from 'next/link'
+
+import { Title } from 'components/atoms/title/title'
+import { Button } from 'components/atoms/button/button'
+import { ArticleData } from 'components/organisms/articles/data'
+import { Paragraph } from 'components/atoms/paragraph/paragraph'
+
 import DefaultPicture from 'public/article-one.jpg'
 
-type ArticleProps = {
-  image: string
-  title: string
-  description: string
-  tags?: string[]
-}
-
-export const Article = ({ image, title, description, tags }: ArticleProps) => {
+export const Article = ({ articleData }: { articleData: ArticleData }) => {
   return (
-    <article className='shadow-card-shadow md:hover:shadow-card-shadow group relative overflow-hidden rounded-lg bg-neutral p-4 transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral'>
+    <article className='group relative overflow-hidden rounded-lg bg-neutral p-4 shadow-card-shadow transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral md:hover:shadow-card-shadow'>
       <div className='flex flex-col gap-4'>
         <Image
-          src={image || DefaultPicture}
+          src={articleData.image || DefaultPicture}
           alt='article image'
           width={600}
           height={400}
           className='w-full overflow-hidden rounded-[4px]'
         />
 
-        {tags && tags.length > 0 && (
+        {articleData.tags && articleData.tags.length > 0 && (
           <div className='flex gap-2'>
-            {tags.slice(0, 3).map((tag) => (
+            {articleData.tags.slice(0, 3).map((tag) => (
               <Button key={tag} variant='tagSmall'>
                 {tag}
               </Button>
@@ -35,10 +30,10 @@ export const Article = ({ image, title, description, tags }: ArticleProps) => {
         )}
 
         <Title as='h4' variant={'small'}>
-          {title}
+          {articleData.title}
         </Title>
         <Paragraph variant={'small'} className='line-clamp-3'>
-          {description}
+          {articleData.description}
         </Paragraph>
       </div>
 

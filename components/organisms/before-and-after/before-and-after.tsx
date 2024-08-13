@@ -10,11 +10,11 @@ import {
 } from 'components/ui/carousel'
 import { useEffect, useState } from 'react'
 
+import { beforeAndAfterSlides } from './data'
 import { Title } from 'components/atoms/title/title'
 import { BeforeAndAfterSlide } from './before-and-after-slide'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
-import { beforeAndAfterSlides } from './data'
 
 export const BeforeAndAfter = () => {
   const [api, setApi] = useState<CarouselApi>()
@@ -31,7 +31,7 @@ export const BeforeAndAfter = () => {
   }, [api])
 
   return (
-    <section className='relative mb-32 px-4 pb-2 pt-20 md:px-0'>
+    <section className='relative mb-32 overflow-hidden px-4 pb-2 pt-20 md:px-0'>
       <Title as='h3' variant='medium' className='pb-6 text-center'>
         Before & After Spice
       </Title>
@@ -52,7 +52,11 @@ export const BeforeAndAfter = () => {
               key={index}
               className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)] xl:basis-[calc(100%-10rem)]'
             >
-              <BeforeAndAfterSlide slideData={slideData} />
+              <BeforeAndAfterSlide
+                slideData={slideData}
+                carouselApi={api}
+                isCurrentSlide={index === current}
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -60,7 +64,12 @@ export const BeforeAndAfter = () => {
         <CarouselNext />
       </Carousel>
 
-      <DotsPagination api={api} current={current} />
+      <DotsPagination
+        api={api}
+        current={current}
+        className='md:block'
+        dotsLength={beforeAndAfterSlides.length}
+      />
     </section>
   )
 }

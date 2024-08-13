@@ -45,7 +45,7 @@ type BenefitProps = {
 
 export const Benefit = ({ isBefore, textBefore, textAfter }: BenefitProps) => {
   return (
-    <div className='flex items-center gap-6 rounded-sm border border-alpha-150 bg-neutral px-6 py-8'>
+    <div className='flex items-center gap-6 rounded-sm border border-alpha-150 bg-neutral px-4 py-6 lg:px-6 lg:py-8'>
       <div>{isBefore ? <ShieldWarning /> : <ShieldCheck />}</div>
       <Paragraph className='font-semibold'>{isBefore ? textBefore : textAfter}</Paragraph>
     </div>
