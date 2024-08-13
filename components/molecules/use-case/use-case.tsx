@@ -9,7 +9,7 @@ export const UseCase = ({ useCaseData }: { useCaseData: UseCaseData }) => {
       href='#'
       target='_blank'
       rel='noopener noreferrer'
-      className='group flex h-[368px] flex-col items-start justify-between gap-6 rounded-sm border border-alpha-150 bg-neutral px-10 py-14 transition-colors hover:bg-neutral hover:shadow-card-shadow lg:h-auto lg:bg-transparent'
+      className='hover:shadow-box group flex h-[368px] flex-col items-start justify-between gap-6 rounded-sm border border-alpha-150 bg-neutral px-10 py-14 transition-colors hover:bg-neutral lg:h-auto lg:bg-transparent'
     >
       <div>
         <Title as='h4' variant={'small'} className='line-clamp-2'>

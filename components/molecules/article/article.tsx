@@ -9,7 +9,7 @@ import DefaultPicture from 'public/article-one.jpg'
 
 export const Article = ({ articleData }: { articleData: ArticleData }) => {
   return (
-    <article className='group relative overflow-hidden rounded-lg bg-neutral p-4 shadow-card-shadow transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral md:hover:shadow-card-shadow'>
+    <article className='shadow-box md:hover:shadow-box group relative overflow-hidden rounded-lg bg-neutral p-4 transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral'>
       <div className='flex flex-col gap-4'>
         <Image
           src={articleData.image || DefaultPicture}
