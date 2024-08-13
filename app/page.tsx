@@ -15,7 +15,7 @@ export default function LandingPage() {
       <Container>
         <Title className='mb-5'>Landing Page</Title>
 
-        <div className='hidden items-center gap-3 bg-gray-700 p-10 sm:flex'>
+        <div className='hidden items-center gap-3 overflow-hidden bg-gray-700 p-10 sm:flex'>
           <Button href='/page-2' size='lg' variant='brandOutline'>
             Brand Outline - Link
           </Button>
