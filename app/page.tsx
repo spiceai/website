@@ -8,6 +8,7 @@ import { Cta } from 'components/molecules/cta/cta'
 import { Articles } from 'components/organisms/articles/articles'
 import { Install } from 'components/organisms/install/install'
 import { BeforeAndAfter } from 'components/organisms/before-and-after/before-and-after'
+import { UseCases } from 'components/organisms/use-cases/use-cases'
 
 export default function LandingPage() {
   return (
@@ -49,6 +50,8 @@ export default function LandingPage() {
             <Link href='#'>Link</Link>
           </div>
         </div>
+
+        <UseCases />
       </Container>
 
       <BeforeAndAfter />
