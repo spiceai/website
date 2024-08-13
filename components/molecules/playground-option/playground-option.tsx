@@ -29,7 +29,7 @@ export const PlaygroundOption = ({
 }: PlaygroundOptionProps) => {
   return (
     <div className='rounded-lg border border-alpha-150 bg-neutral pb-0 md:pb-10'>
-      <div className='flex flex-col items-center justify-between gap-10 border-b border-alpha-150 px-6 py-8 md:flex-row md:px-10 md:py-10'>
+      <div className='flex flex-col items-center justify-between gap-6 border-b border-alpha-150 px-6 py-8 md:flex-row md:gap-10 md:px-10 md:py-10'>
         <ArrowButton carouselApi={carouselApi} />
         <div>
           <Title as='h4' variant='small' className='mb-4 md:text-center'>
