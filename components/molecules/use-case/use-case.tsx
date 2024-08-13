@@ -9,19 +9,19 @@ export const UseCase = ({ useCaseData }: { useCaseData: UseCaseData }) => {
       href='#'
       target='_blank'
       rel='noopener noreferrer'
-      className='group flex flex-col items-start justify-between gap-6 rounded-sm border border-alpha-150 px-10 py-14 transition-colors hover:bg-neutral hover:shadow-card-shadow'
+      className='group flex h-[368px] flex-col items-start justify-between gap-6 rounded-sm border border-alpha-150 bg-neutral px-10 py-14 transition-colors hover:bg-neutral hover:shadow-card-shadow lg:h-auto lg:bg-transparent'
     >
       <div>
-        <Title as='h4' variant={'small'}>
+        <Title as='h4' variant={'small'} className='line-clamp-2'>
           {useCaseData.title}
         </Title>
-        <Paragraph className='mt-6'>{useCaseData.description}</Paragraph>
+        <Paragraph className='mt-6 line-clamp-5'>{useCaseData.description}</Paragraph>
       </div>
       <Button
         variant={'secondary'}
-        className='group-hover:bg-primary group-hover:text-primary-foreground'
+        className='w-full bg-alpha-900 text-neutral lg:w-auto lg:bg-transparent lg:text-alpha-900 lg:group-hover:bg-primary lg:group-hover:text-primary-foreground'
       >
-        {useCaseData.buttonText}
+        <span className='line-clamp-1'>{useCaseData.buttonText}</span>
       </Button>
     </a>
   )
