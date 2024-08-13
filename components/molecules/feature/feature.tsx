@@ -1,17 +1,14 @@
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Title } from 'components/atoms/title/title'
 
-export const Feature = () => {
+export const Feature = ({ title, description }: { title: string; description: string }) => {
   return (
     <div className='shadow-box flex flex-col items-start gap-4 rounded-sm border border-alpha-150 px-6 py-10 md:gap-10 md:px-10'>
       <Squares />
       <Title as='h4' variant={'small'} className='line-clamp-2'>
-        Drop-in solution - change connection string.
+        {title}
       </Title>
-      <Paragraph>
-        Compare the number of NFTs being sold in a five-minute window across both Polygon and
-        Ethereum.
-      </Paragraph>
+      <Paragraph>{description}</Paragraph>
     </div>
   )
 }
