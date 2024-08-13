@@ -1,9 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-import { Article } from 'components/molecules/article/article'
-import { Title } from 'components/atoms/title/title'
 import {
   Carousel,
   CarouselApi,
@@ -13,8 +9,12 @@ import {
   CarouselPrevious
 } from 'components/ui/carousel'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
+import { Title } from 'components/atoms/title/title'
+import { Article } from 'components/molecules/article/article'
+import { useEffect, useState } from 'react'
+import { Paragraph } from 'components/atoms/paragraph/paragraph'
 
-export const Articles = () => {
+export const BeforeAndAfter = () => {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
 
@@ -29,10 +29,13 @@ export const Articles = () => {
   }, [api])
 
   return (
-    <section className='relative pb-0 pt-20 md:py-36'>
-      <Title as='h3' variant='medium' className='pb-6 text-center md:pb-14 md:text-left'>
-        Latest Articles
+    <section className='pt-20'>
+      <Title as='h3' variant='medium' className='pb-6 text-center'>
+        Before & After Spice
       </Title>
+      <Paragraph className='pb-6 text-center'>
+        Transformation with Spice: Before and After for scenario 1, scenario 2 or scenario 3.
+      </Paragraph>
       <Carousel
         opts={{
           align: 'start',
@@ -43,7 +46,7 @@ export const Articles = () => {
       >
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
+            <CarouselItem key={index} className=''>
               <Article
                 image='/article-one.jpg'
                 title='How to use Spice.ai'

@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
-import { ArrowLeft, ChevronRight } from 'lucide-react'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
 
 import { cn } from 'lib/utils'

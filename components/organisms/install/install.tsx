@@ -5,7 +5,7 @@ import { Title } from 'components/atoms/title/title'
 
 export const Install = () => {
   return (
-    <div className='my-20 rounded-lg border border-alpha-150 bg-neutral p-8 md:p-16 xl:p-20'>
+    <section className='my-20 rounded-lg border border-alpha-150 bg-neutral p-8 md:p-16 xl:p-20'>
       <Title variant={'medium'} className='mb-6'>
         Install the Spice CLI
       </Title>
@@ -27,6 +27,6 @@ export const Install = () => {
       </Button>
 
       <video src='/spice-demo.mp4' className='w-full rounded-lg' controls />
-    </div>
+    </section>
   )
 }
