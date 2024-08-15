@@ -7,6 +7,7 @@ import { Cta } from 'components/molecules/cta/cta'
 
 import { Articles } from 'components/organisms/articles/articles'
 import { Install } from 'components/organisms/install/install'
+import { BeforeAndAfter } from 'components/organisms/before-and-after/before-and-after'
 
 export default function LandingPage() {
   return (
@@ -14,7 +15,7 @@ export default function LandingPage() {
       <Container>
         <Title className='mb-5'>Landing Page</Title>
 
-        <div className='hidden items-center gap-3 bg-gray-700 p-10 sm:flex'>
+        <div className='hidden items-center gap-3 overflow-hidden bg-gray-700 p-10 sm:flex'>
           <Button href='/page-2' size='lg' variant='brandOutline'>
             Brand Outline - Link
           </Button>
@@ -48,7 +49,11 @@ export default function LandingPage() {
             <Link href='#'>Link</Link>
           </div>
         </div>
+      </Container>
 
+      <BeforeAndAfter />
+
+      <Container>
         <Install />
 
         <Articles />
