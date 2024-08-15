@@ -61,7 +61,7 @@ export const InstallOptions = () => {
           return (
             <Button
               key={index}
-              variant={'tag'}
+              variant='tag'
               ref={(el) => {
                 tabsRef.current[index] = el
               }}
