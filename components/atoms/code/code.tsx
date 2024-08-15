@@ -17,7 +17,7 @@ export const Code = ({ code }: { code: string }) => {
           setCopied(false)
         }, 2500)
       }}
-      className='hover:shadow-code-shadow group relative mt-6 w-full rounded-lg border border-alpha-150 bg-neutral p-4 shadow-card-shadow transition-shadow md:w-11/12 md:p-10'
+      className='hover:shadow-code shadow-box group relative mt-6 w-full rounded-lg border border-alpha-150 bg-neutral p-4 transition-shadow md:w-11/12 md:p-10'
     >
       <div className='flex items-center gap-4 overflow-x-scroll text-left md:overflow-x-auto'>
         <div>
