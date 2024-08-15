@@ -30,7 +30,9 @@ export const Footer = () => {
             </Link>
           </nav>
           <div className='flex flex-col items-center gap-6 md:flex-row'>
-            <Paragraph variant='medium'>© 2023 Spice AI, Inc. All rights reserved.</Paragraph>
+            <Paragraph variant='medium' className='text-base'>
+              © 2024 Spice AI, Inc. All rights reserved.
+            </Paragraph>
             <div className='flex items-center gap-6'>
               <Link variant='large' href='#' className='text-base font-normal leading-7'>
                 Privacy Policy
