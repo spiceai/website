@@ -1,7 +1,13 @@
 import * as React from 'react'
-import { cva, type VariantProps } from 'class-variance-authority'
 import Link, { LinkProps } from 'next/link'
+import { cva, type VariantProps } from 'class-variance-authority'
+
 import { cn } from 'lib/utils'
+
+type ButtonAnchorProps = Omit<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  keyof React.ButtonHTMLAttributes<HTMLButtonElement>
+>
 
 const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
   variants: {
@@ -12,9 +18,9 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
       primary: 'bg-alpha-900 hover:bg-primary ',
       secondary: 'bg-neutral hover:bg-alpha-150 hover:text-neutral-foreground active:bg-alpha-300',
       negative: 'bg-neutral hover:bg-primary',
-      tag: 'px-4 py-3 hover:bg-alpha-50 active:bg-alpha-100',
+      tag: 'px-4 py-3 md:hover:bg-alpha-50 md:active:bg-alpha-100',
       tagSmall:
-        'bg-alpha-100 rounded-sm hover:bg-alpha-150 active:bg-alpha-200 text-sm leading-6 text-alpha-700'
+        'bg-alpha-100 rounded-sm md:hover:bg-alpha-150 active:bg-alpha-200 text-sm leading-6 text-alpha-700'
     },
     size: {
       sm: 'px-3 py-2 text-base',
@@ -48,12 +54,15 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
 })
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonAnchorProps>,
+    ButtonAnchorProps,
     VariantProps<typeof buttonVariants> {
   href?: string
+  ref?: React.Ref<HTMLButtonElement & HTMLAnchorElement>
 }
-const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
-  const classes = cn(buttonVariants({ variant, size, className }))
+
+const Button = ({ className, variant, size, href, ref, ...props }: ButtonProps) => {
+  const classes = cn('inline-block', buttonVariants({ variant, size, className }))
 
   if (href) {
     return (
@@ -63,7 +72,7 @@ const Button = ({ className, variant, size, href, ...props }: ButtonProps) => {
     )
   }
 
-  return <button className={classes} {...props} />
+  return <button className={classes} {...props} {...(ref ? { ref } : {})} />
 }
 
 Button.displayName = 'Button'
