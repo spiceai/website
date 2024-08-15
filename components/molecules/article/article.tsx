@@ -14,7 +14,7 @@ type ArticleProps = {
 
 export const Article = ({ image, title, description, tags }: ArticleProps) => {
   return (
-    <article className='shadow-card-shadow md:hover:shadow-card-shadow group relative overflow-hidden rounded-lg bg-neutral p-4 transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral'>
+    <article className='shadow-card-shadow md:hover:drop-shadow-sm group relative overflow-hidden rounded-lg bg-neutral p-4 transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral'>
       <div className='flex flex-col gap-4'>
         <Image
           src={image || DefaultPicture}
