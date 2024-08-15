@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en'>
       <body className={clsx('min-h-screen bg-neutral-50 font-sans antialiased', manrope.variable)}>
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

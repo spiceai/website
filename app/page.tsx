@@ -5,9 +5,11 @@ import { TestButton } from './_landing/test-button'
 import { Link } from 'components/atoms/link/link'
 import { Cta } from 'components/molecules/cta/cta'
 
+import { Articles } from 'components/organisms/articles/articles'
+
 export default function LandingPage() {
   return (
-    <div>
+    <>
       <Container>
         <Title className='mb-5'>Landing Page</Title>
 
@@ -21,6 +23,11 @@ export default function LandingPage() {
           <Button variant='negative' size='sm'>
             Negative Small
           </Button>
+          <div className='rounded-sm bg-neutral p-10'>
+            <Button variant='tag' size='sm'>
+              Tag button
+            </Button>
+          </div>
         </div>
 
         <div className='flex items-center gap-3 bg-gray-800 p-6 md:p-10'>
@@ -40,9 +47,11 @@ export default function LandingPage() {
             <Link href='#'>Link</Link>
           </div>
         </div>
+
+        <Articles />
       </Container>
 
-      <Cta mobileFullWidth />
-    </div>
+      <Cta />
+    </>
   )
 }

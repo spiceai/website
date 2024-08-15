@@ -12,14 +12,10 @@ import { cn } from 'lib/utils'
 import kannan from 'public/kannan.png'
 import eigenLayer from 'public/eigen-layer.png'
 
-type CtaProps = {
-  className?: string
-  mobileFullWidth?: boolean
-}
-export const Cta = ({ className }: CtaProps) => {
+export const Cta = ({ className }: { className?: string }) => {
   return (
     <Container className='px-0'>
-      <div
+      <section
         className={cn(
           'my-20 flex flex-col overflow-hidden rounded-none sm:rounded-2xl lg:flex-row',
           className
@@ -64,7 +60,7 @@ export const Cta = ({ className }: CtaProps) => {
             <Image src={kannan} alt='Kannan' width={70} height={70} />
           </div>
         </div>
-      </div>
+      </section>
     </Container>
   )
 }
