@@ -66,7 +66,7 @@ export const InstallOptions = () => {
                 tabsRef.current[index] = el
               }}
               className={clsx(
-                'relative bottom-1 flex items-center justify-center gap-2 md:bottom-0',
+                'relative bottom-1 flex items-center justify-center gap-2 md:bottom-0 md:active:bg-alpha-50',
                 isActive && 'hover:bg-transparent'
               )}
               onClick={() => setActiveTabIndex(index)}
