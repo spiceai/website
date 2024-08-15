@@ -6,10 +6,10 @@ import { Title } from 'components/atoms/title/title'
 export const Install = () => {
   return (
     <section className='my-20 rounded-lg border border-alpha-150 bg-neutral p-8 md:p-16 xl:p-20'>
-      <Title variant={'medium'} className='mb-6'>
+      <Title variant='medium' className='mb-6'>
         Install the Spice CLI
       </Title>
-      <Paragraph variant={'large'} className='max-w-3xl'>
+      <Paragraph variant='large' className='max-w-3xl'>
         Unified SQL Interface for effortlessly materializing, accelerating, and querying data from
         any database, data warehouse, or data lake.
       </Paragraph>
@@ -20,7 +20,7 @@ export const Install = () => {
         href='https://docs.spice.ai/'
         target='_blank'
         rel='noopener noreferrer'
-        variant={'primary'}
+        variant='primary'
         className='mb-14 mt-6 md:my-14'
       >
         Quickstart docs
