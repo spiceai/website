@@ -31,7 +31,7 @@ export const BeforeAndAfter = () => {
   }, [api])
 
   return (
-    <section className='relative mb-32 px-4 pb-2 pt-20 md:px-0'>
+    <section className='relative mb-32 overflow-x-clip px-4 pb-2 pt-20 md:px-0'>
       <Title as='h3' variant='medium' className='pb-6 text-center'>
         Before & After Spice
       </Title>
@@ -67,7 +67,7 @@ export const BeforeAndAfter = () => {
       <DotsPagination
         api={api}
         current={current}
-        className='md:block'
+        className='-bottom-[60px] md:block'
         dotsLength={beforeAndAfterSlides.length}
       />
     </section>

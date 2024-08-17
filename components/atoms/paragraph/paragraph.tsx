@@ -6,9 +6,9 @@ import { cn } from 'lib/utils'
 const paragraphVariants = cva('', {
   variants: {
     variant: {
-      small: 'text-sm leading-6',
+      small: 'text-sm leading-6 font-normal',
       medium: 'text-sm md:text-base leading-6 md:leading-7 font-normal',
-      large: 'text-sm md:text-lg leading-6 md:leading-7 ',
+      large: 'text-sm md:text-lg leading-6 md:leading-7 font-normal',
       extralarge: 'text-lg md:text-2xl text-neutral-400 leading-7'
     }
   },

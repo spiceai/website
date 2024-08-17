@@ -67,7 +67,7 @@ export const BeforeAndAfterSlide = ({
       {!isCurrentSlide && (
         <>
           <ArrowButton className='right-1.5 xl:right-3' onClick={() => carouselApi?.scrollPrev()}>
-            <HiChevronLeft className='relative left-px h-6 w-6' />
+            <HiChevronLeft className='relative right-px h-6 w-6' />
           </ArrowButton>
           <ArrowButton className='left-1.5 xl:left-3' onClick={() => carouselApi?.scrollNext()}>
             <HiChevronRight className='relative left-px h-6 w-6' />

@@ -15,7 +15,7 @@ const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
       brand: 'bg-primary hover:bg-primary-600',
       brandOutline:
         'bg-primary  hover:bg-neutral hover:text-neutral-foreground active:bg-neutral-400 active:shadow-none hover:shadow-button-hover',
-      primary: 'bg-alpha-900 hover:bg-primary ',
+      primary: 'bg-alpha-900 hover:bg-primary',
       secondary:
         'bg-transparent hover:bg-alpha-150 hover:text-neutral-foreground active:bg-alpha-300 border border-alpha-150',
       negative: 'bg-neutral hover:bg-primary',
