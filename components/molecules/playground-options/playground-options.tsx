@@ -12,19 +12,56 @@ import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Button } from 'components/atoms/button/button'
 import { FaPlay } from 'react-icons/fa'
 
+type ResponseData = {
+  rowCount: number
+  rows: {
+    seconds_ago: number
+    time_window: string
+    to_address: string
+    token_address: string
+    token_id: string
+  }
+}
+
 export const HeroPlaygroundOptions = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const currentData = heroPlaygroundData[currentIndex]
+  const [requestDuration, setRequestDuration] = useState<number | null>(null)
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? heroPlaygroundData.length - 1 : prevIndex - 1
     )
+    setRequestDuration(null)
   }
 
   const handleNext = () => {
-    console.log('next')
     setCurrentIndex((prevIndex) => (prevIndex + 1) % heroPlaygroundData.length)
+    setRequestDuration(null)
+  }
+
+  const handleCurrentIndexChange = (index: number) => {
+    setCurrentIndex(index)
+    setRequestDuration(null)
+  }
+
+  const handleRequest = async () => {
+    const startTime = performance.now()
+
+    try {
+      const response = await fetch(currentData.requestUrl)
+      const data: ResponseData = await response.json()
+
+      const endTime = performance.now()
+      const durationInSeconds = (endTime - startTime) / 1000
+
+      setRequestDuration(durationInSeconds)
+
+      console.log(`Request took ${durationInSeconds.toFixed(3)} seconds`, durationInSeconds)
+    } catch (error) {
+      console.error('Error fetching data:', error)
+      setRequestDuration(null)
+    }
   }
 
   return (
@@ -43,8 +80,8 @@ export const HeroPlaygroundOptions = () => {
           onPrev={handlePrev}
           onNext={handleNext}
           currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
           totalItems={heroPlaygroundData.length}
+          handleCurrentIndexChange={handleCurrentIndexChange}
         />
       </div>
 
@@ -56,14 +93,18 @@ export const HeroPlaygroundOptions = () => {
 
           {currentData.code}
 
-          <Button variant={'primary'} className='flex items-center gap-2'>
+          <Button variant={'primary'} className='flex items-center gap-2' onClick={handleRequest}>
             <FaPlay className='h-3.5 w-3.5' />
             Run code
           </Button>
         </div>
 
         <div className='flex items-center justify-center rounded-sm border border-dashed p-6 md:w-1/2'>
-          <Paragraph variant={'small'}>Run code to get results.</Paragraph>
+          {requestDuration == null ? (
+            <Paragraph variant={'small'}>Run code to get results.</Paragraph>
+          ) : (
+            <p>Request took {requestDuration.toFixed(3)} seconds</p>
+          )}
         </div>
       </div>
     </div>
@@ -101,13 +142,13 @@ export const MobileNavigation = ({
   onPrev,
   onNext,
   currentIndex,
-  setCurrentIndex,
+  handleCurrentIndexChange,
   totalItems
 }: {
   onPrev: () => void
   onNext: () => void
   currentIndex: number
-  setCurrentIndex: (index: number) => void
+  handleCurrentIndexChange: (index: number) => void
   totalItems: number
 }) => {
   return (
@@ -125,7 +166,7 @@ export const MobileNavigation = ({
         className='bottom-auto translate-y-0'
         current={currentIndex}
         dotsLength={totalItems}
-        setCurrent={setCurrentIndex}
+        handleCurrentIndexChange={handleCurrentIndexChange}
       />
       <button
         type='button'

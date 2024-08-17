@@ -2,6 +2,7 @@ export type HeroPlaygroundData = {
   title: string
   description: string
   code: React.ReactElement<HTMLElement>
+  requestUrl: string
 }
 
 export const heroPlaygroundData: HeroPlaygroundData[] = [
@@ -14,7 +15,9 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         UNIX_TIMESTAMP() - block_timestamp <span className='text-red-400'>as</span> seconds_ago
         <span className='text-red-400'> FROM</span> eth.recent_nft_mints
       </code>
-    )
+    ),
+    requestUrl:
+      'https://data.spiceai.io/v0.1/sampler/recent_nft_mints?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   },
   {
     title: 'Recent Ethereum Blocks',
@@ -26,7 +29,9 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         <br />
         <span className='text-red-400'> FROM</span> eth.recent_blocks
       </code>
-    )
+    ),
+    requestUrl:
+      'https://data.spiceai.io/v0.1/sampler/recent_ethereum_blocks?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   },
   {
     title: 'OpenSea NFT Sales Across Ethereum/Polygon',
@@ -44,7 +49,9 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         <span className='text-red-400'>ORDER BY</span> time_window{' '}
         <span className='text-red-400'>desc</span>
       </code>
-    )
+    ),
+    requestUrl:
+      'https://data.spiceai.io/v0.1/sampler/recent_sales?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   },
   {
     title: 'Average Transaction Fees for Ethereum',
@@ -64,7 +71,9 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         <br />
         <span className='text-red-400'>GROUP BY</span> block_number, block_timestamp
       </code>
-    )
+    ),
+    requestUrl:
+      'https://data.spiceai.io/v0.1/sampler/recent_transactions?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   },
   {
     title: 'Total Bitcoin Transferred by Block Number',
@@ -77,6 +86,8 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         btc.recent_transactions <br />
         <span className='text-red-400'>GROUP BY</span> block_number
       </code>
-    )
+    ),
+    requestUrl:
+      'https://data.spiceai.io/v0.1/sampler/recent_transactions?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   }
 ]

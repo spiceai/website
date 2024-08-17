@@ -9,7 +9,6 @@ import { Title } from 'components/atoms/title/title'
 import { Logo } from 'components/atoms/logo/logo'
 import { cn } from 'lib/utils'
 
-import kannan from 'public/kannan.png'
 import andy from 'public/andy.png'
 import barracuda from 'public/barracuda.png'
 
@@ -50,7 +49,7 @@ export const Cta = ({ className }: { className?: string }) => {
             define and query accelerated datasets without a lot of overhead.”
           </Paragraph>
 
-          <div className='flex items-start justify-between gap-5'>
+          <div className='flex items-start justify-between gap-6'>
             <div className='flex flex-col gap-2'>
               <Title as='h5' variant='small' className='font-bold text-neutral'>
                 Andy Blyler
@@ -61,10 +60,16 @@ export const Cta = ({ className }: { className?: string }) => {
                 alt='EigenLayer'
                 width={180}
                 height={44}
-                className='relative right-1.5 mt-2'
+                className='relative right-1.5 mt-2 h-auto w-40'
               />
             </div>
-            <Image src={andy} alt='Kannan' width={70} height={70} className='rounded-full' />
+            <Image
+              src={andy}
+              alt='Andy'
+              width={70}
+              height={70}
+              className='h-16 w-16 rounded-full'
+            />
           </div>
         </div>
       </section>
