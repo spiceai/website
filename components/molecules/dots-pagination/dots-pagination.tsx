@@ -15,23 +15,27 @@ export const DotsPagination = ({ api, current, className, dotsLength }: DotsPagi
   return (
     <div
       className={cn(
-        'absolute -bottom-12 left-1/2 -translate-x-1/2 -translate-y-1/2 transform md:hidden',
+        'absolute -bottom-16 left-1/2 -translate-x-1/2 -translate-y-1/2 transform md:-bottom-20 md:hidden',
         className
       )}
     >
-      <div className='flex gap-4'>
+      <div className='flex gap-1'>
         {Array.from({ length: dotsLength }).map((_, index) => (
           <button
             type='button'
             onClick={() => {
               api?.scrollTo(index)
             }}
+            className='p-2 md:p-3'
             key={index}
-            className={clsx(
-              'h-2 w-2 rounded-full',
-              current === index ? 'bg-alpha-900' : 'bg-alpha-300'
-            )}
-          />
+          >
+            <span
+              className={clsx(
+                'block h-2 w-2 rounded-full md:h-3 md:w-3',
+                current === index ? 'bg-alpha-900' : 'bg-alpha-300'
+              )}
+            />
+          </button>
         ))}
       </div>
     </div>

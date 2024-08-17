@@ -121,7 +121,7 @@ export const MobileNavigation = ({
         api={carouselApi}
         current={currentIndex}
         dotsLength={3}
-        className='bottom-4 translate-y-0'
+        className='bottom-auto translate-y-0'
       />
       <ArrowButton carouselApi={carouselApi} isLeft={false} />
       <button
