@@ -5,13 +5,20 @@ import { cn } from 'lib/utils'
 import { CarouselApi } from 'components/ui/carousel'
 
 type DotsPaginationProps = {
-  api: CarouselApi
+  api?: CarouselApi
   current: number
+  setCurrent?: (index: number) => void
   className?: string
   dotsLength: number
 }
 
-export const DotsPagination = ({ api, current, className, dotsLength }: DotsPaginationProps) => {
+export const DotsPagination = ({
+  api,
+  current,
+  className,
+  dotsLength,
+  setCurrent
+}: DotsPaginationProps) => {
   return (
     <div
       className={cn(
@@ -24,7 +31,11 @@ export const DotsPagination = ({ api, current, className, dotsLength }: DotsPagi
           <button
             type='button'
             onClick={() => {
-              api?.scrollTo(index)
+              if (setCurrent) {
+                setCurrent(index)
+              } else {
+                api?.scrollTo(index)
+              }
             }}
             className='p-2 md:p-3'
             key={index}

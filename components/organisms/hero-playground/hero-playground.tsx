@@ -2,15 +2,15 @@ import Image from 'next/image'
 
 import { Title } from 'components/atoms/title/title'
 import { Button } from 'components/atoms/button/button'
-import { HeroPlaygroundSlider } from './hero-playground-slider'
 import { Container } from 'components/atoms/container/container'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
+import { HeroPlaygroundOptions } from 'components/molecules/playground-options/playground-options'
 
 export const HeroPlayground = () => {
   return (
     <section className='relative pt-12'>
       <Container>
-        <div className='shadow-box relative z-10 overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-8 md:px-20 md:pb-14 md:pt-20'>
+        <div className='relative z-10 overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-8 shadow-box md:px-20 md:pb-14 md:pt-20'>
           <Title
             as='h1'
             variant={'large'}
@@ -32,7 +32,7 @@ export const HeroPlayground = () => {
             <Button variant={'secondary'}>Documentation</Button>
           </div>
 
-          <HeroPlaygroundSlider />
+          <HeroPlaygroundOptions />
 
           <div className='hidden pt-14 md:block'>
             <Paragraph variant={'small'} className='mb-4 text-center'>
