@@ -1,45 +1,51 @@
 'use client'
 
-import React from 'react'
-import { FaPlay } from 'react-icons/fa'
+import { useState } from 'react'
+
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
-
-import { CarouselApi } from 'components/ui/carousel'
-import { Title } from 'components/atoms/title/title'
-import { Button } from 'components/atoms/button/button'
-import { Paragraph } from 'components/atoms/paragraph/paragraph'
-
+import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
 import { cn } from 'lib/utils'
-import { DotsPagination } from '../dots-pagination/dots-pagination'
 
-type PlaygroundOptionProps = {
-  carouselApi: CarouselApi
-  currentIndex: number
-  title: string
-  description: string
-  code: React.ReactNode
-}
+import { heroPlaygroundData } from './data'
+import { Title } from 'components/atoms/title/title'
+import { Paragraph } from 'components/atoms/paragraph/paragraph'
+import { Button } from 'components/atoms/button/button'
+import { FaPlay } from 'react-icons/fa'
 
-export const PlaygroundOption = ({
-  carouselApi,
-  currentIndex,
-  title,
-  description,
-  code
-}: PlaygroundOptionProps) => {
+export const HeroPlaygroundOptions = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const currentData = heroPlaygroundData[currentIndex]
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? heroPlaygroundData.length - 1 : prevIndex - 1
+    )
+  }
+
+  const handleNext = () => {
+    console.log('next')
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % heroPlaygroundData.length)
+  }
+
   return (
     <div className='rounded-lg border border-alpha-150 bg-neutral pb-0 md:pb-10'>
       <div className='flex flex-col items-center justify-between gap-6 border-b border-alpha-150 px-6 py-8 md:flex-row md:gap-10 md:px-10 md:py-10'>
-        <ArrowButton carouselApi={carouselApi} />
+        <ArrowButton onClick={handlePrev} />
         <div>
           <Title as='h4' variant='small' className='mb-4 md:text-center'>
-            {title}
+            {currentData.title}
           </Title>
-          <Paragraph className='md:text-center'>{description}</Paragraph>
+          <Paragraph className='md:text-center'>{currentData.description}</Paragraph>
         </div>
-        <ArrowButton carouselApi={carouselApi} isLeft={false} />
+        <ArrowButton onClick={handleNext} isLeft={false} />
 
-        <MobileNavigation carouselApi={carouselApi} currentIndex={currentIndex} />
+        <MobileNavigation
+          onPrev={handlePrev}
+          onNext={handleNext}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          totalItems={heroPlaygroundData.length}
+        />
       </div>
 
       <div className='flex flex-col gap-6 p-8 md:flex-row md:gap-10 md:p-10'>
@@ -48,7 +54,7 @@ export const PlaygroundOption = ({
             SQL Query
           </Title>
 
-          {code}
+          {currentData.code}
 
           <Button variant={'primary'} className='flex items-center gap-2'>
             <FaPlay className='h-3.5 w-3.5' />
@@ -67,22 +73,16 @@ export const PlaygroundOption = ({
 const ArrowButton = ({
   className,
   isLeft = true,
-  carouselApi
+  onClick
 }: {
   className?: string
   isLeft?: boolean
-  carouselApi: CarouselApi
+  onClick: () => void
 }) => {
   return (
     <button
       type='button'
-      onClick={() => {
-        if (isLeft) {
-          carouselApi?.scrollPrev()
-        } else {
-          carouselApi?.scrollNext()
-        }
-      }}
+      onClick={onClick}
       className={cn(
         'z-10 hidden rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary md:block',
         className
@@ -98,19 +98,23 @@ const ArrowButton = ({
 }
 
 export const MobileNavigation = ({
-  carouselApi,
-  currentIndex
+  onPrev,
+  onNext,
+  currentIndex,
+  setCurrentIndex,
+  totalItems
 }: {
-  carouselApi: CarouselApi
+  onPrev: () => void
+  onNext: () => void
   currentIndex: number
+  setCurrentIndex: (index: number) => void
+  totalItems: number
 }) => {
   return (
     <div className='relative flex w-full items-center justify-between gap-2 md:hidden'>
       <button
         type='button'
-        onClick={() => {
-          carouselApi?.scrollPrev()
-        }}
+        onClick={onPrev}
         className={
           'z-10 rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary'
         }
@@ -118,17 +122,14 @@ export const MobileNavigation = ({
         <HiChevronLeft className='relative right-px h-6 w-6' />
       </button>
       <DotsPagination
-        api={carouselApi}
+        className='bottom-auto translate-y-0'
         current={currentIndex}
-        dotsLength={3}
-        className='bottom-4 translate-y-0'
+        dotsLength={totalItems}
+        setCurrent={setCurrentIndex}
       />
-      <ArrowButton carouselApi={carouselApi} isLeft={false} />
       <button
         type='button'
-        onClick={() => {
-          carouselApi?.scrollNext()
-        }}
+        onClick={onNext}
         className={
           'z-10 rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary'
         }

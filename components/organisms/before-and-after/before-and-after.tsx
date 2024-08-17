@@ -67,7 +67,7 @@ export const BeforeAndAfter = () => {
       <DotsPagination
         api={api}
         current={current}
-        className='md:block'
+        className='-bottom-[60px] md:block'
         dotsLength={beforeAndAfterSlides.length}
       />
     </section>

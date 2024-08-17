@@ -29,16 +29,16 @@ export const Article = ({ articleData }: { articleData: ArticleData }) => {
           </div>
         )}
 
-        <Title as='h4' variant={'small'}>
+        <Title as='h4' variant='small'>
           {articleData.title}
         </Title>
-        <Paragraph variant={'small'} className='line-clamp-3'>
+        <Paragraph variant='small' className='line-clamp-3'>
           {articleData.description}
         </Paragraph>
       </div>
 
       <Button
-        variant={'primary'}
+        variant='primary'
         className='absolute bottom-4 left-4 z-10 transition-opacity group-hover:opacity-100 md:opacity-0'
       >
         Continue reading

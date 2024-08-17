@@ -1,10 +1,10 @@
 'use client'
-import clsx from 'clsx'
-import { FcLinux } from 'react-icons/fc'
-import { useEffect, useRef, useState } from 'react'
-import { FaApple, FaWindows } from 'react-icons/fa'
 
-import { Code } from 'components/atoms/code/code'
+import clsx from 'clsx'
+import { useEffect, useRef, useState } from 'react'
+import { FaApple, FaWindows, FaLinux } from 'react-icons/fa'
+
+import { CopyCode } from '../copy-code/copy-code'
 import { Button } from 'components/atoms/button/button'
 
 let allTabs = [
@@ -61,19 +61,19 @@ export const InstallOptions = () => {
           return (
             <Button
               key={index}
-              variant={'tag'}
+              variant='tag'
               ref={(el) => {
                 tabsRef.current[index] = el
               }}
               className={clsx(
-                'relative bottom-1 flex items-center justify-center gap-2 md:bottom-0',
+                'relative bottom-1 flex items-center justify-center gap-2 md:bottom-0 md:active:bg-alpha-50',
                 isActive && 'hover:bg-transparent'
               )}
               onClick={() => setActiveTabIndex(index)}
             >
               <>
                 {index === 0 && <FaApple className='h-7 w-7' />}
-                {index === 1 && <FcLinux className='h-7 w-7' />}
+                {index === 1 && <FaLinux className='h-6 w-6' />}
                 {index === 2 && <FaWindows className='h-6 w-6' />}
 
                 <span className='hidden md:block'>{tab.name}</span>
@@ -82,7 +82,7 @@ export const InstallOptions = () => {
           )
         })}
       </div>
-      {activeTabIndex !== null && <Code code={allTabs[activeTabIndex].command} />}
+      {activeTabIndex !== null && <CopyCode code={allTabs[activeTabIndex].command} />}
     </div>
   )
 }

@@ -15,11 +15,11 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
-    "babel-plugin-react-compiler": "0.0.0-experimental-334f00b-20240725",
+    "babel-plugin-react-compiler": "0.0.0-experimental-52d6685-20240815",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.1.8",
-    "lucide-react": "^0.427.0",
+    "lucide-react": "^0.428.0",
     "next": "15.0.0-rc.0",
     "react": "19.0.0-rc-06d0b89e-20240801",
     "react-dom": "19.0.0-rc-06d0b89e-20240801",
@@ -38,7 +38,7 @@
     "@storybook/nextjs": "^8.2.9",
     "@storybook/react": "^8.2.9",
     "@storybook/test": "^8.2.9",
-    "@types/node": "^22.2.0",
+    "@types/node": "^22.4.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
@@ -49,7 +49,7 @@
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "storybook": "^8.2.9",
-    "tailwindcss": "^3.4.9",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
   },
   "eslintConfig": {
