@@ -2,7 +2,9 @@ import * as React from 'react'
 import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 import { cn } from 'lib/utils'
 
-interface LinkProps extends Omit<NextLinkProps, 'href'> {
+interface LinkProps
+  extends Omit<NextLinkProps, 'href'>,
+    React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string
   variant?: 'small' | 'large'
   className?: string

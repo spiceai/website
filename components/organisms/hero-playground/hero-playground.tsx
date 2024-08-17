@@ -8,13 +8,13 @@ import { HeroPlaygroundOptions } from 'components/molecules/playground-options/p
 
 export const HeroPlayground = () => {
   return (
-    <section className='relative pt-12'>
+    <section className='relative pt-10 md:pt-12'>
       <Container>
         <div className='relative z-10 overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-8 shadow-box md:px-20 md:pb-14 md:pt-20'>
           <Title
             as='h1'
             variant={'large'}
-            className='mx-auto mb-6 md:text-center xl:max-w-[1020px]'
+            className='mx-auto mb-6 mt-7 md:mt-0 md:text-center xl:max-w-[1020px]'
           >
             Spice is a powerful, portable{' '}
             <span className='text-primary'>runtime for developers.</span>
