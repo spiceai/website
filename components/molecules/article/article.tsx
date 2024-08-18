@@ -2,38 +2,36 @@ import Image from 'next/image'
 
 import { Title } from 'components/atoms/title/title'
 import { Button } from 'components/atoms/button/button'
-import { ArticleData } from 'components/organisms/articles/data'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 
 import DefaultPicture from 'public/article-one.jpg'
+import { ProcessedFile } from 'components/organisms/articles/articles'
 
-export const Article = ({ articleData }: { articleData: ArticleData }) => {
+export const Article = ({ article }: { article: ProcessedFile }) => {
   return (
-    <article className='shadow-box md:hover:shadow-box group relative overflow-hidden rounded-lg bg-neutral p-4 transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral'>
+    <article className='group relative overflow-hidden rounded-lg bg-neutral p-4 shadow-box transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral md:hover:shadow-box'>
       <div className='flex flex-col gap-4'>
         <Image
-          src={articleData.image || DefaultPicture}
+          src={DefaultPicture}
           alt='article image'
           width={600}
           height={400}
           className='w-full overflow-hidden rounded-[4px]'
         />
 
-        {articleData.tags && articleData.tags.length > 0 && (
-          <div className='flex gap-2'>
-            {articleData.tags.slice(0, 3).map((tag) => (
-              <Button key={tag} variant='tagSmall'>
-                {tag}
-              </Button>
-            ))}
-          </div>
-        )}
+        <div className='flex gap-2'>
+          {['spice.ai', 'web3', 'data', 'ai'].slice(0, 3).map((tag) => (
+            <Button key={tag} variant='tagSmall'>
+              {tag}
+            </Button>
+          ))}
+        </div>
 
         <Title as='h4' variant='small'>
-          {articleData.title}
+          {article.content.title}
         </Title>
         <Paragraph variant='small' className='line-clamp-3'>
-          {articleData.description}
+          {article.content.description}
         </Paragraph>
       </div>
 
