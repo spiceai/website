@@ -3,8 +3,9 @@ import { Button } from 'components/atoms/button/button'
 import { Icon } from 'components/atoms/icon/icon'
 import { Link } from 'components/atoms/link/link'
 import { Logo } from 'components/atoms/logo/logo'
+import { StarsCount } from 'components/atoms/stars-count/stars-count'
 
-export const Header = () => {
+export const Header = async () => {
   return (
     <header className='fixed left-1/2 top-4 z-20 flex -translate-x-1/2 transform items-center gap-6 rounded-2xl bg-alpha-800 p-1 pr-11 shadow-box backdrop-blur-sm md:top-6 md:pr-1'>
       <div className='w-10'>
@@ -27,7 +28,7 @@ export const Header = () => {
           className='flex items-center gap-2'
         >
           <Icon iconName='github' className='h-6 w-6' />
-          1.8k
+          <StarsCount />
         </Link>
       </nav>
       <Button variant={'negative'} size={'sm'}>

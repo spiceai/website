@@ -10,6 +10,7 @@ import { cn } from 'lib/utils'
 
 import andy from 'public/andy.png'
 import barracuda from 'public/barracuda.png'
+import { StarsCount } from 'components/atoms/stars-count/stars-count'
 
 export const Cta = ({ className }: { className?: string }) => {
   return (
@@ -36,7 +37,7 @@ export const Cta = ({ className }: { className?: string }) => {
             <div className='flex items-center gap-2'>
               <MyIcon width='40px' height='40px' />
               <Paragraph variant='large' className='font-medium text-neutral'>
-                1.7k
+                <StarsCount />
               </Paragraph>
             </div>
           </div>
