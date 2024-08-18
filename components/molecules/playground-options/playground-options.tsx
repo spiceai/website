@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { cn } from 'lib/utils'
 
@@ -52,8 +52,12 @@ export const HeroPlaygroundOptions = () => {
   const handleRequest = async () => {
     const startTime = performance.now()
 
+    if (requestDuration) return
+
     try {
-      const response = await fetch(currentData.requestUrl)
+      const response = await fetch(
+        `https://data.spiceai.io/v0.1/sampler/${currentData.requestUrl}?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa`
+      )
       const data: ResponseData = await response.json()
 
       if (data?.rows?.length > 0) {
@@ -69,6 +73,37 @@ export const HeroPlaygroundOptions = () => {
       setRequestDuration(null)
     }
   }
+
+  // Handle keyboard navigation - Love u React 19 ❤️, no more useCallback!
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.defaultPrevented) {
+      return
+    }
+
+    switch (event.code) {
+      case 'ArrowLeft':
+        handlePrev()
+        break
+      case 'ArrowRight':
+        handleNext()
+        break
+      case 'Enter':
+        handleRequest()
+        break
+      default:
+        return
+    }
+
+    event.preventDefault()
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown, true)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown, true)
+    }
+  }, [handleKeyDown])
 
   return (
     <div className='rounded-lg border border-alpha-150 bg-neutral pb-0 md:pb-10'>
