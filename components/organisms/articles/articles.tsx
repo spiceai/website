@@ -75,7 +75,7 @@ async function getFormattedData(): Promise<ProcessedFile[]> {
 export const Articles = async () => {
   const data = await getFormattedData()
 
-  // TODO: How can I get the link and tags data?
+  // TODO: How can I get the link, image and tags data?
 
   return (
     <section className='relative mb-28 pb-0 md:py-36'>
