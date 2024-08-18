@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Table2 } from 'lucide-react'
 import { FaPlay } from 'react-icons/fa'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
 
@@ -14,6 +13,7 @@ import { PlaygroundTable } from './playground-table'
 import { Button } from 'components/atoms/button/button'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
+import { TableCellsIcon } from '@heroicons/react/20/solid'
 
 export type ResponseData = {
   rowCount: number
@@ -131,7 +131,7 @@ export const HeroPlaygroundOptions = () => {
                     className='flex items-center gap-2'
                     onClick={() => setIsOpenTable(true)}
                   >
-                    <Table2 className='h-4 w-4' />
+                    <TableCellsIcon className='h-5 w-5' />
                     View results
                   </Button>
                 )}
