@@ -17,7 +17,7 @@ export const PlaygroundTable = ({
     <>
       <div className='relative h-40 max-w-xl overflow-hidden'>
         <TableData data={data} />
-        <Shadows />
+        {data.schema.length > 3 && <Shadows />}
       </div>
       <Dialog open={isOpenTable} onOpenChange={setIsOpenTable} modal={false}>
         <DialogContent className='w-full max-w-4xl' onOpenAutoFocus={(e) => e.preventDefault()}>

@@ -125,14 +125,16 @@ export const HeroPlaygroundOptions = () => {
                   />
                 )}
 
-                <Button
-                  variant={'brand'}
-                  className='flex items-center gap-2'
-                  onClick={() => setIsOpenTable(true)}
-                >
-                  <Table2 className='h-4 w-4' />
-                  View results
-                </Button>
+                {responseData && responseData?.schema.length > 3 && (
+                  <Button
+                    variant={'brand'}
+                    className='flex items-center gap-2'
+                    onClick={() => setIsOpenTable(true)}
+                  >
+                    <Table2 className='h-4 w-4' />
+                    View results
+                  </Button>
+                )}
               </div>
             </div>
           )}
