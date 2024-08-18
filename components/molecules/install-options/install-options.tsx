@@ -2,10 +2,10 @@
 
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
-import { FaApple, FaWindows, FaLinux } from 'react-icons/fa'
 
 import { CopyCode } from '../copy-code/copy-code'
 import { Button } from 'components/atoms/button/button'
+import { Icon } from 'components/atoms/icon/icon'
 
 let allTabs = [
   {
@@ -72,9 +72,9 @@ export const InstallOptions = () => {
               onClick={() => setActiveTabIndex(index)}
             >
               <>
-                {index === 0 && <FaApple className='h-7 w-7' />}
-                {index === 1 && <FaLinux className='h-6 w-6' />}
-                {index === 2 && <FaWindows className='h-6 w-6' />}
+                {index === 0 && <Icon iconName='apple' className='h-7 w-7' />}
+                {index === 1 && <Icon iconName='linux' className='h-6 w-6' />}
+                {index === 2 && <Icon iconName='windows' className='h-6 w-6' />}
 
                 <span className='hidden md:block'>{tab.name}</span>
               </>

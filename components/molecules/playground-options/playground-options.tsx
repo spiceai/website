@@ -1,8 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { FaPlay } from 'react-icons/fa'
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
 
 import { cn } from 'lib/utils'
 
@@ -13,7 +11,8 @@ import { PlaygroundTable } from './playground-table'
 import { Button } from 'components/atoms/button/button'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
-import { TableCellsIcon } from '@heroicons/react/20/solid'
+import { PlayIcon, TableCellsIcon } from '@heroicons/react/20/solid'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 export type ResponseData = {
   rowCount: number
@@ -101,7 +100,7 @@ export const HeroPlaygroundOptions = () => {
           {currentData.code}
 
           <Button variant={'primary'} className='flex items-center gap-2' onClick={handleRequest}>
-            <FaPlay className='h-3.5 w-3.5' />
+            <PlayIcon className='h-5 w-5' />
             Run code
           </Button>
         </div>
@@ -163,9 +162,9 @@ const ArrowButton = ({
       )}
     >
       {isLeft ? (
-        <HiChevronLeft className='relative right-px h-6 w-6' />
+        <ChevronLeftIcon className='relative right-px h-6 w-6' />
       ) : (
-        <HiChevronRight className='relative left-px h-6 w-6' />
+        <ChevronRightIcon className='relative left-px h-6 w-6' />
       )}
     </button>
   )
@@ -193,7 +192,7 @@ export const MobileNavigation = ({
           'z-10 rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary'
         }
       >
-        <HiChevronLeft className='relative right-px h-6 w-6' />
+        <ChevronLeftIcon className='relative right-px h-6 w-6' />
       </button>
       <DotsPagination
         className='bottom-auto translate-y-0'
@@ -208,7 +207,7 @@ export const MobileNavigation = ({
           'z-10 rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary'
         }
       >
-        <HiChevronRight className='relative right-px h-6 w-6' />
+        <ChevronRightIcon className='relative right-px h-6 w-6' />
       </button>
     </div>
   )
