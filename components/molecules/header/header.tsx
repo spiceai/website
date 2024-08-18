@@ -1,8 +1,8 @@
-import { Bars3Icon } from '@heroicons/react/24/outline'
-import { Button } from 'components/atoms/button/button'
 import { Icon } from 'components/atoms/icon/icon'
 import { Link } from 'components/atoms/link/link'
 import { Logo } from 'components/atoms/logo/logo'
+import { Bars3Icon } from '@heroicons/react/24/outline'
+import { Button } from 'components/atoms/button/button'
 import { StarsCount } from 'components/atoms/stars-count/stars-count'
 
 export const Header = async () => {

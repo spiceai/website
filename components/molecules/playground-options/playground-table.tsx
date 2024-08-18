@@ -1,8 +1,11 @@
 import { Dispatch, SetStateAction } from 'react'
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 
 import { ResponseData } from './playground-options'
 import { Dialog, DialogContent } from 'components/ui/dialog'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from 'components/ui/table'
+
+import { DialogTitle } from '@radix-ui/react-dialog'
 
 export const PlaygroundTable = ({
   data,
@@ -20,8 +23,15 @@ export const PlaygroundTable = ({
         {data.schema.length > 3 && <Shadows />}
       </div>
       <Dialog open={isOpenTable} onOpenChange={setIsOpenTable} modal={false}>
-        <DialogContent className='w-full max-w-4xl' onOpenAutoFocus={(e) => e.preventDefault()}>
-          <Table className='w-full text-sm'>{data.schema && <TableData data={data} />}</Table>
+        <DialogContent
+          className='w-full max-w-4xl'
+          onOpenAutoFocus={(e) => e.preventDefault()}
+          aria-describedby={undefined}
+        >
+          <VisuallyHidden.Root>
+            <DialogTitle>Results</DialogTitle>
+          </VisuallyHidden.Root>
+          <TableData data={data} />
         </DialogContent>
       </Dialog>
     </>

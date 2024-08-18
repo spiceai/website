@@ -1,9 +1,8 @@
 export const StarsCount = async () => {
   const res = await fetch('https://api.github.com/repos/spiceai/spiceai').then((res) => res.json())
   const stars = res.stargazers_count
-  console.log(stars)
 
-  return <span>{formatStars(stars)}</span>
+  return <span>{formatStars(stars || 1800)}</span>
 }
 
 function formatStars(num: number): string {
