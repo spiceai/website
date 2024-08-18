@@ -1,32 +1,37 @@
 'use client'
 
 import { useState } from 'react'
-
+import { Table2 } from 'lucide-react'
+import { FaPlay } from 'react-icons/fa'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
-import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
+
 import { cn } from 'lib/utils'
 
 import { heroPlaygroundData } from './data'
 import { Title } from 'components/atoms/title/title'
-import { Paragraph } from 'components/atoms/paragraph/paragraph'
-import { Button } from 'components/atoms/button/button'
-import { FaPlay } from 'react-icons/fa'
+import { PlaygroundTable } from './playground-table'
 
-type ResponseData = {
+import { Button } from 'components/atoms/button/button'
+import { Paragraph } from 'components/atoms/paragraph/paragraph'
+import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
+
+export type ResponseData = {
   rowCount: number
-  rows: {
-    seconds_ago: number
-    time_window: string
-    to_address: string
-    token_address: string
-    token_id: string
-  }
+  schema: Array<{
+    name: string
+    type: {
+      name: string
+    }
+  }>
+  rows: Array<Record<string, any>>
 }
 
 export const HeroPlaygroundOptions = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const currentData = heroPlaygroundData[currentIndex]
   const [requestDuration, setRequestDuration] = useState<number | null>(null)
+  const [responseData, setResponseData] = useState<ResponseData | null>(null)
+  const [isOpenTable, setIsOpenTable] = useState(false)
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -52,12 +57,14 @@ export const HeroPlaygroundOptions = () => {
       const response = await fetch(currentData.requestUrl)
       const data: ResponseData = await response.json()
 
+      if (data?.rows?.length > 0) {
+        setResponseData(data)
+      }
+
       const endTime = performance.now()
       const durationInSeconds = (endTime - startTime) / 1000
 
       setRequestDuration(durationInSeconds)
-
-      console.log(`Request took ${durationInSeconds.toFixed(3)} seconds`, durationInSeconds)
     } catch (error) {
       console.error('Error fetching data:', error)
       setRequestDuration(null)
@@ -99,11 +106,35 @@ export const HeroPlaygroundOptions = () => {
           </Button>
         </div>
 
-        <div className='flex items-center justify-center rounded-sm border border-dashed p-6 md:w-1/2'>
+        <div className='relative flex items-center justify-center overflow-hidden rounded-sm border border-dashed p-6 md:h-80 md:w-1/2'>
           {requestDuration == null ? (
             <Paragraph variant={'small'}>Run code to get results.</Paragraph>
           ) : (
-            <p>Request took {requestDuration.toFixed(3)} seconds</p>
+            <div>
+              <div className='flex flex-col items-center justify-center gap-2'>
+                <p className='font-semibold text-neutral-600'>
+                  {responseData?.rowCount} of {responseData?.rowCount} total results in{' '}
+                  <span className='text-primary'>{requestDuration.toFixed(3)}</span> seconds.
+                </p>
+
+                {responseData?.schema && (
+                  <PlaygroundTable
+                    data={responseData}
+                    isOpenTable={isOpenTable}
+                    setIsOpenTable={setIsOpenTable}
+                  />
+                )}
+
+                <Button
+                  variant={'brand'}
+                  className='flex items-center gap-2'
+                  onClick={() => setIsOpenTable(true)}
+                >
+                  <Table2 className='h-4 w-4' />
+                  View results
+                </Button>
+              </div>
+            </div>
           )}
         </div>
       </div>

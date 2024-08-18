@@ -14,6 +14,7 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,css,md,json}\""
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-slot": "^1.1.0",
     "babel-plugin-react-compiler": "0.0.0-experimental-52d6685-20240815",
     "class-variance-authority": "^0.7.0",

@@ -51,7 +51,7 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
       </code>
     ),
     requestUrl:
-      'https://data.spiceai.io/v0.1/sampler/recent_sales?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
+      'https://data.spiceai.io/v0.1/sampler/opensea_sales?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   },
   {
     title: 'Average Transaction Fees for Ethereum',
@@ -73,7 +73,7 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
       </code>
     ),
     requestUrl:
-      'https://data.spiceai.io/v0.1/sampler/recent_transactions?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
+      'https://data.spiceai.io/v0.1/sampler/average_ethereum_transaction_fee?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   },
   {
     title: 'Total Bitcoin Transferred by Block Number',
@@ -88,6 +88,6 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
       </code>
     ),
     requestUrl:
-      'https://data.spiceai.io/v0.1/sampler/recent_transactions?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
+      'https://data.spiceai.io/v0.1/sampler/total_bitcoin_transferred?api_key=313834%7C0666ecca421b4b33ba4d0dd2e90d6daa'
   }
 ]
