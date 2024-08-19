@@ -1,10 +1,15 @@
 import { GITHUB_REPO } from 'lib/constants'
 
 export const StarsCount = async () => {
-  const res = await fetch(GITHUB_REPO, { cache: 'force-cache' }).then((res) => res.json())
+  const res = await fetch(GITHUB_REPO, { next: { revalidate: 14400 } }).then((res) => res.json()) // Every 4 hours
+
+  if (!res.stargazers_count) {
+    console.error('Error fetching stars count', res)
+  }
+
   const stars = res.stargazers_count
 
-  return <span>{formatStars(stars || 1800)}</span>
+  return <span>{formatStars(stars || 1700)}</span>
 }
 
 function formatStars(num: number): string {
