@@ -1,13 +1,11 @@
 'use client'
 
-import clsx from 'clsx'
 import Image from 'next/image'
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 import { SlideData } from './data'
 import { CarouselApi } from 'components/ui/carousel'
-import { Button } from 'components/atoms/button/button'
 import { Benefit } from 'components/molecules/benefit/benefit'
 
 import { cn } from 'lib/utils'
@@ -16,33 +14,19 @@ type BeforeAndAfterSlideProps = {
   slideData: SlideData
   carouselApi: CarouselApi
   isCurrentSlide: boolean
+  isBefore: boolean
+  setIsBefore: Dispatch<SetStateAction<boolean>>
 }
 
 export const BeforeAndAfterSlide = ({
   slideData,
   carouselApi,
-  isCurrentSlide
+  isCurrentSlide,
+  isBefore,
+  setIsBefore
 }: BeforeAndAfterSlideProps) => {
-  const [isBefore, setIsBefore] = useState(true)
-
   return (
-    <div className='relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-8 md:px-20'>
-      <div className='grid grid-cols-2 items-center justify-center gap-2 pb-14 lg:flex lg:pb-8'>
-        <Button
-          variant={'tag'}
-          className={clsx(isBefore && 'bg-alpha-100')}
-          onClick={() => setIsBefore(true)}
-        >
-          Before Spice
-        </Button>
-        <Button
-          variant={'tag'}
-          className={clsx(!isBefore && 'bg-alpha-100')}
-          onClick={() => setIsBefore(false)}
-        >
-          After Spice
-        </Button>
-      </div>
+    <div className='relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-28 md:px-20'>
       <Image
         src={isBefore ? slideData.imageBefore : slideData.imageAfter}
         alt='Before and After Slide'
