@@ -3,7 +3,6 @@ import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 
 import { ResponseData } from './playground-options'
 import { Dialog, DialogContent } from 'components/ui/dialog'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from 'components/ui/table'
 
 import { DialogTitle } from '@radix-ui/react-dialog'
 
@@ -24,7 +23,7 @@ export const PlaygroundTable = ({
       </div>
       <Dialog open={isOpenTable} onOpenChange={setIsOpenTable} modal={false}>
         <DialogContent
-          className='w-full max-w-4xl'
+          className='w-full max-w-5xl'
           onOpenAutoFocus={(e) => e.preventDefault()}
           aria-describedby={undefined}
         >
@@ -40,28 +39,32 @@ export const PlaygroundTable = ({
 
 const TableData = ({ data }: { data: ResponseData }) => {
   return (
-    <Table className='w-full text-sm'>
-      <TableHeader>
-        <TableRow>
-          {data.schema.map((column, index) => (
-            <TableHead key={index} className='px-2 text-left font-bold'>
-              {column.name}
-            </TableHead>
-          ))}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {data.rows.map((row, rowIndex) => (
-          <TableRow key={rowIndex} className='odd:bg-neutral-50/70'>
-            {data.schema.map((column, columnIndex) => (
-              <TableCell key={columnIndex} className='px-2 py-2'>
-                <span className='block max-w-10 truncate md:max-w-40'>{row[column.name]}</span>
-              </TableCell>
+    <div className='w-full overflow-x-auto'>
+      <table className='w-full overflow-hidden rounded-md text-left text-sm'>
+        <thead className='bg-neutral-50 text-xs uppercase text-gray-700'>
+          <tr>
+            {data.schema.map((column, index) => (
+              <th key={index} className='px-6 py-3 font-bold'>
+                {column.name}
+              </th>
             ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+          </tr>
+        </thead>
+        <tbody>
+          {data.rows.map((row, rowIndex) => (
+            <tr key={rowIndex} className='border-b bg-white even:bg-neutral-50/70 hover:bg-gray-50'>
+              {data.schema.map((column, columnIndex) => (
+                <td key={columnIndex} className='px-6 py-2'>
+                  <span className='block max-w-[150px] truncate sm:max-w-[200px]'>
+                    {row[column.name]}
+                  </span>
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 

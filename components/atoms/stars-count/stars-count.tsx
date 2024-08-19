@@ -9,7 +9,7 @@ export const StarsCount = async () => {
 
   const stars = res.stargazers_count
 
-  return <span>{formatStars(stars || 1700)}</span>
+  return <span>{formatStars(stars || 1200)}</span>
 }
 
 function formatStars(num: number): string {
