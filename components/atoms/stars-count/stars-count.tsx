@@ -1,7 +1,9 @@
-import { GITHUB_REPO } from 'lib/constants'
+import { GITHUB_MAIN_REPO } from 'lib/constants'
 
 export const StarsCount = async () => {
-  const res = await fetch(GITHUB_REPO, { next: { revalidate: 14400 } }).then((res) => res.json()) // Every 4 hours
+  const res = await fetch(GITHUB_MAIN_REPO, { next: { revalidate: 14400 } }).then((res) =>
+    res.json()
+  ) // Every 4 hours
 
   if (!res.stargazers_count) {
     console.error('Error fetching stars count', res)

@@ -5,7 +5,7 @@ import { Button } from 'components/atoms/button/button'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 
 import DefaultPicture from 'public/article-one.jpg'
-import { ProcessedFile } from 'components/organisms/articles/articles'
+import { ProcessedFile } from 'components/organisms/articles/utils'
 
 export const Article = ({ article }: { article: ProcessedFile }) => {
   return (
@@ -20,7 +20,7 @@ export const Article = ({ article }: { article: ProcessedFile }) => {
         />
 
         <div className='flex gap-2'>
-          {['spice.ai', 'web3', 'data', 'ai'].slice(0, 3).map((tag) => (
+          {article.tags.slice(0, 3).map((tag: string) => (
             <Button key={tag} variant='tagSmall'>
               {tag}
             </Button>
@@ -28,16 +28,19 @@ export const Article = ({ article }: { article: ProcessedFile }) => {
         </div>
 
         <Title as='h4' variant='small'>
-          {article.content.title}
+          {article.title}
         </Title>
         <Paragraph variant='small' className='line-clamp-3'>
-          {article.content.description}
+          {article.description}
         </Paragraph>
       </div>
 
       <Button
         variant='primary'
         className='absolute bottom-4 left-4 z-10 transition-opacity group-hover:opacity-100 md:opacity-0'
+        href={article.link}
+        target='_blank'
+        rel='noopener noreferrer'
       >
         Continue reading
       </Button>

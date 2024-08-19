@@ -13,7 +13,8 @@ import {
 import { dataArticles } from './data'
 import { Article } from 'components/molecules/article/article'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
-import type { ProcessedFile } from './articles'
+
+import { ProcessedFile } from './utils'
 
 export const ArticlesCarousel = ({ data }: { data: ProcessedFile[] }) => {
   const [api, setApi] = useState<CarouselApi>()
