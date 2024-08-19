@@ -51,8 +51,19 @@ export const Header = () => {
             rel='noopener noreferrer'
             variant={'negative'}
             size={'sm'}
+            className='hidden md:block'
           >
             Installation
+          </Button>
+          <Button
+            className='md:hidden'
+            href='https://docs.spiceai.org'
+            target='_blank'
+            rel='noopener noreferrer'
+            variant={'negative'}
+            size={'sm'}
+          >
+            Docs
           </Button>
 
           <HeaderMobileButton />
