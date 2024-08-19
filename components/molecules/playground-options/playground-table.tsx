@@ -41,10 +41,10 @@ const TableData = ({ data }: { data: ResponseData }) => {
   return (
     <div className='w-full overflow-x-auto'>
       <table className='w-full overflow-hidden rounded-md text-left text-sm'>
-        <thead className='bg-neutral-50 text-xs uppercase text-gray-700'>
+        <thead className='bg-neutral-50 text-xs uppercase text-neutral-600'>
           <tr>
             {data.schema.map((column, index) => (
-              <th key={index} className='px-6 py-3 font-bold'>
+              <th key={index} className='px-6 py-3 font-extrabold'>
                 {column.name}
               </th>
             ))}
@@ -52,7 +52,10 @@ const TableData = ({ data }: { data: ResponseData }) => {
         </thead>
         <tbody>
           {data.rows.map((row, rowIndex) => (
-            <tr key={rowIndex} className='border-b bg-white even:bg-neutral-50/70 hover:bg-gray-50'>
+            <tr
+              key={rowIndex}
+              className='border-b bg-neutral even:bg-neutral-50/70 hover:bg-neutral-100'
+            >
               {data.schema.map((column, columnIndex) => (
                 <td key={columnIndex} className='px-6 py-2'>
                   <span className='block max-w-[150px] truncate sm:max-w-[200px]'>
