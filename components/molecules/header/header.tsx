@@ -17,12 +17,12 @@ export const Header = async () => {
           <Link href='#'>Use cases</Link>
           <Link href='#'>QuickStarts</Link>
           <Link href='#'>Samples</Link>
-          <Link href='#' target='_blank' rel='noopener noreferrer'>
+          <Link href='https://docs.spiceai.org' target='_blank' rel='noopener noreferrer'>
             Docs
           </Link>
         </div>
         <Link
-          href='#'
+          href='https://github.com/spiceai/spiceai'
           target='_blank'
           rel='noopener noreferrer'
           className='flex items-center gap-2'
@@ -31,7 +31,13 @@ export const Header = async () => {
           <StarsCount />
         </Link>
       </nav>
-      <Button variant={'negative'} size={'sm'}>
+      <Button
+        href='https://docs.spiceai.org/installation'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant={'negative'}
+        size={'sm'}
+      >
         Installation
       </Button>
       <button type='button' className='absolute right-2 top-3 text-neutral md:hidden'>

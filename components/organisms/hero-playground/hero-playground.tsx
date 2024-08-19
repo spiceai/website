@@ -26,10 +26,23 @@ export const HeroPlayground = () => {
           </Paragraph>
 
           <div className='mb-14 grid grid-cols-2 items-center justify-center gap-3 md:flex'>
-            <Button variant={'primary'} className='border border-alpha-900 hover:border-primary'>
+            <Button
+              href='https://docs.spiceai.org/installation'
+              target='_blank'
+              rel='noopener noreferrer'
+              variant={'primary'}
+              className='border border-alpha-900 hover:border-primary'
+            >
               Installation
             </Button>
-            <Button variant={'secondary'}>Documentation</Button>
+            <Button
+              href='https://docs.spiceai.org'
+              target='_blank'
+              rel='noopener noreferrer'
+              variant={'secondary'}
+            >
+              Documentation
+            </Button>
           </div>
 
           <HeroPlaygroundOptions />

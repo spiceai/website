@@ -13,6 +13,7 @@ import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
 import { PlayIcon, TableCellsIcon } from '@heroicons/react/20/solid'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { Icon } from 'components/atoms/icon/icon'
 
 export type ResponseData = {
   rowCount: number
@@ -31,6 +32,7 @@ export const HeroPlaygroundOptions = () => {
   const [requestDuration, setRequestDuration] = useState<number | null>(null)
   const [responseData, setResponseData] = useState<ResponseData | null>(null)
   const [isOpenTable, setIsOpenTable] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -50,9 +52,10 @@ export const HeroPlaygroundOptions = () => {
   }
 
   const handleRequest = async () => {
-    const startTime = performance.now()
+    if (requestDuration || isLoading) return
 
-    if (requestDuration) return
+    setIsLoading(true)
+    const startTime = performance.now()
 
     try {
       const response = await fetch(
@@ -71,6 +74,8 @@ export const HeroPlaygroundOptions = () => {
     } catch (error) {
       console.error('Error fetching data:', error)
       setRequestDuration(null)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -135,7 +140,11 @@ export const HeroPlaygroundOptions = () => {
           {currentData.code}
 
           <Button variant={'primary'} className='flex items-center gap-2' onClick={handleRequest}>
-            <PlayIcon className='h-5 w-5' />
+            {isLoading ? (
+              <Icon iconName='spinner' className='h-5 w-5 animate-spin' />
+            ) : (
+              <PlayIcon className='h-5 w-5' />
+            )}
             Run code
           </Button>
         </div>

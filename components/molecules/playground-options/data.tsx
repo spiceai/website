@@ -58,9 +58,9 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
       <code className='text-sm leading-6'>
         <span className='text-red-400'>SELECT</span> block_number, TO_TIMESTAMP(block_timestamp){' '}
         <span className='text-red-400'>as</span> block_timestamp,{' '}
-        <span className='text-red-400'>avg</span>(gas) <span className='text-red-400'>as</span>
+        <span className='text-red-400'>avg</span>(gas) <span className='text-red-400'>as</span>{' '}
         avg_gas_used,
-        <span className='text-red-400'>avg</span>(gas_price /{' '}
+        <span className='text-red-400'> avg</span>(gas_price /{' '}
         <span className='text-red-400'>1e9</span>) <span className='text-red-400'>as</span>{' '}
         avg_gas_price_in_gwei, <span className='text-red-400'>avg</span>(gas * (gas_price /{' '}
         <span className='text-red-400'>1e18</span>)) <span className='text-red-400'>as</span>{' '}
