@@ -1,27 +1,23 @@
-import Image from 'next/image'
-
 import { Title } from 'components/atoms/title/title'
 import { Button } from 'components/atoms/button/button'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 
-import DefaultPicture from 'public/article-one.jpg'
 import { ProcessedFile } from 'components/organisms/articles/utils'
+import { ArticleImage } from './article-image'
 
 export const Article = ({ article }: { article: ProcessedFile }) => {
   return (
     <article className='group relative overflow-hidden rounded-lg bg-neutral p-4 shadow-box transition-all md:bg-transparent md:shadow-none md:hover:bg-neutral md:hover:shadow-box'>
       <div className='flex flex-col gap-4'>
-        <Image
-          src={DefaultPicture}
-          alt='article image'
-          width={600}
-          height={400}
-          className='w-full overflow-hidden rounded-[4px]'
-        />
+        <ArticleImage title={article.title} />
 
         <div className='flex gap-2'>
           {article.tags.slice(0, 3).map((tag: string) => (
-            <Button key={tag} variant='tagSmall'>
+            <Button
+              key={tag}
+              variant='tagSmall'
+              className='max-w-40 truncate whitespace-pre md:hover:bg-alpha-100'
+            >
               {tag}
             </Button>
           ))}

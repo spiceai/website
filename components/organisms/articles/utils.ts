@@ -103,6 +103,9 @@ export async function getFormattedData(): Promise<ProcessedFile[]> {
       console.error('Error processing post:', release.name, error)
     }
   }
+  const sortedReleases = processedReleases.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
 
-  return processedReleases
+  return sortedReleases
 }
