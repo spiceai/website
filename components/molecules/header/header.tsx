@@ -9,9 +9,13 @@ import { HeaderProvider } from './header-context'
 
 export const NavLinks = () => (
   <>
-    <Link href='#'>Use cases</Link>
-    <Link href='#'>QuickStarts</Link>
-    <Link href='#'>Samples</Link>
+    <Link href='#use-cases'>Use cases</Link>
+    <Link href='https://github.com/spiceai/quickstarts' target='_blank' rel='noopener noreferrer'>
+      QuickStarts
+    </Link>
+    <Link href='https://github.com/spiceai/samples ' target='_blank' rel='noopener noreferrer'>
+      Samples
+    </Link>
     <Link href='https://docs.spiceai.org' target='_blank' rel='noopener noreferrer'>
       Docs
     </Link>
