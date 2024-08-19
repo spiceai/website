@@ -18,12 +18,12 @@ export type ProcessedFile = {
 }
 
 async function fetchContents(path: string): Promise<GitHubItem[]> {
-  const res = await fetch(`${GITHUB_REPO}/contents/${path}`, { next: { revalidate: 3600 } })
+  const res = await fetch(`${GITHUB_REPO}/contents/${path}`, { cache: 'force-cache' })
   return res.json()
 }
 
 async function fetchFileContent(url: string): Promise<string> {
-  const res = await fetch(url, { next: { revalidate: 3600 } })
+  const res = await fetch(url, { cache: 'force-cache' })
   return res.text()
 }
 

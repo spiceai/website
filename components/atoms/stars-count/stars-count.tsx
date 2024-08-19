@@ -1,7 +1,7 @@
 import { GITHUB_REPO } from 'lib/constants'
 
 export const StarsCount = async () => {
-  const res = await fetch(GITHUB_REPO).then((res) => res.json())
+  const res = await fetch(GITHUB_REPO, { cache: 'force-cache' }).then((res) => res.json())
   const stars = res.stargazers_count
 
   return <span>{formatStars(stars || 1800)}</span>

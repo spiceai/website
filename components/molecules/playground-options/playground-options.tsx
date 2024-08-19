@@ -79,7 +79,6 @@ export const HeroPlaygroundOptions = () => {
     }
   }
 
-  // Handle keyboard navigation - Love u React 19 ❤️, no more useCallback!
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.defaultPrevented) {
       return
