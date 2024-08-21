@@ -49,30 +49,30 @@ export const HeroPlayground = () => {
           <Breakdown />
 
           <div className='hidden pt-14 md:block'>
-            <Paragraph variant={'small'} className='mb-4 text-center'>
-              Accelerating 🚀
+            <Paragraph variant={'large'} className='mb-4 text-center font-bold'>
+              Powered by
             </Paragraph>
             <div className='flex items-center justify-center gap-10'>
               <Image
-                src={'/accelerating-one.png'}
+                src={'/apache-arrow.svg'}
                 alt='Spice Logo'
                 width={100}
                 height={100}
-                className='h-7 w-auto object-contain'
+                className='h-20 w-auto object-contain'
               />
               <Image
-                src={'/accelerating-two.png'}
+                src={'/apache-datafusion.svg'}
                 alt='Spice Logo'
                 width={100}
                 height={100}
-                className='h-4 w-auto object-contain'
+                className='h-10 w-auto object-contain'
               />
               <Image
-                src={'/accelerating-three.png'}
+                src={'/duckdb.svg'}
                 alt='Spice Logo'
                 width={100}
                 height={100}
-                className='relative bottom-1 h-8 w-auto object-contain'
+                className='h-20 w-auto object-contain'
               />
             </div>
           </div>

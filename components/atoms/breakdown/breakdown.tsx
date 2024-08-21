@@ -8,7 +8,7 @@ export const Breakdown = () => {
         alt='Spice.ai breakdown'
         width={1000}
         height={500}
-        className='w-full'
+        className='h-auto w-full'
       />
     </div>
   )
