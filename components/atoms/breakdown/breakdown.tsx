@@ -9,6 +9,7 @@ export const Breakdown = () => {
         width={1000}
         height={500}
         className='h-auto w-full'
+        priority
       />
     </div>
   )
