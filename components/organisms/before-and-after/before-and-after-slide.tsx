@@ -15,15 +15,13 @@ type BeforeAndAfterSlideProps = {
   carouselApi: CarouselApi
   isCurrentSlide: boolean
   isBefore: boolean
-  setIsBefore: Dispatch<SetStateAction<boolean>>
 }
 
 export const BeforeAndAfterSlide = ({
   slideData,
   carouselApi,
   isCurrentSlide,
-  isBefore,
-  setIsBefore
+  isBefore
 }: BeforeAndAfterSlideProps) => {
   return (
     <div className='relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-28 md:px-20'>
@@ -79,6 +77,7 @@ const ArrowButton = ({
         'absolute bottom-[47%] z-10 hidden -translate-y-1/2 rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-primary md:block',
         className
       )}
+      aria-label='Change slide'
     >
       {children}
     </button>

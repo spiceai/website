@@ -23,7 +23,7 @@ export const Article = ({ article }: { article: ProcessedFile }) => {
           ))}
         </div>
 
-        <Title as='h4' variant='small'>
+        <Title as='h5' variant='small'>
           {article.title}
         </Title>
         <Paragraph variant='small' className='line-clamp-3'>
