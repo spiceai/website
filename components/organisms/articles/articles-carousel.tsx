@@ -2,15 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from 'components/ui/carousel'
-import { dataArticles } from './data'
+import { Carousel, CarouselApi, CarouselContent, CarouselItem } from 'components/ui/carousel'
 import { Article } from 'components/molecules/article/article'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
 
@@ -47,11 +39,11 @@ export const ArticlesCarousel = ({ data }: { data: ProcessedFile[] }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {/* <CarouselPrevious />
+        <CarouselNext /> */}
       </Carousel>
 
-      <DotsPagination api={api} current={current} dotsLength={dataArticles.length} />
+      <DotsPagination api={api} current={current} dotsLength={data.length} />
     </>
   )
 }

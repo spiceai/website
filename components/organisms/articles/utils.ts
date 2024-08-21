@@ -107,5 +107,5 @@ export async function getFormattedData(): Promise<ProcessedFile[]> {
     return new Date(b.date).getTime() - new Date(a.date).getTime()
   })
 
-  return sortedReleases
+  return sortedReleases.slice(0, 3)
 }
