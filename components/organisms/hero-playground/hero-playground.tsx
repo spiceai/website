@@ -4,7 +4,7 @@ import { Title } from 'components/atoms/title/title'
 import { Button } from 'components/atoms/button/button'
 import { Container } from 'components/atoms/container/container'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
-import { HeroPlaygroundOptions } from 'components/molecules/playground-options/playground-options'
+import { Breakdown } from 'components/atoms/breakdown/breakdown'
 
 export const HeroPlayground = () => {
   return (
@@ -45,7 +45,8 @@ export const HeroPlayground = () => {
             </Button>
           </div>
 
-          <HeroPlaygroundOptions />
+          {/* <HeroPlaygroundOptions /> */}
+          <Breakdown />
 
           <div className='hidden pt-14 md:block'>
             <Paragraph variant={'small'} className='mb-4 text-center'>
