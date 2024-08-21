@@ -1,17 +1,19 @@
-import { HiOutlineArrowRight } from 'react-icons/hi2'
-import { FaGithub } from 'react-icons/fa'
 import Image from 'next/image'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Container } from 'components/atoms/container/container'
+
 import { Button } from 'components/atoms/button/button'
 import { Title } from 'components/atoms/title/title'
+import { Icon } from 'components/atoms/icon/icon'
 import { Logo } from 'components/atoms/logo/logo'
+
 import { cn } from 'lib/utils'
 
-import kannan from 'public/kannan.png'
 import andy from 'public/andy.png'
 import barracuda from 'public/barracuda.png'
+import { StarsCount } from 'components/atoms/stars-count/stars-count'
 
 export const Cta = ({ className }: { className?: string }) => {
   return (
@@ -31,16 +33,33 @@ export const Cta = ({ className }: { className?: string }) => {
           </Title>
 
           <div className='flex items-center gap-6'>
-            <Button variant='brand' size='lg' className='flex items-center gap-2'>
-              <HiOutlineArrowRight className='h-6 w-6' />
+            <Button
+              href='https://docs.spiceai.org/installation'
+              target='_blank'
+              rel='noopener noreferrer'
+              variant='brand'
+              size='lg'
+              className='flex items-center gap-2'
+            >
+              <ArrowRightIcon className='h-6 w-6' />
               Installation
             </Button>
-            <div className='flex items-center gap-2'>
-              <FaGithub className='h-10 w-10 fill-neutral' />
+            <a
+              href='https://github.com/spiceai/spiceai'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='group flex items-center gap-2'
+            >
+              <Icon
+                iconName='github'
+                width='40px'
+                height='40px'
+                className='fill-neutral transition-colors group-hover:fill-primary'
+              />
               <Paragraph variant='large' className='font-medium text-neutral'>
-                1.7k
+                <StarsCount />
               </Paragraph>
-            </div>
+            </a>
           </div>
         </div>
         <div className='flex flex-col justify-between gap-6 bg-alpha-800 px-8 py-16 md:p-14 lg:w-5/12 xl:p-20'>
@@ -50,7 +69,7 @@ export const Cta = ({ className }: { className?: string }) => {
             define and query accelerated datasets without a lot of overhead.”
           </Paragraph>
 
-          <div className='flex items-start justify-between gap-5'>
+          <div className='flex items-start justify-between gap-6'>
             <div className='flex flex-col gap-2'>
               <Title as='h5' variant='small' className='font-bold text-neutral'>
                 Andy Blyler
@@ -61,10 +80,16 @@ export const Cta = ({ className }: { className?: string }) => {
                 alt='EigenLayer'
                 width={180}
                 height={44}
-                className='relative right-1.5 mt-2'
+                className='relative right-1.5 mt-2 h-auto w-40'
               />
             </div>
-            <Image src={andy} alt='Kannan' width={70} height={70} className='rounded-full' />
+            <Image
+              src={andy}
+              alt='Andy'
+              width={70}
+              height={70}
+              className='h-16 w-16 rounded-full'
+            />
           </div>
         </div>
       </section>

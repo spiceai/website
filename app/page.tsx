@@ -4,8 +4,8 @@ import { Container } from 'components/atoms/container/container'
 import { Features } from 'components/organisms/features/features'
 import { Articles } from 'components/organisms/articles/articles'
 import { UseCases } from 'components/organisms/use-cases/use-cases'
-import { HeroPlayground } from 'components/organisms/hero-playground/hero-playground'
 import { BeforeAndAfter } from 'components/organisms/before-and-after/before-and-after'
+import { HeroPlayground } from 'components/organisms/hero-playground/hero-playground'
 
 export default function LandingPage() {
   return (

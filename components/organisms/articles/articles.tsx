@@ -1,59 +1,33 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from 'components/ui/carousel'
-import { dataArticles } from './data'
 import { Title } from 'components/atoms/title/title'
-import { Article } from 'components/molecules/article/article'
-import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
+import { ArticlesCarousel } from './articles-carousel'
+import { getFormattedData } from './utils'
+import { Button } from 'components/atoms/button/button'
+import { QueueListIcon } from '@heroicons/react/24/outline'
 
-export const Articles = () => {
-  const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
-
-  useEffect(() => {
-    if (!api) {
-      return
-    }
-
-    api.on('select', () => {
-      setCurrent(api.selectedScrollSnap())
-    })
-  }, [api])
+export const Articles = async () => {
+  const data = await getFormattedData()
 
   return (
     <section className='relative mb-28 pb-0 md:py-36'>
-      <Title as='h3' variant='medium' className='pb-6 text-center md:pb-14 md:text-left'>
-        Latest Articles
-      </Title>
-      <Carousel
-        opts={{
-          align: 'start',
-          loop: true
-        }}
-        setApi={setApi}
-        className='w-full'
-      >
-        <CarouselContent>
-          {dataArticles.map((article, index) => (
-            <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
-              <Article articleData={article} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <div className='flex items-center justify-between gap-4 pb-6 md:pb-14'>
+        <Title as='h3' variant='medium' className='text-center md:text-left'>
+          Latest Articles
+        </Title>
 
-      <DotsPagination api={api} current={current} dotsLength={dataArticles.length} />
+        <Button
+          variant='primary'
+          className='flex items-center gap-2 whitespace-pre'
+          href='https://blog.spiceai.org/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <div className='w-5'>
+            <QueueListIcon />
+          </div>
+          View all
+        </Button>
+      </div>
+      <ArticlesCarousel data={data} />
     </section>
   )
 }

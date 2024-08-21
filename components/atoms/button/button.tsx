@@ -9,7 +9,7 @@ type ButtonAnchorProps = Omit<
   keyof React.ButtonHTMLAttributes<HTMLButtonElement>
 >
 
-const buttonVariants = cva('rounded-xl font-semibold transition-colors', {
+const buttonVariants = cva('rounded-xl font-semibold transition-all outline-none', {
   variants: {
     variant: {
       brand: 'bg-primary hover:bg-primary-600',

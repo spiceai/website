@@ -2,8 +2,16 @@
 
 const nextConfig = {
   experimental: {
-    reactCompiler: true,
+    reactCompiler: true
   },
-};
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co'
+      }
+    ]
+  }
+}
 
-export default nextConfig;
+export default nextConfig

@@ -6,7 +6,10 @@ import { UseCasesMobile } from './use-cases-mobile'
 
 export const UseCases = () => {
   return (
-    <section className='shadow-box mt-20 rounded-2xl border border-alpha-150 bg-alpha-50 p-8 pb-24 md:p-16 xl:p-20'>
+    <section
+      id='use-cases'
+      className='mt-20 rounded-2xl border border-alpha-150 bg-alpha-50 p-8 pb-24 shadow-box md:p-16 xl:p-20'
+    >
       <Title variant={'medium'} className='mb-6'>
         Example use-cases
       </Title>

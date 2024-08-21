@@ -7,7 +7,7 @@ import { CarouselApi } from 'components/ui/carousel'
 type DotsPaginationProps = {
   api?: CarouselApi
   current: number
-  setCurrent?: (index: number) => void
+  handleCurrentIndexChange?: (index: number) => void
   className?: string
   dotsLength: number
 }
@@ -17,7 +17,7 @@ export const DotsPagination = ({
   current,
   className,
   dotsLength,
-  setCurrent
+  handleCurrentIndexChange
 }: DotsPaginationProps) => {
   return (
     <div
@@ -31,8 +31,8 @@ export const DotsPagination = ({
           <button
             type='button'
             onClick={() => {
-              if (setCurrent) {
-                setCurrent(index)
+              if (handleCurrentIndexChange) {
+                handleCurrentIndexChange(index)
               } else {
                 api?.scrollTo(index)
               }

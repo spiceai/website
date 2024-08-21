@@ -1,8 +1,7 @@
 'use client'
 
 import * as React from 'react'
-
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react'
 
 import { cn } from 'lib/utils'
@@ -197,7 +196,7 @@ const CarouselPrevious = React.forwardRef<HTMLButtonElement, React.ComponentProp
         onClick={scrollPrev}
         {...props}
       >
-        <HiChevronLeft className='relative h-6 w-6 md:right-px md:h-12 md:w-12' />
+        <ChevronLeftIcon className='relative h-6 w-6 md:right-px md:h-12 md:w-12' />
         <span className='sr-only'>Previous slide</span>
       </Button>
     )
@@ -225,7 +224,7 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
         onClick={scrollNext}
         {...props}
       >
-        <HiChevronRight className='relative left-px h-6 w-6 md:h-10 md:w-10' />
+        <ChevronRightIcon className='relative left-px h-6 w-6 md:h-10 md:w-10' />
         <span className='sr-only'>Next slide</span>
       </Button>
     )

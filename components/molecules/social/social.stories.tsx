@@ -1,6 +1,6 @@
 import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
-import { Social } from './social' // Adjust the import path as necessary
+import { Social } from './social'
 
 const meta = {
   title: 'Molecules/Social',

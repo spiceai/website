@@ -2,6 +2,7 @@ export type HeroPlaygroundData = {
   title: string
   description: string
   code: React.ReactElement<HTMLElement>
+  requestUrl: string
 }
 
 export const heroPlaygroundData: HeroPlaygroundData[] = [
@@ -14,7 +15,8 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         UNIX_TIMESTAMP() - block_timestamp <span className='text-red-400'>as</span> seconds_ago
         <span className='text-red-400'> FROM</span> eth.recent_nft_mints
       </code>
-    )
+    ),
+    requestUrl: 'recent_nft_mints'
   },
   {
     title: 'Recent Ethereum Blocks',
@@ -26,7 +28,8 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         <br />
         <span className='text-red-400'> FROM</span> eth.recent_blocks
       </code>
-    )
+    ),
+    requestUrl: 'recent_ethereum_blocks'
   },
   {
     title: 'OpenSea NFT Sales Across Ethereum/Polygon',
@@ -44,7 +47,8 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         <span className='text-red-400'>ORDER BY</span> time_window{' '}
         <span className='text-red-400'>desc</span>
       </code>
-    )
+    ),
+    requestUrl: 'opensea_sales'
   },
   {
     title: 'Average Transaction Fees for Ethereum',
@@ -54,9 +58,9 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
       <code className='text-sm leading-6'>
         <span className='text-red-400'>SELECT</span> block_number, TO_TIMESTAMP(block_timestamp){' '}
         <span className='text-red-400'>as</span> block_timestamp,{' '}
-        <span className='text-red-400'>avg</span>(gas) <span className='text-red-400'>as</span>
+        <span className='text-red-400'>avg</span>(gas) <span className='text-red-400'>as</span>{' '}
         avg_gas_used,
-        <span className='text-red-400'>avg</span>(gas_price /{' '}
+        <span className='text-red-400'> avg</span>(gas_price /{' '}
         <span className='text-red-400'>1e9</span>) <span className='text-red-400'>as</span>{' '}
         avg_gas_price_in_gwei, <span className='text-red-400'>avg</span>(gas * (gas_price /{' '}
         <span className='text-red-400'>1e18</span>)) <span className='text-red-400'>as</span>{' '}
@@ -64,7 +68,8 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         <br />
         <span className='text-red-400'>GROUP BY</span> block_number, block_timestamp
       </code>
-    )
+    ),
+    requestUrl: 'average_ethereum_transaction_fee'
   },
   {
     title: 'Total Bitcoin Transferred by Block Number',
@@ -77,6 +82,7 @@ export const heroPlaygroundData: HeroPlaygroundData[] = [
         btc.recent_transactions <br />
         <span className='text-red-400'>GROUP BY</span> block_number
       </code>
-    )
+    ),
+    requestUrl: 'total_bitcoin_transferred'
   }
 ]
