@@ -5,7 +5,7 @@ export const StarsCount = async () => {
 
   if (!token) {
     console.error('GitHub token is not set in environment variables')
-    return <span>{formatStars(1200)}</span>
+    return <span>{formatStars(1700)}</span>
   }
 
   const res = await fetch(GITHUB_MAIN_REPO, {
@@ -22,7 +22,7 @@ export const StarsCount = async () => {
 
   const stars = res.stargazers_count
 
-  return <span>{formatStars(stars || 1200)}</span>
+  return <span>{formatStars(stars || 1700)}</span>
 }
 
 function formatStars(num: number): string {
