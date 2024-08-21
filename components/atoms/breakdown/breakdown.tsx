@@ -4,7 +4,7 @@ export const Breakdown = () => {
   return (
     <div>
       <Image
-        src='/breakdown.png'
+        src='/breakdown.webp'
         alt='Spice.ai breakdown'
         width={1000}
         height={500}

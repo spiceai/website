@@ -70,6 +70,7 @@ export const InstallOptions = () => {
                 isActive && 'hover:bg-transparent'
               )}
               onClick={() => setActiveTabIndex(index)}
+              aria-label={`Go to tab ${index + 1}`}
             >
               <>
                 {index === 0 && <Icon iconName='apple' className='h-7 w-7' />}

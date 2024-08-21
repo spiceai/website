@@ -1,20 +1,7 @@
 import { GITHUB_MAIN_REPO } from 'lib/constants'
 
 export const StarsCount = async () => {
-  const token = process.env.GITHUB_PAT
-
-  if (!token) {
-    console.error('GitHub token is not set in environment variables')
-    return <span>{formatStars(1700)}</span>
-  }
-
-  const res = await fetch(GITHUB_MAIN_REPO, {
-    next: { revalidate: 14400 }, // Every 4 hours
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'X-GitHub-Api-Version': '2022-11-28'
-    }
-  }).then((res) => res.json())
+  const res = await fetch(GITHUB_MAIN_REPO, { cache: 'force-cache' }).then((res) => res.json())
 
   if (!res.stargazers_count) {
     console.error('Error fetching stars count', res)
@@ -22,7 +9,7 @@ export const StarsCount = async () => {
 
   const stars = res.stargazers_count
 
-  return <span>{formatStars(stars || 1700)}</span>
+  return <span>{formatStars(stars || 1200)}</span>
 }
 
 function formatStars(num: number): string {

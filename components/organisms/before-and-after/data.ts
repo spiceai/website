@@ -9,8 +9,8 @@ export type SlideData = {
 
 export const beforeAndAfterSlides: SlideData[] = [
   {
-    imageBefore: '/before-demo.png',
-    imageAfter: '/after-demo.png',
+    imageBefore: '/before-demo.webp',
+    imageAfter: '/after-demo.webp',
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',
@@ -27,8 +27,8 @@ export const beforeAndAfterSlides: SlideData[] = [
     ]
   },
   {
-    imageBefore: '/before-demo.png',
-    imageAfter: '/after-demo.png',
+    imageBefore: '/before-demo.webp',
+    imageAfter: '/after-demo.webp',
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',
@@ -45,8 +45,8 @@ export const beforeAndAfterSlides: SlideData[] = [
     ]
   },
   {
-    imageBefore: '/before-demo.png',
-    imageAfter: '/after-demo.png',
+    imageBefore: '/before-demo.webp',
+    imageAfter: '/after-demo.webp',
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',
@@ -63,8 +63,8 @@ export const beforeAndAfterSlides: SlideData[] = [
     ]
   },
   {
-    imageBefore: '/before-demo.png',
-    imageAfter: '/after-demo.png',
+    imageBefore: '/before-demo.webp',
+    imageAfter: '/after-demo.webp',
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',

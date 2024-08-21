@@ -10,7 +10,7 @@ export const UseCases = () => {
       id='use-cases'
       className='mt-20 rounded-2xl border border-alpha-150 bg-alpha-50 p-8 pb-24 shadow-box md:p-16 xl:p-20'
     >
-      <Title variant={'medium'} className='mb-6'>
+      <Title as='h2' variant={'medium'} className='mb-6'>
         Example use-cases
       </Title>
 

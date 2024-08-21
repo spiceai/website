@@ -26,11 +26,7 @@ export const Install = () => {
         Quickstart docs
       </Button>
 
-      <video
-        src='/spice-intro.mp4'
-        className='h-[calc(100vh-100px)] w-full rounded-lg object-fill'
-        controls
-      />
+      <video src='/spice-intro.mp4' className='w-full rounded-lg object-contain' controls />
     </section>
   )
 }

@@ -26,7 +26,7 @@ export const Cta = ({ className }: { className?: string }) => {
       >
         <div className='bg-alpha-900 px-8 py-16 md:p-14 lg:w-7/12 xl:p-20'>
           <Logo variant='white' />
-          <Title as='h3' variant='medium' className='my-14 text-neutral'>
+          <Title as='h2' variant='medium' className='my-14 text-neutral'>
             Secure, highly-available access to data.{' '}
             <span className='text-primary'>Ridiculously easy setup.</span> Super fast query &
             inference.

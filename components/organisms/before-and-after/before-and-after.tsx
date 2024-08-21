@@ -36,7 +36,7 @@ export const BeforeAndAfter = () => {
 
   return (
     <section className='relative mb-32 overflow-x-clip px-4 pb-2 pt-20 md:px-0'>
-      <Title as='h3' variant='medium' className='pb-6 text-center'>
+      <Title as='h2' variant='medium' className='pb-6 text-center'>
         Before & After Spice
       </Title>
       <Paragraph className='pb-6 text-center'>

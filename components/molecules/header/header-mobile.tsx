@@ -17,6 +17,7 @@ export const HeaderMobileButton = () => {
       type='button'
       className='absolute right-2.5 top-3 z-50 text-neutral md:hidden'
       onClick={toggleMenu}
+      aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
     >
       {isMenuOpen ? <XMarkIcon className='h-6 w-6' /> : <Bars3Icon className='h-6 w-6' />}
     </button>
@@ -39,7 +40,7 @@ export const HeaderMobile = () => {
         <NavLinks />
 
         <div className='h-2 w-full border-t border-neutral-600' />
-        <button onClick={() => setIsMenuOpen(false)}>
+        <button aria-label='Close menu' onClick={() => setIsMenuOpen(false)}>
           <XMarkIcon className='h-6 w-6 text-neutral' />
         </button>
       </nav>

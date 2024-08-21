@@ -39,6 +39,7 @@ export const DotsPagination = ({
             }}
             className='p-2 md:p-3'
             key={index}
+            aria-label={`Go to slide ${index + 1}`}
           >
             <span
               className={clsx(
