@@ -79,7 +79,6 @@ export const BeforeAndAfter = () => {
                   carouselApi={api}
                   isCurrentSlide={index === current}
                   isBefore={isBefore}
-                  setIsBefore={setIsBefore}
                 />
               </CarouselItem>
             ))}
