@@ -1,11 +1,16 @@
+import { getFormattedData } from './utils'
 import { Title } from 'components/atoms/title/title'
 import { ArticlesCarousel } from './articles-carousel'
-import { getFormattedData } from './utils'
 import { Button } from 'components/atoms/button/button'
 import { QueueListIcon } from '@heroicons/react/24/outline'
 
 export const Articles = async () => {
   const data = await getFormattedData()
+
+  if (data.length === 0) {
+    // If something goes wrong with the API, we just don't show the articles section
+    return null
+  }
 
   return (
     <section className='relative mb-28 pb-0 md:py-36'>
