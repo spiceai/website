@@ -27,7 +27,19 @@ type GitHubContent = {
 
 async function fetchContents(path: string): Promise<GitHubContent[]> {
   try {
-    const response = await fetch(`${GITHUB_BLOG_REPO}/contents/${path}`, { cache: 'force-cache' })
+    const token = process.env.GITHUB_PAT
+
+    if (!token) {
+      throw new Error('GitHub token is not set in environment variables')
+    }
+
+    const response = await fetch(`${GITHUB_BLOG_REPO}/contents/${path}`, {
+      next: { revalidate: 14400 }, // Every 4 hours
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
 
     if (!response.ok) {
       throw new Error('Failed to fetch releases')
@@ -43,7 +55,19 @@ async function fetchContents(path: string): Promise<GitHubContent[]> {
 
 async function fetchPostContent(url: string) {
   try {
-    const response = await fetch(url, { cache: 'force-cache' })
+    const token = process.env.GITHUB_PAT
+
+    if (!token) {
+      throw new Error('GitHub token is not set in environment variables')
+    }
+
+    const response = await fetch(url, {
+      next: { revalidate: 14400 },
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    })
     if (!response.ok) {
       throw new Error(`Failed to fetch content from ${url}`)
     }
