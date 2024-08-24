@@ -3,6 +3,7 @@ import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 import type { Preview } from '@storybook/react'
 import { Manrope } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 
 import '../app/globals.css'
 import clsx from 'clsx'
@@ -11,6 +12,12 @@ const manrope = Manrope({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sans'
+})
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono'
 })
 
 const preview: Preview = {
@@ -35,7 +42,9 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={clsx('font-sans text-base antialiased', manrope.variable)}>
+      <div
+        className={clsx('font-sans text-base antialiased', manrope.variable, robotoMono.variable)}
+      >
         <Story />
       </div>
     )

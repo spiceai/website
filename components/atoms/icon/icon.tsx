@@ -47,6 +47,10 @@ const iconViewBox: Record<IconName, string> = {
   spinner: '0 0 16 16'
 }
 
+/**
+ *
+ * Here are the icons we couldn’t find in the Heroicons library.
+ */
 export const Icon = ({
   iconName,
   height = '24px',
