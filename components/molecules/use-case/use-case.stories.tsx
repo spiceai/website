@@ -47,7 +47,7 @@ export const LongDescription: Story = {
 export const MobileView: Story = {
   parameters: {
     viewport: {
-      defaultViewport: 'iphone5'
+      defaultViewport: 'iphone14promax'
     }
   },
   args: {

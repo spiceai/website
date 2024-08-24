@@ -1,6 +1,10 @@
+import { StaticImageData } from 'next/image'
+import ImageAfter from 'public/after-demo.webp'
+import ImageBefore from 'public/before-demo.webp'
+
 export type SlideData = {
-  imageBefore: string
-  imageAfter: string
+  imageBefore: StaticImageData
+  imageAfter: StaticImageData
   benefits: {
     textBefore: string
     textAfter: string
@@ -9,8 +13,8 @@ export type SlideData = {
 
 export const beforeAndAfterSlides: SlideData[] = [
   {
-    imageBefore: '/before-demo.webp',
-    imageAfter: '/after-demo.webp',
+    imageBefore: ImageBefore,
+    imageAfter: ImageAfter,
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',
@@ -27,8 +31,8 @@ export const beforeAndAfterSlides: SlideData[] = [
     ]
   },
   {
-    imageBefore: '/before-demo.webp',
-    imageAfter: '/after-demo.webp',
+    imageBefore: ImageBefore,
+    imageAfter: ImageAfter,
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',
@@ -45,8 +49,8 @@ export const beforeAndAfterSlides: SlideData[] = [
     ]
   },
   {
-    imageBefore: '/before-demo.webp',
-    imageAfter: '/after-demo.webp',
+    imageBefore: ImageBefore,
+    imageAfter: ImageAfter,
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',
@@ -63,8 +67,8 @@ export const beforeAndAfterSlides: SlideData[] = [
     ]
   },
   {
-    imageBefore: '/before-demo.webp',
-    imageAfter: '/after-demo.webp',
+    imageBefore: ImageBefore,
+    imageAfter: ImageAfter,
     benefits: [
       {
         textBefore: 'Without Spice, connect the data is a huge challenge.',

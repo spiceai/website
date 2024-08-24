@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { Dispatch, SetStateAction, useState } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 import { SlideData } from './data'
