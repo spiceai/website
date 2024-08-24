@@ -3,9 +3,7 @@ export const ArticleImage = ({ title }: { title: string }) => {
   const match = title.match(versionRegex)
   const shortTitle = match ? 'Spice.ai ' + match[0] : title
 
-  const imageUrl = `/api/generate-image?title=${encodeURIComponent(shortTitle)}}`
-
-  const placeholderUrl = `https://placehold.co/600x400?text=${encodeURIComponent(shortTitle)}&font=manrope`
+  const imageUrl = `/api/generate-image?title=${encodeURIComponent(shortTitle)}`
 
   return (
     <img
