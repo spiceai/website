@@ -1,16 +1,11 @@
-import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
+import { ImageResponse } from '@vercel/og'
 
 export const runtime = 'edge'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const title = searchParams.get('title') || 'Default Title'
-  const backgroundUrl = searchParams.get('backgroundUrl')
-
-  // if (!backgroundUrl) {
-  //   return new Response('Missing backgroundUrl parameter', { status: 400 })
-  // }
 
   return new ImageResponse(
     (
@@ -22,17 +17,21 @@ export async function GET(request: NextRequest) {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#fff',
-          fontSize: 32,
-          fontWeight: 600,
-          backgroundImage: "url('https://localhost:3000/bg-article.png')"
+          backgroundColor: 'black',
+          fontFamily: 'Manrope',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundImage: "url('https://oss-website-spice.vercel.app/bg-articles.png')"
         }}
       >
         <div tw='flex flex-col w-full h-full items-center justify-center '>
-          <div tw='bg-gray-50 flex w-full'>
-            <div tw='flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8'>
-              <h2 tw='flex flex-col text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left'>
-                <span tw='text-indigo-600'>{title}</span>
+          <div tw=' flex w-full'>
+            <div tw='flex flex-col md:flex-row w-full md:items-center justify-between p-8'>
+              <h2
+                style={{ fontFamily: 'Arial' }}
+                tw='flex flex-col text-3xl ml-20 w-96 mb-32 sm:text-4xl font-bold tracking-tight text-gray-900 text-left'
+              >
+                <span tw='text-white'>{title}</span>
               </h2>
             </div>
           </div>
