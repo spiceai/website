@@ -16,7 +16,7 @@ const manrope = Manrope({
 const preview: Preview = {
   tags: ['autodocs'],
   parameters: {
-    docs: { toc: true },
+    docs: { toc: true, class: 'text-base' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -35,7 +35,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={clsx('font-sans antialiased', manrope.variable)}>
+      <div className={clsx('font-sans text-base antialiased', manrope.variable)}>
         <Story />
       </div>
     )
