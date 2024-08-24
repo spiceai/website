@@ -1,9 +1,9 @@
 import React from 'react'
+import { Manrope } from 'next/font/google'
+import { Roboto_Mono } from 'next/font/google'
 import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 import type { Preview } from '@storybook/react'
-import { Manrope } from 'next/font/google'
-import { Roboto_Mono } from 'next/font/google'
 
 import '../app/globals.css'
 import clsx from 'clsx'
