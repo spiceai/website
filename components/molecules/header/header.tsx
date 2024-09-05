@@ -14,7 +14,7 @@ export const NavLinks = () => (
       QuickStarts
     </Link>
     <Link
-      href='https://github.com/spiceai/quickstarts/blob/trunk/README.md'
+      href='https://github.com/spiceai/samples/blob/trunk/README.md'
       target='_blank'
       rel='noopener noreferrer'
     >
