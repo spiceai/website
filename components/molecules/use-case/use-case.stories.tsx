@@ -18,7 +18,8 @@ export const Default: Story = {
     useCaseData: {
       title: 'Example Use Case',
       description: 'This is a description of the example use case.',
-      buttonText: 'Learn More'
+      buttonText: 'Learn More',
+      buttonLink: 'https://example.com'
     }
   }
 }
@@ -28,7 +29,8 @@ export const LongTitle: Story = {
     useCaseData: {
       title: 'This is a very long title that might wrap to multiple lines',
       description: 'A short description.',
-      buttonText: 'Learn More'
+      buttonText: 'Learn More',
+      buttonLink: 'https://example.com'
     }
   }
 }
@@ -39,7 +41,8 @@ export const LongDescription: Story = {
       title: 'Short Title',
       description:
         'This is a very long description that goes into great detail about the use case. It might span multiple lines and really test the layout of the component.',
-      buttonText: 'Learn More'
+      buttonText: 'Learn More',
+      buttonLink: 'https://example.com'
     }
   }
 }
@@ -54,7 +57,8 @@ export const MobileView: Story = {
     useCaseData: {
       title: 'Mobile Use Case',
       description: 'This is how the use case looks on mobile devices.',
-      buttonText: 'Learn More'
+      buttonText: 'Learn More',
+      buttonLink: 'https://example.com'
     }
   }
 }
@@ -69,7 +73,8 @@ export const TabletView: Story = {
     useCaseData: {
       title: 'Tablet Use Case',
       description: 'This is how the use case looks on tablet devices.',
-      buttonText: 'Learn More'
+      buttonText: 'Learn More',
+      buttonLink: 'https://example.com'
     }
   }
 }
