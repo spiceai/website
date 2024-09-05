@@ -1,6 +1,7 @@
 import { Manrope } from 'next/font/google'
 import { Roboto_Mono } from 'next/font/google'
 import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 
 import { Footer } from 'components/organisms/footer/footer'
 import './globals.css'
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
       </body>
+      <Analytics />
     </html>
   )
 }
