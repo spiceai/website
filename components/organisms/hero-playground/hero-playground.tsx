@@ -16,19 +16,18 @@ export const HeroPlayground = () => {
             variant={'large'}
             className='mx-auto mb-6 mt-7 md:mt-0 md:text-center xl:max-w-[1020px]'
           >
-            Spice is a powerful, portable{' '}
-            <span className='text-primary'>runtime for developers.</span>
+            Build fast <span className='text-primary'>data and AI</span> APIs.
           </Title>
 
           <Paragraph className='mb-6 md:text-center'>
-            Unified SQL Interface for effortlessly materializing, accelerating, and querying data
-            from any database, data warehouse, or data lake.
+            Spice makes it easy for developers to create production-ready
+            <br />
+            AI-native data warehouses using Apache Arrow, DuckDB, and SQLite.
           </Paragraph>
 
           <div className='mb-14 grid grid-cols-2 items-center justify-center gap-3 md:flex'>
             <Button
-              href='https://docs.spiceai.org/installation'
-              target='_blank'
+              href='/#install-cli'
               rel='noopener noreferrer'
               variant={'primary'}
               className='border border-alpha-900 hover:border-primary'

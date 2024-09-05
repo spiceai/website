@@ -21,7 +21,7 @@ const buttonVariants = cva('rounded-xl font-semibold transition-all outline-none
       negative: 'bg-neutral hover:bg-primary',
       tag: 'px-4 py-3 md:hover:bg-alpha-50 md:active:bg-alpha-100',
       tagSmall:
-        'bg-alpha-100 rounded-sm md:hover:bg-alpha-150 active:bg-alpha-200 text-sm leading-6 text-alpha-700'
+        'bg-alpha-100 rounded-sm md:hover:bg-alpha-150 active:bg-alpha-200 text-xs leading-6 text-alpha-700'
     },
     size: {
       sm: 'px-3 py-2 text-base',

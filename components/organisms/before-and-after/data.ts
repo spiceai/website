@@ -17,70 +17,16 @@ export const beforeAndAfterSlides: SlideData[] = [
     imageAfter: ImageAfter,
     benefits: [
       {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
+        textBefore: 'Slow 15 sec queries across 100B+ rows.',
+        textAfter: 'Simple drop-in solution to materialize recent data.'
       },
       {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
+        textBefore: 'Poor user experience with slow page loads.',
+        textAfter: 'Significantly better user experience.'
       },
       {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      }
-    ]
-  },
-  {
-    imageBefore: ImageBefore,
-    imageAfter: ImageAfter,
-    benefits: [
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      },
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      },
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      }
-    ]
-  },
-  {
-    imageBefore: ImageBefore,
-    imageAfter: ImageAfter,
-    benefits: [
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      },
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      },
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      }
-    ]
-  },
-  {
-    imageBefore: ImageBefore,
-    imageAfter: ImageAfter,
-    benefits: [
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      },
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
-      },
-      {
-        textBefore: 'Without Spice, connect the data is a huge challenge.',
-        textAfter: 'Spice did all the hard work of connecting the app to data.'
+        textBefore: 'Unnecessary Databricks workspace expense.',
+        textAfter: 'Faster, more resilient queries at lower cost.'
       }
     ]
   }

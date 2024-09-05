@@ -13,10 +13,10 @@ export const Articles = async () => {
   }
 
   return (
-    <section className='relative mb-28 pb-0 md:py-36'>
+    <section className='relative mb-28 pb-0 md:py-16'>
       <div className='flex items-center justify-between gap-4 pb-6 md:pb-14'>
         <Title as='h2' variant='medium' className='text-center md:text-left'>
-          Latest Articles
+          Blog Highlights
         </Title>
 
         <Button

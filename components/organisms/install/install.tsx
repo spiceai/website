@@ -5,28 +5,50 @@ import { Title } from 'components/atoms/title/title'
 
 export const Install = () => {
   return (
-    <section className='my-20 rounded-lg border border-alpha-150 bg-neutral p-8 md:p-16 xl:p-20'>
+    <section
+      id='install-cli'
+      className='my-20 rounded-lg border border-alpha-150 bg-neutral p-8 md:p-16 xl:p-20'
+    >
       <Title variant='medium' className='mb-6'>
         Install the Spice CLI
       </Title>
       <Paragraph variant='large' className='max-w-3xl'>
-        Unified SQL Interface for effortlessly materializing, accelerating, and querying data from
-        any database, data warehouse, or data lake.
+        Try materializing and querying Parquet files from S3, on your laptop, in under 60 seconds.
       </Paragraph>
 
       <InstallOptions />
 
+      <video src='/spice-intro.mp4' className='mt-14 w-full rounded-lg object-contain' controls />
+
       <Button
-        href='https://docs.spice.ai/'
+        href='https://github.com/spiceai/quickstarts'
         target='_blank'
         rel='noopener noreferrer'
         variant='primary'
-        className='mb-14 mt-6 md:my-14'
+        className='mt-6 md:mt-14'
       >
-        Quickstart docs
+        Quickstarts
       </Button>
 
-      <video src='/spice-intro.mp4' className='w-full rounded-lg object-contain' controls />
+      <Button
+        href='https://github.com/spiceai/samples'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant='primary'
+        className='ml-6 mt-6 md:mt-14'
+      >
+        Samples
+      </Button>
+
+      <Button
+        href='https://docs.spiceai.org/'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant='primary'
+        className='ml-6 mt-6 md:mt-14'
+      >
+        Docs
+      </Button>
     </section>
   )
 }

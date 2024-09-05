@@ -8,9 +8,9 @@ import clsx from 'clsx'
 import { Header } from 'components/molecules/header/header'
 
 export const metadata: Metadata = {
-  title: 'Spice.ai',
+  title: 'Spice.ai OSS',
   description:
-    'Composable, ready-to-use data and AI infrastructure pre-loaded with web3 data. Accelerate development of the next generation of intelligent software.'
+    'Spice makes it easy for developers to create production-ready AI-native data warehouses using Apache Arrow, DuckDB, and SQLite.'
 }
 
 const manrope = Manrope({

@@ -11,7 +11,7 @@ export const UseCases = () => {
       className='mt-20 rounded-2xl border border-alpha-150 bg-alpha-50 p-8 pb-24 shadow-box md:p-16 xl:p-20'
     >
       <Title as='h2' variant={'medium'} className='mb-6'>
-        Example use-cases
+        Use-Cases
       </Title>
 
       <Paragraph className='mb-6 md:max-w-3xl'>
