@@ -1,5 +1,6 @@
 'use client'
 
+import clsx from 'clsx'
 import Image from 'next/image'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
@@ -11,11 +12,12 @@ import { cn } from 'lib/utils'
 
 type BeforeAndAfterSlideProps = {
   slideData: SlideData
-  carouselApi: CarouselApi
-  isCurrentSlide: boolean
+  carouselApi?: CarouselApi
+  isCurrentSlide?: boolean
   isBefore: boolean
 }
 
+//                className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)] xl:basis-[calc(100%-10rem)]'
 export const BeforeAndAfterSlide = ({
   slideData,
   carouselApi,
@@ -23,38 +25,45 @@ export const BeforeAndAfterSlide = ({
   isBefore
 }: BeforeAndAfterSlideProps) => {
   return (
-    <div className='relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 pb-10 pt-28 md:px-20'>
-      <Image
-        src={isBefore ? slideData.imageBefore : slideData.imageAfter}
-        alt='Before and After Slide'
-        width={1600}
-        height={800}
-        className='w-full object-contain lg:h-80'
-      />
+    <div className={clsx(!carouselApi && 'px-4 sm:px-16 xl:px-20')}>
+      <div
+        className={clsx(
+          'relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 pb-10 pt-28 md:px-20',
+          !carouselApi && 'mx-auto max-w-screen-xl'
+        )}
+      >
+        <Image
+          src={isBefore ? slideData.imageBefore : slideData.imageAfter}
+          alt='Before and After Slide'
+          width={1600}
+          height={800}
+          className='w-full object-contain lg:h-80'
+        />
 
-      <div className='mt-14 grid grid-cols-1 gap-6 lg:mt-12 lg:grid-cols-3'>
-        {slideData.benefits.map((benefit, index) => (
-          <Benefit
-            key={index}
-            isBefore={isBefore}
-            textBefore={benefit.textBefore}
-            textAfter={benefit.textAfter}
-          />
-        ))}
+        <div className='mt-14 grid grid-cols-1 gap-6 lg:mt-12 lg:grid-cols-3'>
+          {slideData.benefits.map((benefit, index) => (
+            <Benefit
+              key={index}
+              isBefore={isBefore}
+              textBefore={benefit.textBefore}
+              textAfter={benefit.textAfter}
+            />
+          ))}
+        </div>
+
+        {/* Desktop arrows */}
+
+        {carouselApi && !isCurrentSlide && (
+          <>
+            <ArrowButton className='right-1.5 xl:right-3' onClick={() => carouselApi?.scrollPrev()}>
+              <ChevronLeftIcon className='relative right-px h-6 w-6' />
+            </ArrowButton>
+            <ArrowButton className='left-1.5 xl:left-3' onClick={() => carouselApi?.scrollNext()}>
+              <ChevronRightIcon className='relative left-px h-6 w-6' />
+            </ArrowButton>
+          </>
+        )}
       </div>
-
-      {/* Desktop arrows */}
-
-      {!isCurrentSlide && (
-        <>
-          <ArrowButton className='right-1.5 xl:right-3' onClick={() => carouselApi?.scrollPrev()}>
-            <ChevronLeftIcon className='relative right-px h-6 w-6' />
-          </ArrowButton>
-          <ArrowButton className='left-1.5 xl:left-3' onClick={() => carouselApi?.scrollNext()}>
-            <ChevronRightIcon className='relative left-px h-6 w-6' />
-          </ArrowButton>
-        </>
-      )}
     </div>
   )
 }
