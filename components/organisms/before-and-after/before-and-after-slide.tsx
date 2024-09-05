@@ -17,7 +17,6 @@ type BeforeAndAfterSlideProps = {
   isBefore: boolean
 }
 
-//                className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)] xl:basis-[calc(100%-10rem)]'
 export const BeforeAndAfterSlide = ({
   slideData,
   carouselApi,
