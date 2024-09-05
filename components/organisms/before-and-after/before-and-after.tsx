@@ -100,12 +100,14 @@ export const BeforeAndAfter = () => {
         )}
       </div>
 
-      <DotsPagination
-        api={api}
-        current={current}
-        className='-bottom-[60px] md:block'
-        dotsLength={beforeAndAfterSlides.length}
-      />
+      {beforeAndAfterSlides.length > 1 ? (
+        <DotsPagination
+          api={api}
+          current={current}
+          className='-bottom-[60px] md:block'
+          dotsLength={beforeAndAfterSlides.length}
+        />
+      ) : null}
     </section>
   )
 }
