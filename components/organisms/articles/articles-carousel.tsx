@@ -39,8 +39,6 @@ export const ArticlesCarousel = ({ data }: { data: ProcessedFile[] }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* <CarouselPrevious />
-        <CarouselNext /> */}
       </Carousel>
 
       <DotsPagination api={api} current={current} dotsLength={data.length} />

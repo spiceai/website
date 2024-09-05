@@ -37,10 +37,10 @@ export const BeforeAndAfter = () => {
   return (
     <section className='relative mb-32 overflow-x-clip px-4 pb-2 pt-20 md:px-0'>
       <Title as='h2' variant='medium' className='pb-6 text-center'>
-        Before & After Spice
+        Before Spice to With Spice
       </Title>
       <Paragraph className='pb-6 text-center'>
-        Transformation with Spice: Before and After for scenario 1, scenario 2 or scenario 3.
+        See how Spice has been deployed in production architectures.
       </Paragraph>
 
       <div className='relative'>
@@ -57,7 +57,7 @@ export const BeforeAndAfter = () => {
             className={clsx(!isBefore && 'bg-alpha-100')}
             onClick={() => setIsBefore(false)}
           >
-            After Spice
+            With Spice
           </Button>
         </div>
         <Carousel

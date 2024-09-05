@@ -10,22 +10,24 @@ export const Footer = () => {
     <Container>
       <footer className='flex flex-col gap-8 py-16 pt-0 md:py-20'>
         <div className='flex flex-col items-center justify-between gap-8 md:flex-row'>
-          <Logo variant='dark' />
+          <Link href='https://spice.ai' target='_blank'>
+            <Logo variant='dark' />
+          </Link>
 
           <Social />
         </div>
         <div className='flex flex-col items-center justify-between gap-6 md:flex-row'>
           <nav className='flex items-center gap-6 md:gap-10'>
-            <Link href='#' variant='large'>
+            <Link href='https://docs.spice.ai/security' variant='large'>
               Security
             </Link>
-            <Link href='#' variant='large'>
+            <Link href='https://docs.spiceai.org' variant='large'>
               Docs
             </Link>
-            <Link href='#' variant='large'>
+            <Link href='https://blog.spiceai.org' variant='large'>
               Blog
             </Link>
-            <Link href='#' variant='large'>
+            <Link href='mailto:hey@spice.ai' variant='large'>
               Contact
             </Link>
           </nav>
@@ -34,10 +36,18 @@ export const Footer = () => {
               © {new Date().getFullYear()} Spice AI, Inc. All rights reserved.
             </Paragraph>
             <div className='flex items-center gap-6'>
-              <Link variant='large' href='#' className='text-base font-normal leading-7'>
+              <Link
+                variant='large'
+                href='https://docs.spice.ai/privacy'
+                className='text-base font-normal leading-7'
+              >
                 Privacy Policy
               </Link>
-              <Link variant='large' href='#' className='text-base font-normal leading-7'>
+              <Link
+                variant='large'
+                href='https://docs.spice.ai/terms'
+                className='text-base font-normal leading-7'
+              >
                 Terms of Service
               </Link>
             </div>

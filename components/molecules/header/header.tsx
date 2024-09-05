@@ -9,11 +9,15 @@ import { HeaderProvider } from './header-context'
 
 export const NavLinks = () => (
   <>
-    <Link href='#use-cases'>Use cases</Link>
+    <Link href='#use-cases'>Use Cases</Link>
     <Link href='https://github.com/spiceai/quickstarts' target='_blank' rel='noopener noreferrer'>
       QuickStarts
     </Link>
-    <Link href='https://github.com/spiceai/samples ' target='_blank' rel='noopener noreferrer'>
+    <Link
+      href='https://github.com/spiceai/quickstarts/blob/trunk/README.md'
+      target='_blank'
+      rel='noopener noreferrer'
+    >
       Samples
     </Link>
     <Link href='https://docs.spiceai.org' target='_blank' rel='noopener noreferrer'>
@@ -30,7 +34,6 @@ export const Header = () => {
           <div className='w-10'>
             <Logo variant={'logotype'} width={40} height={40} />
           </div>
-
           <nav className='flex items-center gap-6 whitespace-pre pl-8 md:pl-0'>
             <div className='hidden items-center gap-6 md:flex'>
               <NavLinks />
@@ -46,8 +49,7 @@ export const Header = () => {
             </Link>
           </nav>
           <Button
-            href='https://docs.spiceai.org/installation'
-            target='_blank'
+            href='/#install-cli'
             rel='noopener noreferrer'
             variant={'negative'}
             size={'sm'}

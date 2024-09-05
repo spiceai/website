@@ -14,10 +14,13 @@ export default function LandingPage() {
 
       <Container>
         <Features />
-        <UseCases />
       </Container>
 
       <BeforeAndAfter />
+
+      <Container>
+        <UseCases />
+      </Container>
 
       <Container>
         <Install />

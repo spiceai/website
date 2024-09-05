@@ -23,7 +23,7 @@ export const BeforeAndAfterSlide = ({
   isBefore
 }: BeforeAndAfterSlideProps) => {
   return (
-    <div className='relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 py-28 md:px-20'>
+    <div className='relative overflow-hidden rounded-lg border border-alpha-150 bg-neutral px-6 pb-10 pt-28 md:px-20'>
       <Image
         src={isBefore ? slideData.imageBefore : slideData.imageAfter}
         alt='Before and After Slide'

@@ -1,7 +1,16 @@
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { Title } from 'components/atoms/title/title'
+import Link from 'next/link'
 
-export const Feature = ({ title, description }: { title: string; description: string }) => {
+export const Feature = ({
+  title,
+  description,
+  docsLink
+}: {
+  title: string
+  description: string
+  docsLink?: string
+}) => {
   return (
     <div className='flex flex-col items-start gap-4 rounded-sm border border-alpha-150 px-6 py-10 shadow-box md:gap-10 md:px-10'>
       <Squares />
@@ -9,6 +18,16 @@ export const Feature = ({ title, description }: { title: string; description: st
         {title}
       </Title>
       <Paragraph>{description}</Paragraph>
+      {docsLink && (
+        <Link
+          className='hover:text-primary-500'
+          href={docsLink}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Docs
+        </Link>
+      )}
     </div>
   )
 }

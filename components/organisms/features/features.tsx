@@ -5,31 +5,30 @@ export const Features = () => {
   return (
     <section className='mx-auto mt-20 px-6 md:max-w-[843px] md:px-0'>
       <Title className='mb-14'>
-        We believe you can have more control,{' '}
-        <span className='text-primary'>accelerate AI adoption</span>, & do it more securely and at a
-        lower cost than you are doing today.
+        Spice is a portable, open-source runtime for fast, last-mile SQL query and AI inference.
       </Title>
 
       <div className='flex flex-col gap-6 md:flex-row'>
         <div className='flex w-full flex-col gap-6 md:w-1/2'>
           <Feature
-            title='Drop-in solution - change connection string.'
-            description='Compare the number of NFTs being sold in a five-minute window across both Polygon and Ethereum.'
+            title='Federated Data Access'
+            description='Query structured and unstructed data using SQL across databases, data warehouses, and data lakes.'
+            docsLink='https://docs.spiceai.org/features/federated-queries'
           />
           <Feature
-            title='Spice did all the hard work of connecting the app to data.'
-            description='Compare the number of NFTs being sold in a five-minute window across both Polygon'
+            title='Self-Hostable and Open-Source'
+            description='Self-hostable binary or Docker image, platform-agnostic, and Apache 2.0 licensed. Built on industry standard technologies including Apache DataFusion and Apache Arrow.'
           />
         </div>
         <div className='flex w-full flex-col gap-6 md:w-1/2 md:pt-20'>
           <Feature
-            title='Faster, more reliable, and more resilient, at lower cost.'
-            description='Compare the number of NFTs being sold in a five-minute window across both Polygon and Ethereum. Compare the number of NFTs being sold in a five-minute window across both Polygon and Ethereum.'
+            title='Data Acceleration'
+            description='Materialize data and content in DuckDB, SQLite, and PostgreSQL; in-memory or on disk. Results caching included.'
+            docsLink='https://docs.spiceai.org/features/local-acceleration'
           />
           <Feature
-            title='Simple'
-            description='Spice is a drop-in solution that makes
-it easy to query data wherever it lives.'
+            title='Secure AI/ML Gateway'
+            description='Load-balance across local models and OpenAI compatible endpoints with full observability, metrics, telemetry, query/task history, data flows, and tracing.'
           />
         </div>
       </div>
