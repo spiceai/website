@@ -18,6 +18,7 @@ import { BeforeAndAfterSlide } from './before-and-after-slide'
 import { Paragraph } from 'components/atoms/paragraph/paragraph'
 import { DotsPagination } from 'components/molecules/dots-pagination/dots-pagination'
 import { Button } from 'components/atoms/button/button'
+import { Container } from 'components/atoms/container/container'
 
 export const BeforeAndAfter = () => {
   const [api, setApi] = useState<CarouselApi>()
@@ -60,32 +61,43 @@ export const BeforeAndAfter = () => {
             With Spice
           </Button>
         </div>
-        <Carousel
-          opts={{
-            align: 'center',
-            loop: true
-          }}
-          setApi={setApi}
-          className='w-full'
-        >
-          <CarouselContent>
-            {beforeAndAfterSlides.map((slideData, index) => (
-              <CarouselItem
-                key={index}
-                className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)] xl:basis-[calc(100%-10rem)]'
-              >
-                <BeforeAndAfterSlide
-                  slideData={slideData}
-                  carouselApi={api}
-                  isCurrentSlide={index === current}
-                  isBefore={isBefore}
-                />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        {beforeAndAfterSlides.length > 1 ? (
+          <Carousel
+            opts={{
+              align: 'center',
+              loop: true
+            }}
+            setApi={setApi}
+            className='w-full'
+          >
+            <CarouselContent>
+              {beforeAndAfterSlides.map((slideData, index) => (
+                <CarouselItem
+                  key={index}
+                  className='sm:basis-[calc(100%-6rem)] md:max-w-screen-xl md:basis-[calc(100%-8rem)] xl:basis-[calc(100%-10rem)]'
+                >
+                  <BeforeAndAfterSlide
+                    slideData={slideData}
+                    carouselApi={api}
+                    isCurrentSlide={index === current}
+                    isBefore={isBefore}
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        ) : (
+          <Container>
+            <BeforeAndAfterSlide
+              slideData={beforeAndAfterSlides[0]}
+              carouselApi={api}
+              isBefore={isBefore}
+              isCurrentSlide
+            />
+          </Container>
+        )}
       </div>
 
       <DotsPagination
