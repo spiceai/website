@@ -49,7 +49,7 @@ const buttonVariants = cva('rounded-xl font-semibold transition-all outline-none
     },
     {
       variant: ['tagSmall'],
-      className: 'px-2 py-1'
+      className: 'text-sm px-2 py-0.5'
     }
   ]
 })

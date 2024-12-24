@@ -29,6 +29,7 @@ export const Features = () => {
           <Feature
             title='Secure AI/ML Gateway'
             description='Load-balance across local models and OpenAI compatible endpoints with full observability, metrics, telemetry, query/task history, data flows, and tracing.'
+            docsLink='https://docs.spiceai.org/features/large-language-models'
           />
         </div>
       </div>
