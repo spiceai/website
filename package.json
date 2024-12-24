@@ -20,7 +20,7 @@
     "@radix-ui/react-visually-hidden": "^1.1.0",
     "@vercel/analytics": "^1.3.1",
     "@vercel/og": "^0.6.2",
-    "babel-plugin-react-compiler": "0.0.0-experimental-7d62301-20240819",
+    "babel-plugin-react-compiler": "0.0.0-experimental-7449567-20240905",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.2.1",
