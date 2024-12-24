@@ -34,12 +34,12 @@ export async function GET(request: NextRequest) {
               backgroundSize: '100% 100%'
             }}
           >
-            <div tw='flex flex-col w-full h-full items-center justify-center'>
-              <div tw='flex w-full'>
-                <div tw='flex flex-col md:flex-row w-full md:items-center justify-between p-8'>
+            <div className='flex flex-col w-full h-full items-center justify-center'>
+              <div className='flex w-full'>
+                <div className='flex flex-col md:flex-row w-full md:items-center justify-between p-8'>
                   <h2
                     style={{ fontFamily: 'Arial, sans-serif' }}
-                    tw='flex flex-col text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white text-left ml-4 sm:ml-8 lg:ml-36 w-full sm:w-3/4 lg:w-96 mt-10'
+                    className='flex flex-col text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white text-left ml-4 sm:ml-8 lg:ml-36 w-full sm:w-3/4 lg:w-96 mt-10'
                   >
                     {title}
                   </h2>
