@@ -15,7 +15,7 @@ export const BeforeAndAfter = () => {
   return (
     <section className='relative mb-32 overflow-x-clip px-4 pb-2 pt-20 md:px-0'>
       <Title as='h2' variant='medium' className='pb-6 text-center'>
-        Before Spice to With Spice
+        Before and With Spice
       </Title>
       <Paragraph className='pb-6 text-center'>
         See how Spice has been deployed in production architectures.

@@ -7,31 +7,31 @@ export type UseCaseData = {
 
 export const dataUseCases: UseCaseData[] = [
   {
-    title: 'Faster applications and frontends',
+    title: 'Agentic AI Applications',
     description:
-      'Accelerate and co-locate datasets with applications and frontends, to serve more concurrent queries and users with faster page loads and data updates',
-    buttonText: 'Try the CQRS sample app',
-    buttonLink:
-      'https://github.com/spiceai/samples/tree/trunk/acceleration#local-materialization-and-acceleration-cqrs-sample'
+      'Build data-grounded AI apps and agents with local or hosted models, LLM memory, evals, and observability.',
+    buttonText: 'Using the OpenAI SDK',
+    buttonLink: 'https://github.com/spiceai/cookbook/blob/trunk/openai_sdk/README.md'
   },
   {
-    title: 'Faster dashboards, analytics, and BI',
-    description: 'Faster, more responsive dashboards without massive compute costs.',
-    buttonText: 'Watch the Apache Superset demo',
-    buttonLink: 'https://github.com/spiceai/samples/blob/trunk/sales-bi/README.md'
+    title: 'Database CDN',
+    description:
+      'Co-locate working sets of data in Arrow, SQLite, and DuckDB with applications for fast, sub-second query.',
+    buttonText: 'Accelerating data with DuckDB',
+    buttonLink: 'https://github.com/spiceai/cookbook/blob/trunk/duckdb/accelerator/README.md'
   },
   {
-    title: 'Faster data pipelines, ML training and inferencing',
+    title: 'Retrieval-Augmented Generation (RAG)',
     description:
-      'Co-locate datasets in pipelines where the data is needed to minimize data-movement and improve query performance.',
-    buttonText: 'Predict hard drive failure with the SMART data demo',
-    buttonLink: 'https://github.com/spiceai/demos/tree/trunk/smart-demo#spiceai-smart-demo'
+      'Ensure AI is grounded in data with high-performance search and text-to-SQL, across a semantic knowledge layer.',
+    buttonText: 'Text-to-SQL',
+    buttonLink: 'https://github.com/spiceai/cookbook/blob/trunk/text-to-sql/README.md'
   },
   {
-    title: 'Easily query many data sources',
+    title: 'Distributed Data Mesh',
     description:
-      'Federated SQL query across databases, data warehouses, and data lakes using Data Connectors.',
-    buttonText: 'Data Connectors',
-    buttonLink: 'https://docs.spiceai.org/data-connectors'
+      'Use SQL to query across databases, data warehouses, and data lakes with advanced federation.',
+    buttonText: 'Federated SQL Query',
+    buttonLink: 'https://github.com/spiceai/cookbook/blob/trunk/federation/README.md'
   }
 ]

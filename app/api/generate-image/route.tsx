@@ -34,12 +34,43 @@ export async function GET(request: NextRequest) {
               backgroundSize: '100% 100%'
             }}
           >
-            <div className='flex flex-col w-full h-full items-center justify-center'>
-              <div className='flex w-full'>
-                <div className='flex flex-col md:flex-row w-full md:items-center justify-between p-8'>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+                height: '100%',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  width: '100%'
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    width: '100%',
+                    justifyContent: 'space-between',
+                    padding: '32px'
+                  }}
+                >
                   <h2
-                    style={{ fontFamily: 'Arial, sans-serif' }}
-                    className='flex flex-col text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white text-left ml-4 sm:ml-8 lg:ml-36 w-full sm:w-3/4 lg:w-96 mt-10'
+                    style={{
+                      fontFamily: 'Arial, sans-serif',
+                      fontSize: '48px',
+                      fontWeight: 'bold',
+                      letterSpacing: '-0.05em',
+                      color: 'white',
+                      textAlign: 'left',
+                      marginLeft: '80px',
+                      width: '384px',
+                      marginTop: '40px'
+                    }}
                   >
                     {title}
                   </h2>

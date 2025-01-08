@@ -28,8 +28,8 @@ export const Cta = ({ className }: { className?: string }) => {
           <Logo variant='white' />
           <Title as='h2' variant='medium' className='my-14 text-neutral'>
             Secure, highly-available access to data.{' '}
-            <span className='text-primary'>Ridiculously easy setup.</span> Super fast query & AI
-            inference.
+            <span className='text-primary'>Ridiculously easy setup.</span> Super fast data-grounded
+            AI.
           </Title>
 
           <div className='flex items-center gap-6'>

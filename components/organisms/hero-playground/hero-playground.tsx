@@ -16,13 +16,17 @@ export const HeroPlayground = () => {
             variant={'large'}
             className='mx-auto mb-6 mt-7 md:mt-0 md:text-center xl:max-w-[1020px]'
           >
-            Build fast <span className='text-primary'>data and AI</span> APIs.
+            <span className='text-primary'>AI apps and agents</span>
+            <br /> that work.
           </Title>
 
           <Paragraph className='mb-6 md:text-center'>
-            Spice makes it easy for developers to create production-ready
-            <br />
-            AI-native data warehouses using Apache Arrow, DuckDB, and SQLite.
+            Build with confidence, knowing your AI is not hallucinating, but is accurate and
+            grounded in data.
+          </Paragraph>
+
+          <Paragraph className='mb-6 md:text-center'>
+            Spice is an open-source SQL query and AI compute engine, built in Rust, for developers.
           </Paragraph>
 
           <div className='mb-14 grid grid-cols-2 items-center justify-center gap-3 md:flex'>
