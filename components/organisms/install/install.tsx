@@ -21,23 +21,13 @@ export const Install = () => {
       <video src='/spice-intro.mp4' className='mt-14 w-full rounded-lg object-contain' controls />
 
       <Button
-        href='https://github.com/spiceai/quickstarts'
-        target='_blank'
-        rel='noopener noreferrer'
-        variant='primary'
-        className='mt-6 md:mt-14'
-      >
-        Quickstarts
-      </Button>
-
-      <Button
-        href='https://github.com/spiceai/samples'
+        href='https://github.com/spiceai/cookbook#spiceai-oss-cookbook'
         target='_blank'
         rel='noopener noreferrer'
         variant='primary'
         className='ml-6 mt-6 md:mt-14'
       >
-        Samples
+        Cookbook
       </Button>
 
       <Button
@@ -48,6 +38,16 @@ export const Install = () => {
         className='ml-6 mt-6 md:mt-14'
       >
         Docs
+      </Button>
+
+      <Button
+        href='https://docs.spiceai.org/api'
+        target='_blank'
+        rel='noopener noreferrer'
+        variant='primary'
+        className='ml-6 mt-6 md:mt-14'
+      >
+        API
       </Button>
     </section>
   )
