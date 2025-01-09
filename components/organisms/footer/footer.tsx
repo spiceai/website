@@ -33,19 +33,19 @@ export const Footer = () => {
           </nav>
           <div className='flex flex-col items-center gap-6 md:flex-row'>
             <Paragraph variant='medium' className='text-base'>
-              © {new Date().getFullYear()} Spice AI, Inc. All rights reserved.
+              Copyright © 2025 Spice AI, Inc. All rights reserved.
             </Paragraph>
             <div className='flex items-center gap-6'>
               <Link
                 variant='large'
-                href='https://docs.spice.ai/privacy'
+                href='https://docs.spice.ai/legal/privacy'
                 className='text-base font-normal leading-7'
               >
                 Privacy Policy
               </Link>
               <Link
                 variant='large'
-                href='https://docs.spice.ai/terms'
+                href='https://docs.spice.ai/legal/terms'
                 className='text-base font-normal leading-7'
               >
                 Terms of Service

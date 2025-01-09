@@ -14,6 +14,7 @@ import { cn } from 'lib/utils'
 import andy from 'public/andy.png'
 import barracuda from 'public/barracuda.png'
 import { StarsCount } from 'components/atoms/stars-count/stars-count'
+import Link from 'next/link'
 
 export const Cta = ({ className }: { className?: string }) => {
   return (
@@ -44,7 +45,7 @@ export const Cta = ({ className }: { className?: string }) => {
               <ArrowRightIcon className='h-6 w-6' />
               Installation
             </Button>
-            <a
+            <Link
               href='https://github.com/spiceai/spiceai'
               target='_blank'
               rel='noopener noreferrer'
@@ -59,7 +60,7 @@ export const Cta = ({ className }: { className?: string }) => {
               <Paragraph variant='large' className='font-medium text-neutral'>
                 <StarsCount />
               </Paragraph>
-            </a>
+            </Link>
           </div>
         </div>
         <div className='flex flex-col justify-between gap-6 bg-alpha-800 px-8 py-16 md:p-14 lg:w-5/12 xl:p-20'>
