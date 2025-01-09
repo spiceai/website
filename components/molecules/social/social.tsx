@@ -1,5 +1,6 @@
 import { Icon } from 'components/atoms/icon/icon'
 import { Title } from 'components/atoms/title/title'
+import Link from 'next/link'
 
 export const Social = () => {
   const iconClasses = 'h-8 w-8 hover:text-primary transition-colors active:text-red-700'
@@ -11,38 +12,38 @@ export const Social = () => {
         </Title>
       </div>
       <div className='flex items-center gap-6'>
-        <a
+        <Link
           href='https://github.com/spiceai/spiceai'
           target='_blank'
           rel='noreferrer'
           aria-label='GitHub repository for SpiceAI'
         >
           <Icon iconName='github' className={iconClasses} />
-        </a>
-        <a
+        </Link>
+        <Link
           href='https://x.com/spice_ai'
           target='_blank'
           rel='noreferrer'
           aria-label='SpiceAI on Twitter'
         >
           <Icon iconName='twitter' className='h-7 w-7 hover:text-primary' />
-        </a>
-        <a
+        </Link>
+        <Link
           href='https://discord.gg/kZnTfneP5u'
           target='_blank'
           rel='noreferrer'
           aria-label='SpiceAI Discord'
         >
           <Icon iconName='discord' className={iconClasses} />
-        </a>
-        <a
+        </Link>
+        <Link
           href='https://www.youtube.com/@spiceai'
           target='_blank'
           rel='noreferrer'
           aria-label='SpiceAI YouTube'
         >
           <Icon iconName='youtube' className={iconClasses} />
-        </a>
+        </Link>
       </div>
     </div>
   )
