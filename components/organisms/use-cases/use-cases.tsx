@@ -15,8 +15,9 @@ export const UseCases = () => {
       </Title>
 
       <Paragraph className='mb-6 md:max-w-3xl'>
-        Unified SQL Interface for effortlessly materializing, accelerating, and querying data from
-        any database, data warehouse, or data lake.
+        Spice powers data apps and AI agents with federated SQL, vector search, LLM memory,
+        real-time data acceleration, observability, and integration across modern and legacy
+        systems.
       </Paragraph>
 
       <div className='hidden grid-cols-2 gap-6 lg:grid'>
